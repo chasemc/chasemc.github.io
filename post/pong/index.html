@@ -257,7 +257,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 min read
+    6 min read
   </span>
   
 
@@ -332,12 +332,17 @@
 
 
       <div class="article-style" itemprop="articleBody">
-        <p>I am giving a talk about Shiny soon, <a href="https://chasemc.github.io/IDBac">specifically an app I recently created</a>, and part of this will include time for attendees to work on a Shiny app on their own or in groups. There are <a href="https://shiny.rstudio.com/gallery">plenty</a> of sample projects for Shiny but I wanted to do something new-ish.</p>
+        <div id="why" class="section level2">
+<h2>Why?</h2>
+<p>I am giving a talk about Shiny soon, <a href="https://chasemc.github.io/IDBac">specifically an app I recently created</a>, and part of this will include time for attendees to work on a Shiny app on their own or in groups. There are <a href="https://shiny.rstudio.com/gallery">plenty</a> of sample projects for Shiny but I wanted to do something new-ish.</p>
 <p>Something I had wondered for awhile was why there weren’t many games (however simple!) written in R. After awhile of researching, two recent games seemed the best examples:</p>
 <ul>
 <li><p>The best I’ve seen is <a href="https://deanattali.com/blog/shiny-game-lightsout/">Lights Out</a> by Dean Attali, which is based in Shiny and incorporates interactivity, with pushing lights on and off within a puzzle.</p></li>
 <li><p>The second isn’t quite a game, but made it part-way with a <a href="https://www.r-bloggers.com/r-cade-games-simulating-the-legendary-game-of-pong">simulation of pong</a> by Peter Prevos.</p></li>
 </ul>
+</div>
+<div id="creating-the-playing-environment" class="section level2">
+<h2>Creating the Playing Environment</h2>
 <p>I chose GGVis to keep on with my goal of getting better with tidyverse but also, and more importantly, because it was built to play well with Shiny.</p>
 <p>The first challenge is the plot itself, we prefer a blank workspace (no axes or grids). But the player will need to see boundary-lines for the top, right and bottom sides.</p>
 <pre class="r"><code>library(&quot;shiny&quot;)
@@ -360,14 +365,17 @@ and
 ggvis(x = ~x, y = ~y) %&gt;% 
   ... %&gt;% 
    bind_shiny(&quot;p&quot;)</code></pre>
+</div>
+<div id="making-the-game-interactive" class="section level2">
+<h2>Making the Game Interactive</h2>
 <p>The harder part was getting the key-bindings to work, but it’s really not so bad. There are key-bindings in GGVis, but they weren’t working all that great for the needed purpose here.</p>
 <pre class="r"><code># The following code was modified based on https://stackoverflow.com/questions/24973549/r-shiny-key-input-binding
     tags$style(type=&quot;text/css&quot;, &quot;.recalculating {opacity: 1.0;}&quot;),
     tags$script(&#39;$(document).on(&quot;keydown&quot;, function (e) {
                 Shiny.onInputChange(&quot;mydata&quot;, [e.which, Math.random()]  );
                 });&#39;)  </code></pre>
-<p>The Math.random() above is important, as shiny will only recognize the first keystroke of the same type (down, down will only register as one down). By including Math.random() all repetitive keystrokes are returned.</p>
-<p>Then we look for the pressed key with <code>input$mydata</code></p>
+<p>The Math.random() above is important, as Shiny will only recognize the first keystroke of the same type (down, down will only register as a single down). By including Math.random() all repetitive keystrokes are returned.</p>
+<p>Normally we might just access the keystroke with <code>input$mydata</code> within a reactive value, however creating a constant value (eg 39 for right arrow) would lead to constant movement in that direction. We need to track the value of each keystroke while also recognize that a key has stopped being pressed. The easiest way I could think to do that is to wrap functions for each key that modify the coordinates of the object. It’s likely not elegant, but these occur inside a shiny function <code>observEvent(input$mydata){...}</code> which ensures the functions run only when <code>input$mydata</code> changes. Most importantly, <code>&lt;&lt;-</code> ensures that we change the coordinates accross the closure (see Hadley Wickam’s explanation at either <a href="http://adv-r.had.co.nz/Functional-programming.html#mutable-state">advanced R</a> or at <a href="https://stackoverflow.com/questions/2628621/how-do-you-use-scoping-assignment-in-r">stackoverflow</a>).</p>
 <pre class="r"><code># Update paddle position based on keyboard input  
               # Key map  
                  # left  = 37
@@ -391,6 +399,148 @@ ggvis(x = ~x, y = ~y) %&gt;%
           }
      }
   })</code></pre>
+<p>The same logic is used for moving the ball; with <code>invalidateLater()</code> setting a, sort of, frame rate/speed of movement.</p>
+<pre class="r"><code>ballPosition&lt;-reactive({
+    invalidateLater(100)
+    
+     if (initialBallPosition$x &gt; xmax ) {
+       dx &lt;&lt;- -dx * runif(1, .9, 1.1) # Bounce 
+       initialBallPosition &lt;&lt;- initialBallPosition %&gt;% mutate(x = x + dx)
+    }else if (initialBallPosition$y &gt; ymax | initialBallPosition$y &lt; ymin){
+       dy &lt;&lt;- -dy * runif(1, .9, 1.1)
+       initialBallPosition &lt;&lt;- initialBallPosition %&gt;% mutate(y = y + dy)
+    }else if((initialBallPosition$x &lt; xmin+.1) &amp;&amp; (initialBallPosition$y &gt; min(paddleHeight$y) &amp;&amp; initialBallPosition$y &lt; max(paddleHeight$y)) ){
+       dx &lt;&lt;- -dx * runif(1, .9, 1.1) # Bounce 
+       initialBallPosition &lt;&lt;- initialBallPosition %&gt;% mutate(x = x + dx)
+    }else{
+       initialBallPosition &lt;- initialBallPosition %&gt;% mutate(y = y + dy)
+       initialBallPosition &lt;- initialBallPosition %&gt;% mutate(x = x + dx)
+       initialBallPosition &lt;&lt;- initialBallPosition
+    }
+    
+    initialBallPosition 
+  })</code></pre>
+</div>
+<div id="the-final-visualization" class="section level2">
+<h2>The Final Visualization</h2>
+<pre class="r"><code>ggvis(x = ~x, y = ~y) %&gt;% 
+  layer_points(data=ballPosition,size:=100) %&gt;% 
+  layer_paths(data=boundaries) %&gt;% 
+  layer_paths(data=paddleMove, stroke := &quot;red&quot;,strokeWidth := 5) %&gt;% 
+  scale_numeric( &quot;x&quot;, domain = c(0,50)) %&gt;% 
+  scale_numeric( &quot;y&quot;, domain = c(0,50)) %&gt;%
+  hide_axis(scale = &quot;x&quot;) %&gt;%
+  hide_axis(scale = &quot;y&quot;) %&gt;% 
+  bind_shiny(&quot;p&quot;)</code></pre>
+</div>
+<div id="try-it-out" class="section level2">
+<h2>Try It Out</h2>
+<p>A no-frills example can be found at (chasemc.shinyapps.io/pong2)[<a href="https://chasemc.shinyapps.io/pong2/" class="uri">https://chasemc.shinyapps.io/pong2/</a>]</p>
+<pre class="r"><code># Code is very loosely based on https://www.r-bloggers.com/r-cade-games-simulating-the-legendary-game-of-pong/
+library(beepr) 
+library(shiny)
+library(ggvis)
+library(dplyr)
+
+# Playing field boundary lines
+boundaries &lt;- tibble(x = c(0, 50, 50, 0), y = c(0, 0, 50, 50))
+paddleHeight &lt;- tibble(x = c(0, 0), y = c(10, 20))
+
+# Playing field boundaries (depend on cex)
+xmin &lt;- 0
+xmax &lt;- 50
+ymin &lt;- 0
+ymax &lt;- 50
+
+# Initial position
+initialBallPosition &lt;&lt;- tibble(x=40,y=40)
+
+# Paddle control
+psize &lt;- 4
+ypaddle &lt;- 4
+paddleSpeed &lt;- 3
+
+# Set direction
+dx &lt;- runif(1, .5, 1)
+dy &lt;- runif(1, .5, 1) 
+
+ui &lt;- 
+  bootstrapPage(
+    ggvisOutput(&quot;p&quot;),
+    # The following code was modified based on https://stackoverflow.com/questions/24973549/r-shiny-key-input-binding
+    tags$style(type=&quot;text/css&quot;, &quot;.recalculating {opacity: 1.0;}&quot;),
+    tags$script(&#39;$(document).on(&quot;keydown&quot;, function (e) {
+                Shiny.onInputChange(&quot;mydata&quot;, [e.which, Math.random()]  );
+                });&#39;)  
+    )
+
+server &lt;- function(input,output,session) {
+  
+# Update paddle position based on keyboard input  
+              # Key map  
+                 # left  = 37
+                 # right = 39
+                 # up ter   = 38
+                 # down  = 40
+
+  observeEvent(input$mydata,{
+    if((is.null(input$mydata))){
+       playerObjectInitial}else{
+          if(input$mydata[1] == 37){
+            # left arrow key is empty
+          }else if(input$mydata[1] == 39){
+            # right arrow key is empty
+          }else if(input$mydata[1] == 38 &amp;&amp; max(paddleHeight$y) &lt; ymax - paddleSpeed){
+            paddleHeight &lt;&lt;- paddleHeight %&gt;% mutate(y=y+paddleSpeed)
+          }else if(input$mydata[1] == 40 &amp;&amp; min(paddleHeight$y) &gt; ymin + paddleSpeed){
+            paddleHeight &lt;&lt;-   paddleHeight %&gt;% mutate(y=y-paddleSpeed)
+          }
+     }
+  })
+  
+  paddleMove &lt;- reactive({
+    invalidateLater(100)
+    paddleHeight
+  })
+  
+  ballPosition&lt;-reactive({
+
+    invalidateLater(100)
+    
+    if (initialBallPosition$x &gt; xmax ) {
+       dx &lt;&lt;- -dx * runif(1, .9, 1.1) # Bounce 
+       initialBallPosition &lt;&lt;- initialBallPosition %&gt;% mutate(x = x + dx)
+    }else if (initialBallPosition$y &gt; ymax | initialBallPosition$y &lt; ymin){
+       dy &lt;&lt;- -dy * runif(1, .9, 1.1)
+       initialBallPosition &lt;&lt;- initialBallPosition %&gt;% mutate(y = y + dy)
+    }else if((initialBallPosition$x &lt; xmin+.1) &amp;&amp; (initialBallPosition$y &gt; min(paddleHeight$y) &amp;&amp; initialBallPosition$y &lt; max(paddleHeight$y)) ){
+       dx &lt;&lt;- -dx * runif(1, .9, 1.1) # Bounce 
+       initialBallPosition &lt;&lt;- initialBallPosition %&gt;% mutate(x = x + dx)
+    }else{
+       initialBallPosition &lt;- initialBallPosition %&gt;% mutate(y = y + dy)
+       initialBallPosition &lt;- initialBallPosition %&gt;% mutate(x = x + dx)
+       initialBallPosition &lt;&lt;- initialBallPosition
+    }
+    
+    initialBallPosition 
+  })
+
+ggvis(x = ~x, y = ~y) %&gt;% 
+  
+  layer_points(data=ballPosition,size:=100) %&gt;% 
+  layer_paths(data=boundaries) %&gt;% 
+  layer_paths(data=paddleMove, stroke := &quot;red&quot;,strokeWidth := 5) %&gt;% 
+  scale_numeric( &quot;x&quot;, domain = c(0,50)) %&gt;% 
+  scale_numeric( &quot;y&quot;, domain = c(0,50)) %&gt;%
+  hide_axis(scale = &quot;x&quot;) %&gt;%
+  hide_axis(scale = &quot;y&quot;) %&gt;% 
+  bind_shiny(&quot;p&quot;)
+
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)</code></pre>
+</div>
 
       </div>
 
