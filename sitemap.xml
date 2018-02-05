@@ -5,8 +5,8 @@
     
     <url>
     
-      <loc>/project/posng/</loc>
-      <lastmod>2017-12-30T00:00:00+00:00</lastmod>
+      <loc>/post/a-shiny-new-world/</loc>
+      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -14,7 +14,7 @@
     
     <url>
     
-      <loc>/post/pong/</loc>
+      <loc>/project/posng/</loc>
       <lastmod>2017-12-30T00:00:00+00:00</lastmod>
     </url>
     
@@ -78,6 +78,16 @@
     
     <url>
     
+      <loc>/categories/apis/</loc>
+      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/</loc>
       <lastmod>2017-10-15T00:00:00-05:00</lastmod>
       <priority>0</priority>
@@ -89,6 +99,7 @@
     <url>
     
       <loc>/categories/</loc>
+      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -117,16 +128,6 @@
     
     <url>
     
-      <loc>/categories/games/</loc>
-      <lastmod>2017-12-30T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/tags/games/</loc>
       <lastmod>2017-12-30T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -137,8 +138,8 @@
     
     <url>
     
-      <loc>/tags/games/</loc>
-      <lastmod>2017-12-30T00:00:00+00:00</lastmod>
+      <loc>/categories/gapminder/</loc>
+      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -147,8 +148,8 @@
     
     <url>
     
-      <loc>/tags/interactive/</loc>
-      <lastmod>2017-12-30T00:00:00+00:00</lastmod>
+      <loc>/categories/googlesheets/</loc>
+      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -157,8 +158,28 @@
     
     <url>
     
-      <loc>/categories/personal/</loc>
-      <lastmod>2017-12-30T00:00:00+00:00</lastmod>
+      <loc>/categories/instructional/</loc>
+      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/interactive/</loc>
+      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/meetup/</loc>
+      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -187,18 +208,8 @@
     
     <url>
     
-      <loc>/tags/pong/</loc>
-      <lastmod>2017-12-30T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/post/</loc>
-      <lastmod>2017-12-30T00:00:00+00:00</lastmod>
+      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -227,8 +238,8 @@
     
     <url>
     
-      <loc>/categories/r/</loc>
-      <lastmod>2017-12-30T00:00:00+00:00</lastmod>
+      <loc>/tags/r/</loc>
+      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -237,8 +248,18 @@
     
     <url>
     
-      <loc>/tags/r/</loc>
-      <lastmod>2017-12-30T00:00:00+00:00</lastmod>
+      <loc>/categories/r/</loc>
+      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/regression/</loc>
+      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -248,7 +269,17 @@
     <url>
     
       <loc>/tags/shiny/</loc>
-      <lastmod>2017-12-30T00:00:00+00:00</lastmod>
+      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/shiny/</loc>
+      <lastmod>2018-02-05T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
