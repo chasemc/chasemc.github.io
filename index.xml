@@ -66,7 +66,7 @@
 &lt;img src=&#34;/img/post/2018-01-28-a-shiny-new-world/BeginnerExample.PNG&#34; /&gt;
 
 &lt;/div&gt;
-&lt;p&gt;I find Joe Cheng’s &lt;a href=&#34;shiny.rstudio.com/gallery/kmeans-example.html&#34;&gt;k-means example&lt;/a&gt; to be pretty straightforward to point out the basic features of reactivity and chose this as challenge for beginner’s to get familiar with shiny. Trying to understand what happens when you “break” certain lines of the code and why inputs, outputs, and reactives are placed where they are.&lt;/p&gt;
+&lt;p&gt;I find Joe Cheng’s &lt;a href=&#34;https://shiny.rstudio.com/gallery/kmeans-example.html&#34;&gt;k-means example&lt;/a&gt; to be pretty straightforward to point out the basic features of reactivity and chose this as challenge for beginner’s to get familiar with shiny. Trying to understand what happens when you “break” certain lines of the code and why inputs, outputs, and reactives are placed where they are.&lt;/p&gt;
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;app-two-and-three-beginnerintermediate-examples&#34; class=&#34;section level2&#34;&gt;
@@ -141,15 +141,15 @@ devtools::install_github(&amp;quot;chasemc/Jan2018ShinyMeetupCRUG&amp;quot;)&lt;
 &lt;ul&gt;
 &lt;li&gt;Where to start:
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;swirlstats.com&#34; class=&#34;uri&#34;&gt;swirlstats.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;r4ds.had.co.nz&#34; class=&#34;uri&#34;&gt;r4ds.had.co.nz&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Then move on to: &lt;a href=&#34;adv-r.had.co.nz&#34; class=&#34;uri&#34;&gt;adv-r.had.co.nz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://swirlstats.com&#34;&gt;swirlstats.com&lt;/a&gt;{:target=“_blank“}&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://r4ds.had.co.nz&#34;&gt;r4ds.had.co.nz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Then move on to: &lt;a href=&#34;http://adv-r.had.co.nz&#34;&gt;adv-r.had.co.nz&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;Where to find answers to your questions:
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;stackexchange.com&#34; class=&#34;uri&#34;&gt;stackexchange.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;community.rstudio.com&#34; class=&#34;uri&#34;&gt;community.rstudio.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Web Search! (i.e. &lt;a href=&#34;google.com&#34; class=&#34;uri&#34;&gt;google.com&lt;/a&gt;)
+&lt;li&gt;&lt;a href=&#34;https://stackexchange.com&#34;&gt;stackexchange.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://community.rstudio.com&#34;&gt;community.rstudio.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Web Search! (i.e. &lt;a href=&#34;https://google.com&#34;&gt;google.com&lt;/a&gt;)
 &lt;ul&gt;
 &lt;li&gt;E.g. (search: convert list to data frame in R)&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
@@ -159,11 +159,11 @@ devtools::install_github(&amp;quot;chasemc/Jan2018ShinyMeetupCRUG&amp;quot;)&lt;
 &lt;ul&gt;
 &lt;li&gt;A few Shiny resources:
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;shiny.rstudio.com/tutorial&#34; class=&#34;uri&#34;&gt;shiny.rstudio.com/tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;shiny.rstudio.com/articles&#34; class=&#34;uri&#34;&gt;shiny.rstudio.com/articles&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;shiny.rstudio.com/gallery&#34; class=&#34;uri&#34;&gt;shiny.rstudio.com/gallery&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;shiny.rstudio.com/gallery/widget-gallery&#34; class=&#34;uri&#34;&gt;shiny.rstudio.com/gallery/widget-gallery&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;deanattali.com/blog/building-shiny-apps-tutorial&#34; class=&#34;uri&#34;&gt;deanattali.com/blog/building-shiny-apps-tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://shiny.rstudio.com/tutorial&#34;&gt;shiny.rstudio.com/tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://shiny.rstudio.com/articles&#34;&gt;shiny.rstudio.com/articles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://shiny.rstudio.com/gallery&#34;&gt;shiny.rstudio.com/gallery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://shiny.rstudio.com/gallery/widget-gallery.html&#34;&gt;shiny.rstudio.com/gallery/widget-gallery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://deanattali.com/blog/building-shiny-apps-tutorial&#34;&gt;deanattali.com/blog/building-shiny-apps-tutorial&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
