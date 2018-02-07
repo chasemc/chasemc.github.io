@@ -83,9 +83,9 @@
   <meta property="og:description" content="">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2018-02-05T00:00:00&#43;00:00">
+  <meta property="article:published_time" content="2018-02-07T00:00:00&#43;00:00">
   
-  <meta property="article:modified_time" content="2018-02-05T00:00:00&#43;00:00">
+  <meta property="article:modified_time" content="2018-02-07T00:00:00&#43;00:00">
   
 
   
@@ -246,8 +246,8 @@
 
   <span class="article-date">
     
-    <time datetime="2018-02-05 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
-      Feb 5, 2018
+    <time datetime="2018-02-07 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
+      Feb 7, 2018
     </time>
   </span>
   <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
@@ -257,7 +257,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    9 min read
+    4 min read
   </span>
   
 
@@ -347,7 +347,8 @@
 
 
       <div class="article-style" itemprop="articleBody">
-        <div id="jump-to-section" class="section level2">
+        <p>Disclaimer (and maybe dissapointment): This has no connection to Huxley’s dystopian.</p>
+<div id="jump-to-section" class="section level2">
 <h2>Jump to Section:</h2>
 <ul>
 <li><a href="#intro">Brief Introduction</a></li>
@@ -360,19 +361,19 @@
 </div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>I recently gave a talk about R and Shiny at a meetup in Chicago, specifically about an app I recently created called <a href="https://chasemc.github.io/IDBac">IDBac</a>. While there are <a href="https://shiny.rstudio.com/gallery">plenty of example apps</a> for Shiny I also wanted to create some examples of my own for now and any future instruction. Since the meetup had some scheduled time for attendees to work in groups or on their own I thought a nice demonstration of Shiny would be an app that could interactively create groups based on a self-reported skill level.</p>
-<p>However I also wanted to include some introductory-type apps to cover a range of beginner to intermediate skill levels. So, in all, there are three suggested apps to look through, hopefully with each stepping up a degree in skill level needed for both data-wrangling and Shiny skills.</p>
+<p>I recently gave a <a href="https://github.com/chasemc/Jan2018ShinyMeetupCRUG/blob/master/CRUG-Jan-2018-Presentation.pdf">talk</a> at a meetup in Chicago about an R Shiny app I am working on called <a href="https://chasemc.github.io/IDBac">IDBac</a>. While there are <a href="https://shiny.rstudio.com/gallery">plenty of example apps</a> for Shiny I also wanted to create some examples of my own for now and any future instruction. Since the meetup had some scheduled time for attendees to work in groups or on their own I thought a nice demonstration of Shiny would be an app that could interactively create groups based on a self-reported skill level.</p>
+<p>However I also wanted to include some introductory-type apps to cover a range of beginner to intermediate skill levels. So, in all, there are three suggested apps to look through, hopefully with each stepping up a degree in skill level needed for both data-wrangling and Shiny skills. Some links to tutorials and resources can be found at the end of the post.</p>
 <ul>
 <li>App One
 <ul>
-<li>Was borrowed from RStudio’s example gallery and should be straightforward enough to learn some of the basics of Shiny as you go through tutorials (some links later on).
+<li>Was borrowed from RStudio’s example gallery and should be straightforward enough to learn some of the basics of Shiny as you go through tutorials.
 <ul>
 <li>Skills: simple data analysis, simple clustering, simple plotting with base R</li>
 </ul></li>
 </ul></li>
 <li>App Two
 <ul>
-<li>Has some example anaylses of the GapMinder dataset and includes two static ggplots and an interactive datatable.
+<li>Is based on the GapMinder dataset and includes two static ggplots and an interactive datatable.
 <ul>
 <li>Skills: simple data analysis, simple plotting with ggplot</li>
 </ul></li>
@@ -385,7 +386,6 @@
 </ul></li>
 </ul></li>
 </ul>
-<p>I have also included a few resources for those new to R and Shiny at the very bottom of the post.</p>
 <div id="exampleone">
 
 </div>
@@ -448,269 +448,11 @@
 </ul></li>
 </ol>
 <pre class="r"><code>listFromAPI&lt;-read_json(&quot; Insert Signed URL Here &quot;)</code></pre>
-<p>The Shiny App is below and should work with the steps outlined above. It and all three examples, along with my presentation is available on github at: <a href="https://github.com/chasemc/Jan2018ShinyMeetupCRUG">github.com/chasemc/Jan2018ShinyMeetupCRUG</a> or by download as a package with:</p>
+<p>All three apps are released under the <a href="https://www.r-project.org/Licenses/MIT">MIT License</a></p>
+<p>All three examples, along with my presentation, are available on github at: <a href="https://github.com/chasemc/Jan2018ShinyMeetupCRUG">github.com/chasemc/Jan2018ShinyMeetupCRUG</a> or by download as a package with:</p>
 <pre class="r"><code># Install devtools if you haven&#39;t already
 # install.packages(devtools)
 devtools::install_github(&quot;chasemc/Jan2018ShinyMeetupCRUG&quot;)</code></pre>
-<pre class="r"><code>#
-# This is a Shiny web application. You can run the application by clicking
-# the &#39;Run App&#39; button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
-
-# Load required libraries
-
-library(shiny)
-library(tidyverse)
-library(googlesheets)
-library(jsonlite)
-library(magrittr)
-
-
-
-
-
-# Read current list of people attending the &quot;Happy New YeaR!&quot; CRUG meetup
-#To create the json API GET request for your own Meetup.com event, go to this link:
-# https://secure.meetup.com/meetup_api/console/?path=/:urlname/events/:event_id/rsvps
-# and fill out the form, create the API and paste into the JSON call below the Signed URL
-
-
-listFromAPI&lt;-read_json(&quot; Insert Signed URL Here  &quot;)
-
- 
-
-
-
-# extract member info for people attending event (will return both attending and not attending)
-# Returns a list of lists
-memberInfo &lt;- listFromAPI %&gt;% map(&quot;member&quot;)
-
-# Turn list of lists into tibble (tidyverse version of a data frame)
-memberInfo %&lt;&gt;% map(~unlist(.,recursive = F)) %&gt;% bind_rows()
-
-
-
-
-
-
-# Define UI for application 
-ui &lt;- fluidPage(
-  
-  # Application title
-  titlePanel(&quot;Making Small Working Groups&quot;),
-  h3(tags$strong(&quot;Purpose:&quot;)),
-  h5(&quot;This Shiny App groups survey responses from a Google Form,
-     and tries to associate respones by name to a Meetup.com profile picture&quot;),
-  h5(&quot;API calls and number of groups are dynamic&quot;),
-  
-  # Sidebar layout
-  sidebarLayout(
-    sidebarPanel(
-      
-      # Slider input to select at which skill level (SHiny experience) to split groups
-      uiOutput(&quot;splitGroupsUI&quot;),
-      
-      # Slider input to select how many groups to make 
-      uiOutput(&quot;binUI&quot;)
-    ),
-    # Show a plot of the generated distribution
-    mainPanel(
-      # Use imageOutput to place the image on the page
-      # tableOutput(&#39;mytable&#39;)  
-      uiOutput(&quot;htmlTable&quot;),
-      plotOutput(&quot;plotExperienceLevels&quot;)
-      
-      
-    )
-  )
-  )
-
-# Define server logic required to draw a histogram
-server &lt;- function(input, output) {
-  
-  
-  
-  responses &lt;- reactive({
-      surveyResponses &lt;- gs_key(&quot; Insert Key Here &quot;)
-      surveyResponses %&gt;%  gs_read(ws = &quot;Form Responses 1&quot;)
-      
-  }) 
-  
-  
-  output$splitGroupsUI&lt;- renderUI({
-    
-        sliderInput(&quot;splitGroups&quot;,
-                    &quot;Experience Level at which to Split Groups&quot;,
-                    min = 1,
-                    max = max(responses()$`Experience with Shiny`),
-                    value = 1,
-                    step=1)
-  })
-  
-  
-  
-  
-  
-  maxBins &lt;- reactive ({
-      responses() %&gt;% filter(`Experience with Shiny`&gt;= input$splitGroups) %&gt;% nrow
-  })
-  
-  
-  output$binUI&lt;- renderUI({
-      sliderInput(&quot;bins&quot;,
-                &quot;Number of Groups to Make:&quot;,
-                min = 1,
-                max = maxBins(),
-                value = 1,
-                step=1)
-  })
-  
-  namesAndPhotos &lt;- reactive({
-    
-      fuzzyGrep&lt;- responses()$`What is your name? (First and Last)` %&gt;% 
-      # Fuzzy string match, but non-matches are returned as &quot;integer(0)&quot;
-      map(~agrep(.,memberInfo$name)) %&gt;% 
-    
-      # Change &quot;integer(0)&quot; to NA
-      map_int(1,.null=NA)
-    
-      # We needed NA instead of NULL, to keep the vector length consistent 
-      photosVector &lt;- memberInfo$photo.photo_link[fuzzyGrep]
-      namesVector &lt;- responses()$`What is your name? (First and Last)`
-    
-      # This is what a call to namesAndPhotos() will return. A list of length 2, containing a vector
-      # of names and a vector of photos, in matching order 
-      bind_cols(&quot;What is your name? (First and Last)&quot;=namesVector,photos=photosVector)
-  })
-
-  
-  output$htmlTable &lt;- renderUI({   
-    
-    # Combine the two tibbles (google form data and meetup API data) by participant name
-    namesAndPhotosJoined&lt;-left_join(namesAndPhotos(),responses(),by=&quot;What is your name? (First and Last)&quot;)
-    
-    # If the user selects to split into more than one group (bin) then make make groups 
-    if(input$bins &gt; 1){
-      
-      # For simplicity we only recognize two groups of participants (those above the cutoff andd those below the cutoff)
-      aboveSplit &lt;- namesAndPhotosJoined %&gt;% filter(`Experience with Shiny` &gt;= input$splitGroups) 
-      belowSplit &lt;- namesAndPhotosJoined %&gt;% filter(`Experience with Shiny` &lt;  input$splitGroups) 
-
-      # Create random vectors representing groups (ie c(1,2,3) if 3-groups are wanted) and repeat this vector 
-      # as long as there are participants in a skill level (aboveSplit and belowSplit)
-      # Lastly, randomize the vector so that we aren&#39;t just doing alphabetical order by people&#39;s names
-      groupIndices &lt;- c(1:input$bins)
-      randomizedAboveSplit &lt;- sample(rep(groupIndices,times=ceiling(nrow(aboveSplit)/length(groupIndices))))
-      randomizedAboveSplit &lt;- sample(randomizedAboveSplit[1:nrow(aboveSplit)])
-      
-      randomizedBelowSplit &lt;- rep(groupIndices,times=ceiling(nrow(belowSplit)/length(groupIndices)))
-      randomizedBelowSplit &lt;- sample(randomizedBelowSplit[1:nrow(belowSplit)])
-      
-      # This modifies belowSplit into a list of tibbles, with each list element representing a group
-      belowSplit %&lt;&gt;%  mutate(Group=randomizedBelowSplit) %&gt;% split(.$Group)
-      # This modifies aboveSplit into a list of tibbles, with each list element representing a group
-      aboveSplit %&lt;&gt;% mutate(Group=randomizedAboveSplit) %&gt;% split(.$Group)
-      
-      # Combines aboveSplit and belowSplit for each group
-      groups&lt;- lapply(1:length(aboveSplit),function(x){
-                  bind_rows(aboveSplit[x],belowSplit[x])
-               })
-      
-    }else{
-      # If there is only one group to be made:
-      groups&lt;-list(namesAndPhotosJoined)
-    }
-    
-    
-  
-    # Unecessary, but simplify groups to only contain name and photo columns
-    groups %&lt;&gt;%  map(~.[1:2])
-    
-    
-   # htmlTableData() and htmlTableHead() are functions could totally live before the ui (ie outside the reactive environment)
-   # However, when apps become larger, I like to kee related functions together unless used widely throughout an app, 
-   # This is personal preference
-     
-    # This one might be intimidating... What it does is loop through each member of a group, creating an HTML table with
-    # a row, per member, and two columns: name in one column and photo in the second.  
-    # First we create a bunch of tables each containing a group of participants in the &quot;htmlTableData&quot; function
-    # Then we add table headers for each group (&quot;Names&quot;, &quot;Photos&quot;)
-    # Then  we insert the each HTML table of groups into the columns of a big HTML table to organize the groups on the screen
-    
-    # htmlTableData output is a list of HTML tables, each element/table is a group of participants
-    htmlTableData&lt;-function(inputGroup){lapply(1:nrow(inputGroup),function(x){
-                                           # Initiate a row object of an HTML table
-                                          tags$tr(style = &quot;border: 1px solid black&quot;,
-                                                   # First column is participant name
-                                                  tags$td(pull(inputGroup,&quot;What is your name? (First and Last)&quot;)[x]),
-                                                   # Second column is photo if found, if not &quot;whoAmI.jpg&quot; is inserted,
-                                                   # which lives in www directory whichitself is in the same directory as app.R
-                                                  tags$td(tags$img(src=if(is.na(pull(inputGroup,photos)[x])){
-                                                          &quot;whoAmI.jpg&quot;   }else{
-                                                      pull(inputGroup,photos)[x]
-                                                    }
-                                                    , width = &quot;100px&quot;, height = &quot;100px&quot;))
-                                          )
-                                        })}
-    
-    
-    
-    
-    # This  function adds headers to the group HTMLtables
-    htmlTableHead&lt;- function(inputDataHTML){
-                          tags$td(
-                            tags$table(style = &quot;border: thin solid; padding: 1%; width: 100%;&quot;,
-                                       tags$td(
-                                         tags$tr(style = &quot;border: 1px solid black&quot;,
-                                                 tags$th(&quot;Names&quot;),
-                                                 tags$th(&quot;Photo&quot;)
-                                         ), 
-                                         # Insert group table (this is loopes )
-                                         htmlTableData(inputDataHTML)
-                          )))
-                    }
-    
-    
-    # This is the function that initiates all the crazy HTML table stuff above. The output is a list.
-    # Each list element contains the HTML table for a group
-    innerHtmlTables&lt;-lapply(groups,htmlTableHead)
-    
-    # Create Group headers for the main &quot;organizing&quot; HTML table
-    groupHeaders &lt;- lapply(1:input$bins, function(x){ tags$th(paste0(&quot;Group &quot;, x) )})
-    
-    # Create the main &quot;organizing&quot; HTML table, which places each group HTML table into a column with header of &quot;Group XX&quot;
-    mainHtmlTable&lt;-tags$table(style = &quot;border: thin solid; padding: 1%; width: 100%;&quot;,
-                  tags$tr(style = &quot;border: 1px solid black&quot;,
-                          groupHeaders
-                          ),
-                  
-                  innerHtmlTables
-                  )
-    # The output of htmlTable() is the value of &quot;mainHtmlTable&quot;, as created above
-    mainHtmlTable
-  })
-  
-  
-  
-  
-  
-  
-  
-  output$plotExperienceLevels &lt;- renderPlot(
-                                   plot(jitter(x=responses()$`Experience with R`,0.5),y=responses()$`Experience with Shiny`,xlim=c(1,10),ylim=c(1,10))
-                                 )
-  
-  
-
-  
-}
-
-# Run the application 
-shinyApp(ui = ui, server = server)</code></pre>
 <div id="refs">
 
 </div>
@@ -759,7 +501,7 @@ shinyApp(ui = ui, server = server)</code></pre>
   
   <a class="btn btn-primary btn-outline" href="/tags/shiny">Shiny</a>
   
-  <a class="btn btn-primary btn-outline" href="/tags/regression">regression</a>
+  <a class="btn btn-primary btn-outline" href="/tags/instructional">Instructional</a>
   
 </div>
 
@@ -771,16 +513,6 @@ shinyApp(ui = ui, server = server)</code></pre>
 </article>
 
 
-
-<div class="article-container article-widget">
-  <div class="hr-light"></div>
-  <h3>Related</h3>
-  <ul>
-    
-    <li><a href="/project/posng/">Interactive Pong in R</a></li>
-    
-  </ul>
-</div>
 
 
 
