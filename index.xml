@@ -22,6 +22,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;#intro&#34;&gt;Brief Introduction&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#exampleone&#34;&gt;Example Apps&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#code&#34;&gt;Code and Presentation Slides&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#refs&#34;&gt;Resources for Beginners&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div id=&#34;intro&#34;&gt;
@@ -117,14 +118,22 @@
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;listFromAPI&amp;lt;-read_json(&amp;quot; Insert Signed URL Here &amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;All three apps are released under the &lt;a href=&#34;https://www.r-project.org/Licenses/MIT&#34;&gt;MIT License&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;All three examples, along with my presentation, are available on github at: &lt;a href=&#34;https://github.com/chasemc/Jan2018ShinyMeetupCRUG&#34;&gt;github.com/chasemc/Jan2018ShinyMeetupCRUG&lt;/a&gt; or by download as a package with:&lt;/p&gt;
+&lt;hr /&gt;
+&lt;div id=&#34;code&#34;&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;shiny-apps-code-and-chicago-r-user-group-presentation-slides&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Shiny Apps Code and Chicago R User Group Presentation Slides&lt;/h2&gt;
+&lt;p&gt;All three examples, and my presentation, are available on github at: &lt;a href=&#34;https://github.com/chasemc/Jan2018ShinyMeetupCRUG&#34;&gt;github.com/chasemc/Jan2018ShinyMeetupCRUG&lt;/a&gt; or by download as a package with:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Install devtools if you haven&amp;#39;t already
 # install.packages(devtools)
 devtools::install_github(&amp;quot;chasemc/Jan2018ShinyMeetupCRUG&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;All three apps are released under the &lt;a href=&#34;https://www.r-project.org/Licenses/MIT&#34;&gt;MIT License.&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
 &lt;div id=&#34;refs&#34;&gt;
 
-&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;resources&#34; class=&#34;section level2&#34;&gt;
@@ -132,7 +141,7 @@ devtools::install_github(&amp;quot;chasemc/Jan2018ShinyMeetupCRUG&amp;quot;)&lt;
 &lt;ul&gt;
 &lt;li&gt;Where to start:
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;swirlstats.com&#34;&gt;swirlstatscom&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;swirlstats.com&#34; class=&#34;uri&#34;&gt;swirlstats.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;r4ds.had.co.nz&#34; class=&#34;uri&#34;&gt;r4ds.had.co.nz&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Then move on to: &lt;a href=&#34;adv-r.had.co.nz&#34; class=&#34;uri&#34;&gt;adv-r.had.co.nz&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
