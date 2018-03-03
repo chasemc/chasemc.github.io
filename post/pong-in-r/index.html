@@ -257,7 +257,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    3 min read
+    4 min read
   </span>
   
 
@@ -347,14 +347,12 @@ p.caption {
 }
 </style>
 <p>While R is traditionally an academically-oriented language (usually statistics) it has moved into some kind of grey-zone due to inclusive philosophies and an abundance of new packages.</p>
-<p>Thinking about this recently, I wondered if anyone had written any interactive games in R. The answer is “kind-of”. About 2 years ago, Shiny afficionado Dean Attali wrote an <a href="https://deanattali.com/blog/shiny-game-lightsout/">interactive game</a>, which is interactive but still lacked dynamic movement of a piece/character, charactestic of many games.</p>
-<p>After another brief search I came across Peter Prevos’ <a href="https://www.r-bloggers.com/r-cade-games-simulating-the-legendary-game-of-pong">post in r-bloggers</a>, about pong in R. I thought that was it, my search was done! …However, a closer look at the title revealed he had “simulated” the game but had yet to accomplish interactivity.</p>
-So here’s my proof of concept, super-glitchy, 10-min code attempt of truly interactive game of Pong in R, using Shiny, dplyr, and ggvis.
-<p>
-<p>I extended this to a game similar to Google dino-game easter egg (eg <a href="http://www.trex-game.skipser.com">here</a>)…but that seems to be on my other computer, or maybe I just dreamt that… so maybe another day :)</p>
-<p>Feel free to modify this code into an actual full-fledged game if you are so inclined. Peters’ <a href="https://www.r-bloggers.com/r-cade-games-simulating-the-legendary-game-of-pong">post</a> even gives some ideas of incorporating sound and how to handle when the paddle misses/levels/Game Over screen.</p>
-<p>Yeah, there’s currently no winner, the ball moves slowly, it might be a bit jumpy, I probably used the wrong syntax… let’s see your best, make it better… I dare you!</p>
-<p>An online version can be found here: <a href="https://chasemc.shinyapps.io/PONG" class="uri">https://chasemc.shinyapps.io/PONG</a></p>
+<p>Thinking about this recently, I wondered if anyone had written any interactive games in R- and the answer is “kind-of”. About 2 years ago, Shiny afficionado Dean Attali wrote an <a href="https://deanattali.com/blog/shiny-game-lightsout/">interactive game</a>, which is interactive but still lacked dynamic movement of a piece/character, charactestic of many games.</p>
+<p>After another brief search I came across Peter Prevos’ <a href="https://www.r-bloggers.com/r-cade-games-simulating-the-legendary-game-of-pong">post in r-bloggers</a> about pong in R. I thought that was it, my search was done! But a closer look at the title revealed that while he had “simulated” the game, he had yet to accomplish interactivity.</p>
+<p>So here’s my proof of concept, super-glitchy, 10-min of coding attempt of a truly interactive game of Pong in R, using Shiny, dplyr, and ggvis. I had extended this to a game similar to Google dino-game easter egg (eg <a href="http://www.trex-game.skipser.com">here</a>)…but that seems to be on my other computer, or maybe I just dreamt that… so maybe another day, another post. :)</p>
+<p>Feel free to modify this code into an actual full-fledged game if you are so inclined. Peters’ <a href="https://www.r-bloggers.com/r-cade-games-simulating-the-legendary-game-of-pong">post</a> even gives some ideas of incorporating sound and how to handle when the paddle misses/adding levels/and a “Game Over” screen.</p>
+<p>Yeah, there’s currently no winner, the ball moves slowly, it might be a bit jumpy, I probably used the wrong syntax… let’s see your best, make it better… game on!</p>
+<p>An online version can be found here: <a href="https://chasemc.shinyapps.io/PONG">chasemc.shinyapps.io/PONG</a></p>
 <pre class="r"><code># Code is very loosely based on https://www.r-bloggers.com/r-cade-games-simulating-the-legendary-game-of-pong/
 
 library(shiny)
@@ -432,7 +430,7 @@ server &lt;- function(input,output,session) {
     paddleHeight
   })
   
-  ballPosition&lt;-reactive({
+  ballPosition &lt;- reactive({
     
     invalidateLater(200)
     
