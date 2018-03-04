@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sat, 03 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Mar 2018 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/tags/r/feed.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Beyond Rstats -&gt; Rgames</title>
       <link>/post/pong-in-r/</link>
-      <pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 04 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/pong-in-r/</guid>
       <description>&lt;p&gt;While R is traditionally an academically-oriented language (usually statistics) it has moved into some kind of grey-zone due to inclusive philosophies and an abundance of new packages.&lt;/p&gt;
