@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Game on </title>
-    <link>https://chasemc.github.io/categories/game/</link>
+    <link>/categories/game/</link>
     <description>Recent content in Game on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sun, 04 Mar 2018 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://chasemc.github.io/categories/game/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/categories/game/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Beyond Rstats -&gt; Rgames</title>
-      <link>https://chasemc.github.io/post/pong-in-r/</link>
+      <link>/post/pong-in-r/</link>
       <pubDate>Sun, 04 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://chasemc.github.io/post/pong-in-r/</guid>
+      <guid>/post/pong-in-r/</guid>
       <description>&lt;p&gt;While R is traditionally an academically-oriented language (usually statistics) it has moved into some kind of grey-zone due to inclusive philosophies and an abundance of new packages.&lt;/p&gt;
 &lt;p&gt;Thinking about this recently, I wondered if anyone had written any interactive games in R- and the answer is “kind-of”. About 2 years ago, Shiny afficionado Dean Attali wrote an &lt;a href=&#34;https://deanattali.com/blog/shiny-game-lightsout/&#34;&gt;interactive game&lt;/a&gt;, which is interactive but still lacked dynamic movement of a piece/character, charactestic of many games.&lt;/p&gt;
 &lt;p&gt;After another brief search I came across Peter Prevos’ &lt;a href=&#34;https://www.r-bloggers.com/r-cade-games-simulating-the-legendary-game-of-pong&#34;&gt;post in r-bloggers&lt;/a&gt; about pong in R. I thought that was it, my search was done! But a closer look at the title revealed that while he had “simulated” the game, he had yet to accomplish interactivity.&lt;/p&gt;

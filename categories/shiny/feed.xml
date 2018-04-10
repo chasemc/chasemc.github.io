@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shiny on </title>
-    <link>https://chasemc.github.io/categories/shiny/</link>
+    <link>/categories/shiny/</link>
     <description>Recent content in Shiny on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Wed, 07 Feb 2018 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://chasemc.github.io/categories/shiny/feed.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/categories/shiny/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A Shiny New World</title>
-      <link>https://chasemc.github.io/post/a-shiny-new-world/</link>
+      <link>/post/a-shiny-new-world/</link>
       <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://chasemc.github.io/post/a-shiny-new-world/</guid>
+      <guid>/post/a-shiny-new-world/</guid>
       <description>&lt;p&gt;Disclaimer (and maybe dissapointment): This has no connection to Huxley’s dystopian.&lt;/p&gt;
 &lt;div id=&#34;jump-to-section&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Jump to Section:&lt;/h2&gt;
@@ -65,7 +65,7 @@
 &lt;div id=&#34;app-one-beginner-example&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;App One: Beginner Example&lt;/h2&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://chasemc.github.io/img/post/2018-01-28-a-shiny-new-world/BeginnerExample.PNG&#34; /&gt;
+&lt;img src=&#34;/img/post/2018-01-28-a-shiny-new-world/BeginnerExample.PNG&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;I find Joe Cheng’s &lt;a href=&#34;https://shiny.rstudio.com/gallery/kmeans-example.html&#34;&gt;k-means example&lt;/a&gt; to be pretty straightforward to point out the basic features of reactivity and chose this as challenge for beginner’s to get familiar with shiny. Trying to understand what happens when you “break” certain lines of the code and why inputs, outputs, and reactives are placed where they are.&lt;/p&gt;
@@ -77,7 +77,7 @@
 &lt;div id=&#34;app-two-plotting-gapminder-data&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;App Two: Plotting GapMinder Data&lt;/h3&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://chasemc.github.io/img/post/2018-01-28-a-shiny-new-world/Beginner-Intermediate.PNG&#34; /&gt;
+&lt;img src=&#34;/img/post/2018-01-28-a-shiny-new-world/Beginner-Intermediate.PNG&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;This example is pretty short and simple with an interactive dataframe and two static ggplots within three separate tabPanels.&lt;/p&gt;
@@ -87,7 +87,7 @@
 &lt;div id=&#34;app-three-interactively-create-groups-at-a-meetup&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;App Three: Interactively Create Groups at a Meetup&lt;/h3&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;https://chasemc.github.io/img/post/2018-01-28-a-shiny-new-world/MeetupParticipantGrouping.PNG&#34; /&gt;
+&lt;img src=&#34;/img/post/2018-01-28-a-shiny-new-world/MeetupParticipantGrouping.PNG&#34; /&gt;
 
 &lt;/div&gt;
 &lt;p&gt;Due to some technical difficulties with the display tech at the meetup I wasn’t able to present this app example since I was using a computer sans-R, but wanted to include it here.&lt;/p&gt;
