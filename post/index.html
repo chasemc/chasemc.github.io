@@ -83,7 +83,7 @@
   <meta property="og:description" content="PhD Candidate">
   <meta property="og:locale" content="en-us">
   
-  <meta property="og:updated_time" content="2018-04-18T00:00:00&#43;00:00">
+  <meta property="og:updated_time" content="2018-04-19T00:00:00&#43;00:00">
   
 
   
@@ -239,6 +239,78 @@
   
 
   
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+  
+  
+  <h3 class="article-title" itemprop="headline">
+    <a href="/post/tidy-tuesday-4-17-2018/" itemprop="url">Tidy Tuesday 4-17-2018</a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2018-04-19 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
+      Apr 19, 2018
+    </time>
+  </span>
+  <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Chase Clark">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    14 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/tidy-tuesday-4-17-2018/#disqus_thread"></a>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/r">R</a
+    >, 
+    
+    <a href="/categories/tidy-tuesday">Tidy Tuesday</a
+    >
+    
+  </span>
+  
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    library(tidyverse)library(plotly)library(ggrepel)Read in data, remove punctuation from column names
+inputData &lt;- readxl::read_xlsx(&quot;data/4-19-18/global_mortality.xlsx&quot;)names(inputData) &lt;- str_trim(str_remove_all(names(inputData), &quot;[[:punct:]]&quot;))Mean of each category grouped by country isn’t great, but for a tidy-tuesday it’ll do…
+a2 &lt;- inputData %&gt;% group_by(country) %&gt;% summarize_if(is.numeric,mean)a &lt;- a2 %&gt;% select(4:34) %&gt;% replace(is.na(.), 0)principleComponents &lt;- prcomp(a) %&gt;%.$x %&gt;%as_tibble %&gt;%bind_cols(name=a2$country, .)ggplot(principleComponents) +geom_label(aes(x=PC1,y=PC2,label=name)) +ggtitle(&quot;First and Second Principle Components&quot;)principleComponents2 &lt;- prcomp(a) %&gt;%.
+    
+  </div>
+  <p class="read-more" itemprop="mainEntityOfPage">
+    <a href="/post/tidy-tuesday-4-17-2018/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
   
     
     
