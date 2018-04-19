@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.34" />
+  <meta name="generator" content="Hugo 0.36.1" />
   <meta name="author" content="Chase Clark">
   <meta name="description" content="PhD Candidate">
 
@@ -83,7 +83,7 @@
   <meta property="og:description" content="PhD Candidate">
   <meta property="og:locale" content="en-us">
   
-  <meta property="og:updated_time" content="2018-04-09T00:00:00&#43;00:00">
+  <meta property="og:updated_time" content="2018-04-18T00:00:00&#43;00:00">
   
 
   
@@ -239,6 +239,91 @@
   
 
   
+  
+    
+    
+
+<div class="article-list-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+  
+  
+  <h3 class="article-title" itemprop="headline">
+    <a href="/post/animated-t-sne/" itemprop="url">Animated t-SNE</a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2018-04-18 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
+      Apr 18, 2018
+    </time>
+  </span>
+  <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Chase Clark">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    2 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/animated-t-sne/#disqus_thread"></a>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/r">R</a
+    >, 
+    
+    <a href="/categories/instructional">Instructional</a
+    >, 
+    
+    <a href="/categories/ggplot">ggplot</a
+    >, 
+    
+    <a href="/categories/rtsne">Rtsne</a
+    >, 
+    
+    <a href="/categories/gganimate">gganimate</a
+    >, 
+    
+    <a href="/categories/tweenr">tweenr</a
+    >
+    
+  </span>
+  
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    Load libraries
+library(Rtsne)library(createdatasets)library(tweenr)library(gganimate)library(ggplot2)set.seed(42)Create data for t-SNE
+# Get MNIST data for t-SNEdf_mnist &lt;- createMNIST()df_sampled &lt;- df_mnist[sample(1:nrow(df_mnist),1000),]mat_mnist &lt;- as.matrix(df_sampled[,!(colnames(df_sampled) == &quot;Class&quot;)])whichNumber &lt;- as.character(df_sampled[,(colnames(df_sampled) == &quot;Class&quot;)])# Going to do parallel t-SNE later (and data has to be created for each instance on Windows R parallel, so lets save the data as rdssaveRDS(mat_mnist,&quot;data/mat_mnist.rds&quot;)saveRDS(df_sampled,&quot;data/df_sampled.rds&quot;)saveRDS(whichNumber,&quot;data/whichNumber.rds&quot;)Run Parallel t-SNE
+# Setup parallelnumCores &lt;- parallel::detectCores()numCores &lt;- parallel::makeCluster(numCores-1)# Run parallel t-SNE e &lt;- parallel::parLapply(numCores, 1:30 , function(x){set.
+    
+  </div>
+  <p class="read-more" itemprop="mainEntityOfPage">
+    <a href="/post/animated-t-sne/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
   
     
     
