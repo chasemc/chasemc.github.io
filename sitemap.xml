@@ -195,8 +195,8 @@
     
     <url>
     
-      <loc>/categories/instructional/</loc>
-      <lastmod>2018-04-18T00:00:00+00:00</lastmod>
+      <loc>/tags/instructional/</loc>
+      <lastmod>2018-03-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -205,8 +205,8 @@
     
     <url>
     
-      <loc>/tags/instructional/</loc>
-      <lastmod>2018-03-04T00:00:00+00:00</lastmod>
+      <loc>/categories/instructional/</loc>
+      <lastmod>2018-04-18T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -255,8 +255,8 @@
     
     <url>
     
-      <loc>/categories/r/</loc>
-      <lastmod>2018-04-19T00:00:00+00:00</lastmod>
+      <loc>/tags/r/</loc>
+      <lastmod>2018-03-04T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -265,8 +265,8 @@
     
     <url>
     
-      <loc>/tags/r/</loc>
-      <lastmod>2018-03-04T00:00:00+00:00</lastmod>
+      <loc>/categories/r/</loc>
+      <lastmod>2018-04-19T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -285,28 +285,28 @@
     
     <url>
     
-      <loc>/categories/shiny/</loc>
-      <lastmod>2018-02-07T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/categories/shiny/</loc>
-      <lastmod>2018-02-07T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/tags/shiny/</loc>
       <lastmod>2018-03-04T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/shiny/</loc>
+      <lastmod>2018-02-07T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/shiny/</loc>
+      <lastmod>2018-02-07T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

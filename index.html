@@ -786,9 +786,10 @@ url('/img/headers/MainHeader.jpg');
 
   <div class="article-style" itemprop="articleBody">
     
-    library(tidyverse)library(plotly)library(ggrepel)Read in data, remove punctuation from column names
+    See here for more about tidy tuesday: https://github.com/rfordatascience/tidytuesday
+library(tidyverse)library(plotly)library(ggrepel)Read in data, remove punctuation from column names
 inputData &lt;- readxl::read_xlsx(&quot;data/4-19-18/global_mortality.xlsx&quot;)names(inputData) &lt;- str_trim(str_remove_all(names(inputData), &quot;[[:punct:]]&quot;))Mean of each category grouped by country isn’t great, but for a tidy-tuesday it’ll do…
-a2 &lt;- inputData %&gt;% group_by(country) %&gt;% summarize_if(is.numeric,mean)a &lt;- a2 %&gt;% select(4:34) %&gt;% replace(is.na(.), 0)principleComponents &lt;- prcomp(a) %&gt;%.$x %&gt;%as_tibble %&gt;%bind_cols(name=a2$country, .)ggplot(principleComponents) +geom_label(aes(x=PC1,y=PC2,label=name)) +ggtitle(&quot;First and Second Principle Components&quot;)principleComponents2 &lt;- prcomp(a) %&gt;%.
+a2 &lt;- inputData %&gt;% group_by(country) %&gt;% summarize_if(is.numeric,mean)a &lt;- a2 %&gt;% select(4:34) %&gt;% replace(is.na(.), 0)principleComponents &lt;- prcomp(a) %&gt;%.$x %&gt;%as_tibble %&gt;%bind_cols(name=a2$country, .
     
   </div>
   <p class="read-more" itemprop="mainEntityOfPage">

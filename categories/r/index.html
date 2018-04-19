@@ -246,7 +246,8 @@
     <h2><a href="/post/tidy-tuesday-4-17-2018/">Tidy Tuesday 4-17-2018</a></h2>
     <div class="article-style">
       
-      library(tidyverse)
+      See here for more about tidy tuesday: <a href="https://github.com/rfordatascience/tidytuesday" target="_blank">https://github.com/rfordatascience/tidytuesday</a>
+library(tidyverse)
 library(plotly)
 library(ggrepel)
 Read in data, remove punctuation from column names
@@ -260,12 +261,7 @@ a &lt;- a2 %&gt;% select(4:34) %&gt;% replace(is.na(.), 0)
 principleComponents &lt;- prcomp(a) %&gt;%
 .$x %&gt;%
 as_tibble %&gt;%
-bind_cols(name=a2$country, .)
-ggplot(principleComponents) +
-geom_label(aes(x=PC1,y=PC2,label=name)) +
-ggtitle(&quot;First and Second Principle Components&quot;)
-principleComponents2 &lt;- prcomp(a) %&gt;%
-.
+bind_cols(name=a2$country, .
       
     </div>
   </div>
