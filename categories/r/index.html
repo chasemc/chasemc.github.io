@@ -258,25 +258,14 @@ Create data for t-SNE</p>
 <h1 id="get-mnist-data-for-t-sne">Get MNIST data for t-SNE</h1>
 
 <p>df_mnist &lt;- createMNIST()
-df_sampled &lt;- df_mnist[sample(1:nrow(df_mnist),1000),]
-mat_mnist &lt;- as.matrix(df_sampled[,!(colnames(df_sampled) == &quot;Class&quot;)])
-whichNumber &lt;- as.character(df_sampled[,(colnames(df_sampled) == &quot;Class&quot;)])</p>
+df_sampled &lt;- df_mnist[sample(1:nrow(df_mnist), 1000), ]
+mat_mnist &lt;- as.matrix(df_sampled[ , !(colnames(df_sampled) == &quot;Class&quot;)])
+whichNumber &lt;- as.character(df_sampled[ , (colnames(df_sampled) == &quot;Class&quot;)])</p>
 
 <h1 id="going-to-do-parallel-t-sne-later-and-data-has-to-be-created-for-each-instance-on-windows-r-parallel-so-lets-save-the-data-as-rds">Going to do parallel t-SNE later (and data has to be created for each instance on Windows R parallel, so lets save the data as rds</h1>
 
-<p>saveRDS(mat_mnist,&quot;data/mat_mnist.rds&quot;)
-saveRDS(df_sampled,&quot;data/df_sampled.rds&quot;)
-saveRDS(whichNumber,&quot;data/whichNumber.rds&quot;)
-Run Parallel t-SNE</p>
-
-<h1 id="setup-parallel">Setup parallel</h1>
-
-<p>numCores &lt;- parallel::detectCores()
-numCores &lt;- parallel::makeCluster(numCores-1)</p>
-
-<h1 id="run-parallel-t-sne-e-lt-parallel-parlapply-numcores-1-30-function-x">Run parallel t-SNE e &lt;- parallel::parLapply(numCores, 1:30 , function(x){</h1>
-
-<p>set.</p>
+<p>saveRDS(mat_mnist, &quot;data/mat_mnist.rds&quot;)
+saveRDS(df_sampled, &quot;data/df_sampled.</p>
 
       
     </div>

@@ -355,18 +355,18 @@ set.seed(42)</code></pre>
 <p>Create data for t-SNE</p>
 <pre class="r"><code># Get MNIST data for t-SNE
 df_mnist    &lt;- createMNIST()
-df_sampled  &lt;- df_mnist[sample(1:nrow(df_mnist),1000),]
-mat_mnist   &lt;- as.matrix(df_sampled[,!(colnames(df_sampled) == &quot;Class&quot;)])
-whichNumber &lt;- as.character(df_sampled[,(colnames(df_sampled) == &quot;Class&quot;)])
+df_sampled  &lt;- df_mnist[sample(1:nrow(df_mnist), 1000), ]
+mat_mnist   &lt;- as.matrix(df_sampled[ , !(colnames(df_sampled) == &quot;Class&quot;)])
+whichNumber &lt;- as.character(df_sampled[ , (colnames(df_sampled) == &quot;Class&quot;)])
 
 # Going to do parallel t-SNE later (and data has to be created for each instance on Windows R parallel,  so lets save the data as rds
-saveRDS(mat_mnist,&quot;data/mat_mnist.rds&quot;)
-saveRDS(df_sampled,&quot;data/df_sampled.rds&quot;)
-saveRDS(whichNumber,&quot;data/whichNumber.rds&quot;)</code></pre>
+saveRDS(mat_mnist, &quot;data/mat_mnist.rds&quot;)
+saveRDS(df_sampled, &quot;data/df_sampled.rds&quot;)
+saveRDS(whichNumber, &quot;data/whichNumber.rds&quot;)</code></pre>
 <p>Run Parallel t-SNE</p>
 <pre class="r"><code># Setup parallel
 numCores &lt;- parallel::detectCores()
-numCores &lt;- parallel::makeCluster(numCores-1)
+numCores &lt;- parallel::makeCluster(numCores - 1)
 
 # Run parallel t-SNE        
 e &lt;- parallel::parLapply(numCores, 1:30 , function(x){
@@ -376,10 +376,10 @@ e &lt;- parallel::parLapply(numCores, 1:30 , function(x){
           mat_mnist &lt;- readRDS(&quot;data/mat_mnist.rds&quot;)
           whichNumber &lt;- readRDS(&quot;data/whichNumber.rds&quot;)
 
-          c&lt;- Rtsne::Rtsne(df_sampled, pca=TRUE, dims=2, perplexity = x, theta = 0.5, max_iter = 1000)
+          c &lt;- Rtsne::Rtsne(df_sampled, pca=TRUE, dims=2, perplexity = x, theta = 0.5, max_iter = 1000)
           d &lt;- as.data.frame(c$Y)
-          d &lt;- cbind.data.frame(whichNumber,d,rep(x,times=nrow(d)))
-          colnames(d) &lt;- c(&quot;Number&quot;,&quot;Dim.1&quot;,&quot;Dim.2&quot;,&quot;Framer&quot;)
+          d &lt;- cbind.data.frame(whichNumber, d, rep(x, times = nrow(d)))
+          colnames(d) &lt;- c(&quot;Number&quot;, &quot;Dim.1&quot;, &quot;Dim.2&quot;, &quot;Framer&quot;)
           d
   
 })
@@ -391,13 +391,13 @@ e &lt;- parallel::parLapply(numCores, 1:30 , function(x){
 
 
 p &lt;- ggplot(tf, aes(`Dim.1`, `Dim.2`, frame = Framer)) +
-           geom_point(aes(colour=Number)) +
+           geom_point(aes(colour = Number)) +
            ggtitle(&quot;t-SNE: Perplexity Step 1 to 30 by 1&quot;)</code></pre>
 <p>Create animation (GIF)</p>
-<pre class="r"><code>animation::ani.options(convert=&quot;C:\\ImageMagick-7.0.7-Q16\\convert.exe&quot;)
+<pre class="r"><code>animation::ani.options(convert = &quot;C:\\ImageMagick-7.0.7-Q16\\convert.exe&quot;)
 animation::ani.options(interval = 1/15)
 
-gganimate(p,title_frame = FALSE)</code></pre>
+gganimate(p, title_frame = FALSE)</code></pre>
 <div class="figure">
 <img src="/img/post/2018-04-18/animated_tSNE.gif" />
 
@@ -405,7 +405,7 @@ gganimate(p,title_frame = FALSE)</code></pre>
 <p>Information about the computer code was run on:</p>
 <pre class="r"><code>parallel::detectCores()</code></pre>
 <pre><code>## [1] 8</code></pre>
-<pre class="r"><code>a&lt;-system(&#39;systeminfo&#39;,intern = TRUE)
+<pre class="r"><code>a &lt;- system(&#39;systeminfo&#39;, intern = TRUE)
 a[3:4]</code></pre>
 <pre><code>## [1] &quot;OS Name:                   Microsoft Windows 10 Education&quot;
 ## [2] &quot;OS Version:                10.0.16299 N/A Build 16299&quot;</code></pre>
