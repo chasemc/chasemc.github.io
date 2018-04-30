@@ -99,17 +99,17 @@
     </item>
     
     <item>
-      <title>First Experience With Scientific Preprint</title>
-      <link>/post/first-experience-with-scientific-preprint/</link>
-      <pubDate>Sun, 29 Apr 2018 00:00:00 +0000</pubDate>
+      <title>First Experience With Scientific Publishing and Preprints</title>
+      <link>/post/first-experience-with-scientific-publishing-and-preprints/</link>
+      <pubDate>Mon, 30 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/first-experience-with-scientific-preprint/</guid>
+      <guid>/post/first-experience-with-scientific-publishing-and-preprints/</guid>
       <description>&lt;p&gt;My first scientific publication was published this month in PNAS: &lt;a href=&#34;https://doi.org/10.1073/pnas.1801247115&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1073/pnas.1801247115&lt;/a&gt; and has been a long time coming. I am in the second-half of my third year and began this project as an interim between my first and second rotations as an incoming PhD student when everyone else had left for December break.&lt;/p&gt;
 &lt;p&gt;The manuscript took some time to prepare and apart from the usual: waiting for instrument time, repairs (LCQ used for initial derepilcation of desferrioxamines), etc., it was doubly-lengthy for two reasons:&lt;/p&gt;
 &lt;div id=&#34;delay-1-software-development-isnt-linearespecially-when-you-have-no-development-experience&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Delay 1: Software development isn’t linear…especially when you have no development experience&lt;/h3&gt;
 &lt;p&gt;In fact, we had orignally anticipated utilizing Bruker’s BioTyper software for the entire project. Had we stayed with using BioTyper, IDBac would have been prohibitively exclusive to only those well-funded labs who could afford software that is price-targeted for hospital-conglomerates. I had some very limited experience using KNIME, a “scientific workflow system”, in my previous job- doing excel-sheet mining of quality control data and some cheminformatics with FT-IR and HPLC method validation. Never having been exposed to “coding/scripting” I found KNIME intuitive, especially for smaller workflows. So I decided to do a quick layout of a potential analysis script in KNIME.&lt;/p&gt;
-&lt;p&gt;I hid the large network of functions, transformtions, etc. within a handful of “metanodes” so that users press “play” it would create a directory to drag-and-drop files into, press “play” again and generate visualizations (dendrograms and 3-D principle components plots). While few in steps, it became obvious that users were less than thrilled and wanted as few point and clicks as possible. &lt;img src=&#34;/img/post/first-preprint/knime-overview.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;I hid the large network of functions, transformations, etc. within a handful of “metanodes” so that users press “play” it would create a directory to drag-and-drop files into, press “play” again and generate visualizations (dendrograms and 3-D principle components plots). While few in steps, it became obvious that it was less intuitive than I had believed and there was much that could be improved. &lt;img src=&#34;/img/post/first-preprint/knime-overview.png&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;So I decided to learn R and began spending days, nights, weekends writing code, googling/reading/learning, and re-writing code. This morphed over the months into its current form of &amp;gt;2,000 lines of code that is accesible through a double-click to start executable and all analyses performed within a self-contained GUI. Briefly, IDBac is built to convert raw spectra to .mzXML, do spectra processing, perform hierarchical clustering (with factor-mapping), PCA, and network analysis. The next release is nigh and will also allow PCoA and t-SNE analyses and expand the input source types to .csv/.txt and natively-named Bruker-data.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;delay-2-bench-science&#34; class=&#34;section level3&#34;&gt;
@@ -121,14 +121,14 @@ Luckily… in my second rotation with Dr. Alessandra Eustaquio I had helped wit
 &lt;/div&gt;
 &lt;div id=&#34;so-preprints&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;So… Preprints&lt;/h2&gt;
-&lt;p&gt;In November of 2017 we finally had our experiments done, main manuscript written, supplementary materials finished, and software ready to test on a broader scale. But we knew the publishing step could take many months so we made the decision to submit a preprint to bioRxiv. This was also because we had been talking about the pipeline at conferences for some months… people seemed excited, but hadn’t really exposed experimental details. Also, a couple of labs at UIC and across the US had started using the software.&lt;/p&gt;
+&lt;p&gt;In October of 2017 we &lt;em&gt;finally&lt;/em&gt; had our experiments done, main manuscript written, supplementary materials finished, and software ready to test on a broader scale. But we knew the publishing step could take many months so we made the decision to submit a preprint to bioRxiv. This was also because we had been talking about the pipeline at conferences for some months… people seemed excited, but hadn’t really exposed experimental details. Also, a couple of labs at UIC and across the US had started using the software.&lt;/p&gt;
 &lt;p&gt;In the five months between first-preprint and when we were officially published, the preprint abstract was read over 1,200 times and the pdf of the article downloaded over 650 times. This means that we reached a large audience that was obviously interested in reading the research earlier than peer-review and prompted conversations with interested parties months earlier than it otherwise would have.&lt;/p&gt;
-&lt;p&gt;I keep seeing “Keep a lookout for our article that was just submitted to XX!”. I think our collective response should be: Can you send me the link to the preprint?&lt;/p&gt;
+&lt;p&gt;I keep seeing “Keep a lookout for our article that was just submitted to XX!”. I think our collective response should be: “Can you send me the link to the preprint?”&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;take-home-message&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Take Home Message&lt;/h2&gt;
 &lt;p&gt;Submit preprints.&lt;/p&gt;
-&lt;p&gt;Scietific progress is already slow, let’s do what we can to make it faster.&lt;/p&gt;
+&lt;p&gt;Scientific progress is already slow, let’s do what we can to make it faster.&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>
