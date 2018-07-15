@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gganimate on </title>
+    <link>/categories/gganimate/</link>
+    <description>Recent content in Gganimate on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Wed, 18 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/gganimate/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Animated t-SNE</title>
+      <link>/post/animated-t-sne/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/animated-t-sne/</guid>
+      <description>&lt;p&gt;Load libraries&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(Rtsne)
+library(createdatasets)
+library(tweenr)
+library(gganimate)
+library(ggplot2)
+
+set.seed(42)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Create data for t-SNE&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Get MNIST data for t-SNE
+df_mnist    &amp;lt;- createMNIST()
+df_sampled  &amp;lt;- df_mnist[sample(1:nrow(df_mnist), 1000), ]
+mat_mnist   &amp;lt;- as.matrix(df_sampled[ , !(colnames(df_sampled) == &amp;quot;Class&amp;quot;)])
+whichNumber &amp;lt;- as.character(df_sampled[ , (colnames(df_sampled) == &amp;quot;Class&amp;quot;)])
+
+# Going to do parallel t-SNE later (and data has to be created for each instance on Windows R parallel,  so lets save the data as rds
+saveRDS(mat_mnist, &amp;quot;data/mat_mnist.rds&amp;quot;)
+saveRDS(df_sampled, &amp;quot;data/df_sampled.rds&amp;quot;)
+saveRDS(whichNumber, &amp;quot;data/whichNumber.rds&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Run Parallel t-SNE&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Setup parallel
+numCores &amp;lt;- parallel::detectCores()
+numCores &amp;lt;- parallel::makeCluster(numCores - 1)
+
+# Run parallel t-SNE        
+e &amp;lt;- parallel::parLapply(numCores, 1:30 , function(x){
+          set.seed(42)
+          # Read in data tyo each instance
+          df_sampled &amp;lt;- readRDS(&amp;quot;data/df_sampled.rds&amp;quot;)          
+          mat_mnist &amp;lt;- readRDS(&amp;quot;data/mat_mnist.rds&amp;quot;)
+          whichNumber &amp;lt;- readRDS(&amp;quot;data/whichNumber.rds&amp;quot;)
+
+          c &amp;lt;- Rtsne::Rtsne(df_sampled, pca=TRUE, dims=2, perplexity = x, theta = 0.5, max_iter = 1000)
+          d &amp;lt;- as.data.frame(c$Y)
+          d &amp;lt;- cbind.data.frame(whichNumber, d, rep(x, times = nrow(d)))
+          colnames(d) &amp;lt;- c(&amp;quot;Number&amp;quot;, &amp;quot;Dim.1&amp;quot;, &amp;quot;Dim.2&amp;quot;, &amp;quot;Framer&amp;quot;)
+          d
+  
+})
+            parallel::stopCluster(numCores)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Create animation states and plots&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tf &amp;lt;- tween_states(e, tweenlength = 2, statelength = 1, 
+                   ease = c(&amp;#39;cubic-in-out&amp;#39;), 
+                   nframes = 500)
+
+
+p &amp;lt;- ggplot(tf, aes(`Dim.1`, `Dim.2`, frame = Framer)) +
+           geom_point(aes(colour = Number)) +
+           ggtitle(&amp;quot;t-SNE: Perplexity Step 1 to 30 by 1&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Create animation (GIF)&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;animation::ani.options(convert = &amp;quot;C:\\ImageMagick-7.0.7-Q16\\convert.exe&amp;quot;)
+animation::ani.options(interval = 1/15)
+
+gganimate(p, title_frame = FALSE)&lt;/code&gt;&lt;/pre&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;/img/post/2018-04-18/animated_tSNE.gif&#34; /&gt;
+
+&lt;/div&gt;
+&lt;p&gt;Information about the computer code was run on:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;parallel::detectCores()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] 8&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;a &amp;lt;- system(&amp;#39;systeminfo&amp;#39;, intern = TRUE)
+a[3:4]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;OS Name:                   Microsoft Windows 10 Education&amp;quot;
+## [2] &amp;quot;OS Version:                10.0.16299 N/A Build 16299&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;a[16:17]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Processor(s):              1 Processor(s) Installed.&amp;quot;                                      
+## [2] &amp;quot;                           [01]: AMD64 Family 21 Model 1 Stepping 2 AuthenticAMD ~3600 Mhz&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;a[25]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Total Physical Memory:     16,342 MB&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

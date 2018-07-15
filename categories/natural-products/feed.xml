@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Natural Products on </title>
+    <link>/categories/natural-products/</link>
+    <description>Recent content in Natural Products on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Mon, 30 Apr 2018 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="/categories/natural-products/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>First Experience With Scientific Publishing and Preprints</title>
+      <link>/post/first-experience-with-scientific-publishing-and-preprints/</link>
+      <pubDate>Mon, 30 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/first-experience-with-scientific-publishing-and-preprints/</guid>
+      <description>&lt;p&gt;My first scientific publication was published this month in PNAS: &lt;a href=&#34;https://doi.org/10.1073/pnas.1801247115&#34; class=&#34;uri&#34;&gt;https://doi.org/10.1073/pnas.1801247115&lt;/a&gt; and has been a long time coming. I began this project as an interim between my first and second rotations as a first-year PhD student, I am now in the second-half of my third year.&lt;/p&gt;
+&lt;p&gt;The manuscript took some time to prepare and apart from the usual: waiting for instrument time, repairs (LCQ used for initial derepilcation of desferrioxamines), etc., it was doubly-lengthy for two reasons:&lt;/p&gt;
+&lt;div id=&#34;delay-1-software-development-isnt-linearespecially-when-you-have-no-development-experience&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Delay 1: Software development isn’t linear…especially when you have no development experience&lt;/h3&gt;
+&lt;p&gt;In fact, we had orignally anticipated utilizing Bruker’s BioTyper software for the entire project. Had we stayed with using BioTyper, IDBac would have been prohibitively exclusive to only those well-funded labs who could afford software that is price-targeted for hospital-conglomerates. I had some very limited experience using KNIME, a “scientific workflow system”, in my previous job- doing excel-sheet mining of quality control data and some cheminformatics with FT-IR and HPLC method validation. Never having been exposed to “coding/scripting” I found KNIME intuitive, especially for smaller workflows. So I decided to do a quick layout of a potential analysis script in KNIME.&lt;/p&gt;
+&lt;p&gt;I hid the large network of functions, transformations, etc. within a handful of “metanodes” so that users press “play” it would create a directory to drag-and-drop files into, press “play” again and generate visualizations (dendrograms and 3-D principle components plots). While few in steps, it became obvious that it was less intuitive than I had believed and there was much that could be improved. &lt;img src=&#34;/img/post/first-preprint/knime-overview.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;So I decided to learn R and began spending days, nights, weekends writing code, googling/reading/learning, and re-writing code. This morphed over the months into its current form of &amp;gt;2,000 lines of code that is accesible through a double-click to start executable and all analyses performed within a self-contained GUI. Briefly, IDBac is built to convert raw spectra to .mzXML, do spectra processing, perform hierarchical clustering (with factor-mapping), PCA, and network analysis. The next release is nigh and will also allow PCoA and t-SNE analyses and expand the input source types to .csv/.txt and natively-named Bruker-data.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;delay-2-bench-science&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Delay 2: Bench Science!&lt;/h3&gt;
+&lt;p&gt;Like most things in life science we wound up doing a lot of confirmatory experiments that weren’t anticipated at the beginning of the project. An example of this was dereplicating desferrioxamines from the Micromonospora strains. I had noticed a common set of peaks in a number of strains by observing MS1 MALDI spectra (before the KNIME and R programs were written). When we were trying to decide strains for the paper I remembered this earlier observation and further searching in compound databases revealed a shortlist of compounds.&lt;br /&gt;
+Luckily… in my second rotation with Dr. Alessandra Eustaquio I had helped with the genome sequencing of one of these strains (B006). Antismash predicted a siderophore and a few other compounds but the details were pretty buried. I had recently attended a genome annotation/comparative genomics workshop at Argonne National Laboratory using this and another strain. I went back to that data and found an intact biosynthetic gene cluster related to a compound on the short-list… desferrioxamine.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/post/first-preprint/B006-des.png&#34; /&gt; &lt;img src=&#34;/img/post/first-preprint/PATRIC_compare_regions.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;This still didn’t prove that the MS1 peaks correlated to these genes though, so we moved to gain chemical evidence for their presence. This consisted of a Bligh and Dyer extraction followed by high-res, accurate-mass Orbitrap MS2. This data supported the dereplication with intact MS accurate mass, MS/MS fragmentation, and iron-isotope analysis.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;so-preprints&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;So… Preprints&lt;/h2&gt;
+&lt;p&gt;In October of 2017 we &lt;em&gt;finally&lt;/em&gt; had our experiments done, main manuscript written, supplementary materials finished, and software ready to test on a broader scale. But we knew the publishing step could take many months so we made the decision to submit a preprint to bioRxiv. This was also because we had been talking about the pipeline at conferences for some months… people seemed excited, but hadn’t really exposed experimental details. Also, a couple of labs at UIC and across the US had started using the software.&lt;/p&gt;
+&lt;p&gt;In the five months between first-preprint and when we were officially published, the preprint abstract was read over 1,200 times and the pdf of the article downloaded over 650 times. This means that we reached a large audience that was obviously interested in reading the research earlier than peer-review and prompted conversations with interested parties months earlier than it otherwise would have.&lt;/p&gt;
+&lt;p&gt;I keep seeing “Keep a lookout for our article that was just submitted to XX!”. I think our collective response should be: “Can you send me the link to the preprint?”&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;take-home-message&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Take Home Message&lt;/h2&gt;
+&lt;p&gt;Submit preprints.&lt;/p&gt;
+&lt;p&gt;Scientific progress is already slow, let’s do what we can to make it faster.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
