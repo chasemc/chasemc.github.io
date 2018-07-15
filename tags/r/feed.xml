@@ -7,10 +7,157 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 04 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 07 Dec 2018 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/tags/r/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Structuring Shiny App Development</title>
+      <link>/post/structuring-shiny-app-development/</link>
+      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/structuring-shiny-app-development/</guid>
+      <description>&lt;div id=&#34;part-one-scope&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Part One: Scope&lt;/h3&gt;
+&lt;p&gt;This is going to be a fairly opinionated post about my &lt;strong&gt;not novel&lt;/strong&gt; but recent revelations as to how I think &lt;a href=&#34;https://shiny.rstudio.com&#34;&gt;Shiny&lt;/a&gt; apps should be formatted. By formatting I don’t mean UI formatting, code style, etc. I mean how one might organize, holistically, a Shiny app to help maximize readability, stability, and scalability. Again &lt;em&gt;not novel&lt;/em&gt;, just me getting my thoughts “on paper’.&lt;/p&gt;
+&lt;p&gt;Before now my &lt;code&gt;server()&lt;/code&gt; sections kind of looked like this: &lt;img src=&#34;/img/post/2018-07-12/unorganized.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;I am aware that it is possible to “modularize” a shiny app and there is good info on that from RStudio &lt;a href=&#34;https://shiny.rstudio.com/articles/modules.html&#34;&gt;here&lt;/a&gt; and Steph Locke &lt;a href=&#34;https://itsalocke.com/blog/shiny-module-design-patterns-pass-module-inputs-to-other-modules&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I am not a fan of this approach for a couple of reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I think it can add unnecessary complexity to small applications&lt;/li&gt;
+&lt;li&gt;I think it’s difficult to use with large applications that have highly interconnected reactivity&lt;/li&gt;
+&lt;li&gt;But, in reality, it’s likely I just haven’t spent enough time trying it ¯\&lt;em&gt;(ツ)&lt;/em&gt;/¯&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;part-two-straight-to-the-point&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Part Two: Straight to the Point&lt;/h3&gt;
+&lt;p&gt;I think abstracting Shiny apps to small functional components is most helpful when done at the most fundamental level. Luckily there are two elements of the R ecosystem that are crazy-complementary to Shiny apps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://r-pkgs.had.co.nz/intro.html&#34;&gt;Packages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://adv-r.had.co.nz/Functions.html&#34;&gt;Functions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Those links point to Hadley Wickham’s book &lt;em&gt;R packages&lt;/em&gt; and a chapter of &lt;em&gt;Advanced R&lt;/em&gt;, respectively.&lt;/p&gt;
+&lt;p&gt;And if we look at the first sentence of each:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;R packages&lt;/em&gt;:&lt;br /&gt;
+“In R, the fundamental unit of shareable code is the package.”&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Advanced R&lt;/em&gt;:&lt;br /&gt;
+“Functions are a fundamental building block of R…”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;i.e. The tools you need to organize your app exist:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Start by making it a package&lt;br /&gt;
+&lt;/li&gt;
+&lt;li&gt;Then break your computation into standalone functions that reside outside the app&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;part-three-a-shiny-app-is-a-package&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Part Three: A Shiny App is a Package&lt;/h3&gt;
+&lt;p&gt;Making your Shiny app a package allows you to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Easily distribute the app&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://r-pkgs.had.co.nz/description.html#dependencies&#34;&gt;Manage package dependencies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Write unit tests for your app (more on that in Part Five)&lt;/li&gt;
+&lt;li&gt;Easily include any needed data within the app (eg example data, models)&lt;/li&gt;
+&lt;li&gt;Organize your code&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Creating an app as a package provides you a framework for development: &lt;img src=&#34;/img/post/2018-07-12/organized.PNG&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Dean Attali briefly described the basics of including a Shiny app within a package &lt;a href=&#34;https://deanattali.com/2015/04/21/r-package-shiny-app/&#34;&gt;here&lt;/a&gt;. That formed the basis for how I now write Shiny apps, along with what I’ve learned from creating Shiny apps as Windows executables using Jonathan Hill’s &lt;a href=&#34;https://github.com/ficonsulting/RInno/&#34;&gt;“RInno” package&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;part-four-shiny-apps-consist-of-functions&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Part Four: Shiny Apps Consist of Functions&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Concept One: Reactive Expressions are Basically Functions&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In reality it’s &lt;a href=&#34;http://adv-r.had.co.nz/Expressions.html&#34;&gt;more complicated&lt;/a&gt; but a lot of the basic components of a Shiny app (e.g. &lt;code&gt;server()&lt;/code&gt;, &lt;code&gt;reactive()&lt;/code&gt;, &lt;code&gt;observe()&lt;/code&gt;, etc.) can be thought of as functions.&lt;/p&gt;
+&lt;p&gt;Imagine we have a simple app that has a slider input that represnents the number of pumpkins you sell per year, but you want the &lt;code&gt;log10&lt;/code&gt; of that number.&lt;/p&gt;
+&lt;p&gt;You could make a little reactive expression that would do this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pumpkinLog &amp;lt;- reactive({
+                log10(input$pumpkins)
+              })&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now imagine we moved the slider input to 10 pumpkins. We then save &lt;code&gt;pumpkinLog()&lt;/code&gt; to &lt;code&gt;savedValue&lt;/code&gt; in the parent environment and close the app.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;observe(
+ savedValue &amp;lt;&amp;lt;- pumpkinLog()
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;What will printing &lt;code&gt;savedValue&lt;/code&gt; give us?&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;print(savedValue)
+   
+  [1] 1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;It gave us &lt;code&gt;1&lt;/code&gt;, the value we would expect to be returned from &lt;code&gt;log10(10)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This is because, in essence, you are asking for the result of calling a reactive “function”.&lt;/p&gt;
+&lt;p&gt;And, just like in base R, functions can take as arguments the result given by calling another function.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Concept Two: Shiny Inputs Just Return a Value&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This concept is pretty simple, &lt;code&gt;input$...&lt;/code&gt; just stores the value of inputs. That’s phenomenally important because it means we can use &lt;code&gt;input$...&lt;/code&gt; as an argument for another function.&lt;/p&gt;
+&lt;p&gt;If you don’t believe me check out below where I saved the inputs from an intermediate point within an app. And upon closing the app printed the values.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;myInputs &amp;lt;&amp;lt;- as.list(input)
+# close app
+
+print(myInputs)
+
+        $`rawORreanalyze`
+        [1] &amp;quot;2&amp;quot;
+        
+        $idbacDirectoryButton
+        [1] 1
+        attr(,&amp;quot;class&amp;quot;)
+        [1] &amp;quot;integer&amp;quot;                &amp;quot;shinyActionButtonValue&amp;quot;
+        
+        $upperMass
+        [1] 15000
+        
+        $updateIDBac
+        [1] 0
+        attr(,&amp;quot;class&amp;quot;)
+        [1] &amp;quot;integer&amp;quot;                &amp;quot;shinyActionButtonValue&amp;quot;
+        
+        $lowerMass
+        [1] 3000&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;part-five-putting-it-all-together&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Part Five: Putting it All Together&lt;/h3&gt;
+&lt;p&gt;So now we know we can use the value from calling a &lt;code&gt;reactive(...)&lt;/code&gt; expression and the value returned by an &lt;code&gt;input$...&lt;/code&gt; as inputs to functions.&lt;/p&gt;
+&lt;p&gt;That means we can do this:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Saved as a seperate .r file, within R folder of package directory
+# eg &amp;quot;pumpkinLogarithm.r&amp;quot;&amp;quot; would contain this:
+
+pumpkinLogarithm &amp;lt;- function(pumpkins){
+   log10(pumpkins)
+}     
+
+# Saved as a seperate .r file, within R folder of package directory
+# eg &amp;quot;otherProduce.r&amp;quot;&amp;quot;  would contain this:
+
+totalProduce &amp;lt;- function(tomatoes, apples, loggedPumpkin){
+  log10(tomatoes) + log10(apples) + loggedPumpkin
+}
+
+# Within your app&amp;#39;s server function
+
+pumpkinLog &amp;lt;- reactive({
+                pumpkinLogarithm(pumpkins = input$numberOfPumpkins)
+              })
+
+groceries &amp;lt;- reactive({
+               totalProduce(tomatoes = input$tomatoes,
+                            apples   = input$apples,
+                            pumpkins = pumpkinLog()
+                            )
+             })&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;So now you have two functions that live &lt;em&gt;outside&lt;/em&gt; the Shiny app. Your server file is more succinct, especially in regard to the variables within each &lt;code&gt;reactive&lt;/code&gt; or &lt;code&gt;observe&lt;/code&gt; chunk that may have had reactive side effects.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Most importantly:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Because you are writing package functions you can wield the freaking awesome power of &lt;a href=&#34;http://testthat.r-lib.org/&#34;&gt;testthat&lt;/a&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I realize that this only tests the internals/non-reactiveness of an app, but there are other packages to test layout/reactivity, etc. But these can be hard to keep up with large apps that don’t have a stable codebase. For that you can reference the packages below&lt;/p&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/rstudio/shinytest&#34; class=&#34;uri&#34;&gt;https://github.com/rstudio/shinytest&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://rpubs.com/johndharrison/13408&#34; class=&#34;uri&#34;&gt;http://rpubs.com/johndharrison/13408&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I will expand this post if there’s interest but here’s an example of an app with a layout that takes at least partial example of all this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/chasemc/mzEasy&#34; class=&#34;uri&#34;&gt;https://github.com/chasemc/mzEasy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Beyond Rstats -&gt; Rgames</title>
