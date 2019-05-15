@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.34" />
+  <meta name="generator" content="Hugo 0.36.1" />
   <meta name="author" content="Chase Clark">
   <meta name="description" content="PhD Candidate">
 
@@ -85,7 +85,7 @@
   <meta property="og:description" content="PhD Candidate">
   <meta property="og:locale" content="en-us">
   
-  <meta property="og:updated_time" content="2018-12-07T00:00:00&#43;00:00">
+  <meta property="og:updated_time" content="2019-05-15T00:00:00&#43;00:00">
   
 
   
@@ -241,6 +241,19 @@
   
 
   
+  
+  <div>
+    <h2><a href="/post/unit-test-renderui-inside-shiny-modules/">Unit test renderUI inside Shiny modules</a></h2>
+    <div class="article-style">
+      
+      I have run across this a few times and hope this might help someone. As Shiny apps get more complicated and you start to use Shiny modules you will likely run across use cases for using renderUI within modules. Sometimes it is desirable to be able to test these using packages like testthat.
+However, you will run into a problem because of a missing session$ns.
+library(testthat)
+library(shiny)
+Example adapted from: <a href="https://shiny" target="_blank">https://shiny</a>.
+      
+    </div>
+  </div>
   
   <div>
     <h2><a href="/post/structuring-shiny-app-development/">Structuring Shiny App Development</a></h2>

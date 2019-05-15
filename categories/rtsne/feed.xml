@@ -72,17 +72,14 @@ p &amp;lt;- ggplot(tf, aes(`Dim.1`, `Dim.2`, frame = Framer)) +
 animation::ani.options(interval = 1/15)
 
 gganimate(p, title_frame = FALSE)&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;/img/post/2018-04-18/animated_tSNE.gif&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;/img/post/2018-04-18/animated_tSNE.gif&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Information about the computer code was run on:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;parallel::detectCores()&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] 8&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;a &amp;lt;- system(&amp;#39;systeminfo&amp;#39;, intern = TRUE)
 a[3:4]&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;OS Name:                   Microsoft Windows 10 Education&amp;quot;
-## [2] &amp;quot;OS Version:                10.0.16299 N/A Build 16299&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+## [2] &amp;quot;OS Version:                10.0.17763 N/A Build 17763&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;a[16:17]&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;Processor(s):              1 Processor(s) Installed.&amp;quot;                                      
 ## [2] &amp;quot;                           [01]: AMD64 Family 21 Model 1 Stepping 2 AuthenticAMD ~3600 Mhz&amp;quot;&lt;/code&gt;&lt;/pre&gt;

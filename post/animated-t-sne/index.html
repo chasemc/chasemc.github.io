@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.34" />
+  <meta name="generator" content="Hugo 0.36.1" />
   <meta name="author" content="Chase Clark">
   <meta name="description" content="PhD Candidate">
 
@@ -398,17 +398,14 @@ p &lt;- ggplot(tf, aes(`Dim.1`, `Dim.2`, frame = Framer)) +
 animation::ani.options(interval = 1/15)
 
 gganimate(p, title_frame = FALSE)</code></pre>
-<div class="figure">
-<img src="/img/post/2018-04-18/animated_tSNE.gif" />
-
-</div>
+<p><img src="/img/post/2018-04-18/animated_tSNE.gif" /></p>
 <p>Information about the computer code was run on:</p>
 <pre class="r"><code>parallel::detectCores()</code></pre>
 <pre><code>## [1] 8</code></pre>
 <pre class="r"><code>a &lt;- system(&#39;systeminfo&#39;, intern = TRUE)
 a[3:4]</code></pre>
 <pre><code>## [1] &quot;OS Name:                   Microsoft Windows 10 Education&quot;
-## [2] &quot;OS Version:                10.0.16299 N/A Build 16299&quot;</code></pre>
+## [2] &quot;OS Version:                10.0.17763 N/A Build 17763&quot;</code></pre>
 <pre class="r"><code>a[16:17]</code></pre>
 <pre><code>## [1] &quot;Processor(s):              1 Processor(s) Installed.&quot;                                      
 ## [2] &quot;                           [01]: AMD64 Family 21 Model 1 Stepping 2 AuthenticAMD ~3600 Mhz&quot;</code></pre>

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.34" />
+  <meta name="generator" content="Hugo 0.36.1" />
   <meta name="author" content="Chase Clark">
   <meta name="description" content="PhD Candidate">
 
@@ -737,6 +737,106 @@ url('/img/headers/MainHeader.jpg');
       
           
       
+          
+      
+          
+      
+          
+      
+
+      
+      
+        
+        
+
+<div class="article-list-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+  
+  
+  <h3 class="article-title" itemprop="headline">
+    <a href="/post/unit-test-renderui-inside-shiny-modules/" itemprop="url">Unit test renderUI inside Shiny modules</a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2019-05-15 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
+      May 15, 2019
+    </time>
+  </span>
+  <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Chase Clark">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    2 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/unit-test-renderui-inside-shiny-modules/#disqus_thread"></a>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/r">R</a
+    >, 
+    
+    <a href="/categories/shiny">Shiny</a
+    >, 
+    
+    <a href="/categories/instructional">Instructional</a
+    >
+    
+  </span>
+  
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    I have run across this a few times and hope this might help someone. As Shiny apps get more complicated and you start to use Shiny modules you will likely run across use cases for using renderUI within modules. Sometimes it is desirable to be able to test these using packages like testthat.
+However, you will run into a problem because of a missing session$ns.
+library(testthat)library(shiny)Example adapted from: https://shiny.
+    
+  </div>
+  <p class="read-more" itemprop="mainEntityOfPage">
+    <a href="/post/unit-test-renderui-inside-shiny-modules/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+      
+
+      
+
+        
+
+        
+        
+
+        
+        
+          
+      
+          
+      
+          
+      
 
       
       
@@ -1083,96 +1183,6 @@ library(Rtsne)library(createdatasets)library(tweenr)library(gganimate)librar
       
 
       
-
-        
-
-        
-        
-
-        
-        
-
-      
-      
-        
-        
-
-<div class="article-list-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
-  
-  
-  <h3 class="article-title" itemprop="headline">
-    <a href="/post/tidy-tuesday-4-9-18/" itemprop="url">Tidy Tuesday 4-9-18</a>
-  </h3>
-  
-
-<div class="article-metadata">
-
-  <span class="article-date">
-    
-    <time datetime="2018-04-09 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
-      Apr 9, 2018
-    </time>
-  </span>
-  <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Chase Clark">
-  </span>
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    4 min read
-  </span>
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <a href="/post/tidy-tuesday-4-9-18/#disqus_thread"></a>
-  
-
-  
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fa fa-folder"></i>
-    
-    <a href="/categories/r">R</a
-    >, 
-    
-    <a href="/categories/ggplot">ggplot</a
-    >, 
-    
-    <a href="/categories/tidy-tuesday">Tidy Tuesday</a
-    >, 
-    
-    <a href="/categories/instructional">Instructional</a
-    >
-    
-  </span>
-  
-  
-
-  
-
-</div>
-
-  <div class="article-style" itemprop="articleBody">
-    
-    library(tidyverse)library(magrittr)Read data into R
-rawData &lt;- readxl::read_excel(&quot;../../static/data/tidy_tuesday_week2.xlsx&quot;)rawData## # A tibble: 800 x 11## year Cornerback `Defensive Lineman` Linebacker `Offensive Lineman`## &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;## 1 2011 11265916 17818000 16420000 15960000## 2 2011 11000000 16200000 15623000 12800000## 3 2011 10000000 12476000 11825000 11767500## 4 2011 10000000 11904706 10083333 10358200## 5 2011 10000000 11762782 10020000 10000000## 6 2011 9244117 11340000 8150000 9859166## 7 2011 8000000 10000000 7812500 9500000## 8 2011 7900000 9482500 7700000 9420000## 9 2011 7400000 8450000 7200000 8880000## 10 2011 7000000 8383266 7100000 8686750## # .
-    
-  </div>
-  <p class="read-more" itemprop="mainEntityOfPage">
-    <a href="/post/tidy-tuesday-4-9-18/" class="btn btn-primary btn-outline">
-      CONTINUE READING
-    </a>
-  </p>
-</div>
-
-      
-
-      
     
 
   </div>
@@ -1274,21 +1284,42 @@ rawData &lt;- readxl::read_excel(&quot;../../static/data/tidy_tuesday_week2.xlsx
           
           
           
-          <a href="/tags/instructional" style="font-size:0.8rem">Instructional</a>
+          <a href="/tags/instructional" style="font-size:2.2643002974495365rem">Instructional</a>
         
           
           
           
           
           
-          <a href="/tags/r" style="font-size:0.8rem">R</a>
+          <a href="/tags/r" style="font-size:2.2643002974495365rem">R</a>
         
           
           
           
           
           
-          <a href="/tags/shiny" style="font-size:0.8rem">Shiny</a>
+          <a href="/tags/shiny" style="font-size:2.2643002974495365rem">Shiny</a>
+        
+          
+          
+          
+          
+          
+          <a href="/tags/test" style="font-size:0.8rem">test</a>
+        
+          
+          
+          
+          
+          
+          <a href="/tags/test-that" style="font-size:0.8rem">test-that</a>
+        
+          
+          
+          
+          
+          
+          <a href="/tags/unit-testing" style="font-size:0.8rem">unit-testing</a>
         
       </div>
     

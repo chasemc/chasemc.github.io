@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>/post/unit-test-renderui-inside-shiny-modules/</loc>
+      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/structuring-shiny-app-development/</loc>
       <lastmod>2018-12-07T00:00:00+00:00</lastmod>
     </url>
@@ -214,7 +223,7 @@
     <url>
     
       <loc>/tags/instructional/</loc>
-      <lastmod>2018-12-07T00:00:00+00:00</lastmod>
+      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -224,7 +233,7 @@
     <url>
     
       <loc>/categories/instructional/</loc>
-      <lastmod>2018-12-07T00:00:00+00:00</lastmod>
+      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -274,7 +283,7 @@
     <url>
     
       <loc>/post/</loc>
-      <lastmod>2018-12-07T00:00:00+00:00</lastmod>
+      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -294,7 +303,7 @@
     <url>
     
       <loc>/tags/r/</loc>
-      <lastmod>2018-12-07T00:00:00+00:00</lastmod>
+      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -304,7 +313,7 @@
     <url>
     
       <loc>/categories/r/</loc>
-      <lastmod>2018-12-07T00:00:00+00:00</lastmod>
+      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -324,7 +333,7 @@
     <url>
     
       <loc>/tags/shiny/</loc>
-      <lastmod>2018-12-07T00:00:00+00:00</lastmod>
+      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -334,7 +343,7 @@
     <url>
     
       <loc>/categories/shiny/</loc>
-      <lastmod>2018-12-07T00:00:00+00:00</lastmod>
+      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -344,7 +353,7 @@
     <url>
     
       <loc>/categories/shiny/</loc>
-      <lastmod>2018-12-07T00:00:00+00:00</lastmod>
+      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -355,6 +364,26 @@
     
       <loc>/tags/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/test/</loc>
+      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/test-that/</loc>
+      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -375,6 +404,16 @@
     
       <loc>/categories/tweenr/</loc>
       <lastmod>2018-04-18T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/unit-testing/</loc>
+      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
