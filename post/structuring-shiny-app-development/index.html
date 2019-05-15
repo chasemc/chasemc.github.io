@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme" content="hugo-academic">
-  <meta name="generator" content="Hugo 0.34" />
+  <meta name="generator" content="Hugo 0.36.1" />
   <meta name="author" content="Chase Clark">
   <meta name="description" content="PhD Candidate">
 
@@ -338,7 +338,7 @@
         <div id="part-one-scope" class="section level3">
 <h3>Part One: Scope</h3>
 <p>This is going to be a fairly opinionated post about my <strong>not novel</strong> but recent revelations as to how I think <a href="https://shiny.rstudio.com">Shiny</a> apps should be formatted. By formatting I don’t mean UI formatting, code style, etc. I mean how one might organize, holistically, a Shiny app to help maximize readability, stability, and scalability. Again <em>not novel</em>, just me getting my thoughts “on paper’.</p>
-<p>Before now my <code>server()</code> sections kind of looked like this: <img src="/img/post/2018-07-12/unorganized.png" /></p>
+<p>Before now my <code>server()</code> sections kind of looked like this: <img src="/img/post/2018-07-12/unorganized.PNG" /></p>
 <p>I am aware that it is possible to “modularize” a shiny app and there is good info on that from RStudio <a href="https://shiny.rstudio.com/articles/modules.html">here</a> and Steph Locke <a href="https://itsalocke.com/blog/shiny-module-design-patterns-pass-module-inputs-to-other-modules">here</a>.</p>
 <p>I am not a fan of this approach for a couple of reasons:</p>
 <ul>
@@ -377,7 +377,7 @@
 <li>Easily include any needed data within the app (eg example data, models)</li>
 <li>Organize your code</li>
 </ul>
-<p>Creating an app as a package provides you a framework for development: <img src="/img/post/2018-07-12/organized.png" /></p>
+<p>Creating an app as a package provides you a framework for development: <img src="/img/post/2018-07-12/organized.PNG" /></p>
 <p>Dean Attali briefly described the basics of including a Shiny app within a package <a href="https://deanattali.com/2015/04/21/r-package-shiny-app/">here</a>. That formed the basis for how I now write Shiny apps, along with what I’ve learned from creating Shiny apps as Windows executables using Jonathan Hill’s <a href="https://github.com/ficonsulting/RInno/">“RInno” package</a></p>
 </div>
 <div id="part-four-shiny-apps-consist-of-functions" class="section level3">
