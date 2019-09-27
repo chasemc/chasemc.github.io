@@ -68,7 +68,7 @@ ui &amp;lt;- fluidPage(
   sidebarLayout(
     sidebarPanel(
       checkboxGroupInput(&amp;quot;selected_sample&amp;quot;,
-                         label = &amp;quot;Select Strain&amp;quot;,
+                         label = &amp;quot;Select Column&amp;quot;,
                          choices = seq_along(mtcars))
     ),
     mainPanel(

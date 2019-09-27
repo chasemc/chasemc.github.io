@@ -285,8 +285,8 @@
     
     <url>
     
-      <loc>/categories/instructional/</loc>
-      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
+      <loc>/tags/instructional/</loc>
+      <lastmod>2019-09-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -295,8 +295,8 @@
     
     <url>
     
-      <loc>/tags/instructional/</loc>
-      <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+      <loc>/categories/instructional/</loc>
+      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -365,8 +365,8 @@
     
     <url>
     
-      <loc>/categories/r/</loc>
-      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
+      <loc>/tags/r/</loc>
+      <lastmod>2019-09-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -375,8 +375,8 @@
     
     <url>
     
-      <loc>/tags/r/</loc>
-      <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+      <loc>/categories/r/</loc>
+      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -395,27 +395,27 @@
     
     <url>
     
-      <loc>/categories/shiny/</loc>
-      <lastmod>2019-09-27T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/categories/shiny/</loc>
-      <lastmod>2019-09-27T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>/tags/shiny/</loc>
+      <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/shiny/</loc>
+      <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/shiny/</loc>
       <lastmod>2019-09-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
