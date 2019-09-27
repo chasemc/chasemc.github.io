@@ -14,6 +14,15 @@
     
     <url>
     
+      <loc>/publication/idbac_acs/</loc>
+      <lastmod>2019-06-23T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/unit-test-renderui-inside-shiny-modules/</loc>
       <lastmod>2019-05-15T00:00:00+00:00</lastmod>
     </url>
@@ -23,8 +32,35 @@
     
     <url>
     
+      <loc>/publication/f001_genome/</loc>
+      <lastmod>2019-05-09T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/publication/idbac_jove/</loc>
+      <lastmod>2019-05-05T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/post/structuring-shiny-app-development/</loc>
       <lastmod>2018-12-07T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/publication/idbac_pnas/</loc>
+      <lastmod>2018-05-08T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -86,8 +122,8 @@
     
     <url>
     
-      <loc>/publication/idbac1/</loc>
-      <lastmod>2017-11-08T00:00:00+00:00</lastmod>
+      <loc>/talk/crug_2017/</loc>
+      <lastmod>2018-01-27T00:00:00-06:00</lastmod>
     </url>
     
   
@@ -95,7 +131,25 @@
     
     <url>
     
-      <loc>/talk/example-talk/</loc>
+      <loc>/talk/satrdays_chicago_2019/</loc>
+      <lastmod>2017-01-01T00:00:00-06:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/talk/rpharma_2018/</loc>
+      <lastmod>2017-01-01T00:00:00-06:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/talk/rpharma_2019/</loc>
       <lastmod>2017-01-01T00:00:00-06:00</lastmod>
     </url>
     
@@ -142,7 +196,7 @@
     <url>
     
       <loc>/publication_types/0/</loc>
-      <lastmod>2017-11-08T00:00:00+00:00</lastmod>
+      <lastmod>2019-06-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -231,8 +285,8 @@
     
     <url>
     
-      <loc>/tags/instructional/</loc>
-      <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+      <loc>/categories/instructional/</loc>
+      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -241,8 +295,8 @@
     
     <url>
     
-      <loc>/categories/instructional/</loc>
-      <lastmod>2019-05-15T00:00:00+00:00</lastmod>
+      <loc>/tags/instructional/</loc>
+      <lastmod>2019-09-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -302,17 +356,7 @@
     <url>
     
       <loc>/publication_types/</loc>
-      <lastmod>2017-11-08T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/tags/r/</loc>
-      <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+      <lastmod>2019-06-23T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -331,6 +375,16 @@
     
     <url>
     
+      <loc>/tags/r/</loc>
+      <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/categories/rtsne/</loc>
       <lastmod>2018-04-18T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -341,27 +395,27 @@
     
     <url>
     
+      <loc>/categories/shiny/</loc>
+      <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/shiny/</loc>
+      <lastmod>2019-09-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>/tags/shiny/</loc>
-      <lastmod>2019-09-27T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/categories/shiny/</loc>
-      <lastmod>2019-09-27T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>/categories/shiny/</loc>
       <lastmod>2019-09-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>

@@ -236,6 +236,15 @@ lapply(seq_along(input$selected_sample),
     </item>
     
     <item>
+      <title>Minimizing Taxonomic and Natural Product Redundancy in Microbial Libraries Using MALDI-TOF MS and the Bioinformatics Pipeline IDBac</title>
+      <link>/publication/idbac_acs/</link>
+      <pubDate>Sun, 23 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/idbac_acs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Unit test renderUI inside Shiny modules</title>
       <link>/post/unit-test-renderui-inside-shiny-modules/</link>
       <pubDate>Wed, 15 May 2019 00:00:00 +0000</pubDate>
@@ -295,6 +304,24 @@ badExample(session)
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;class(badExample(session))&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## [1] &amp;quot;shiny.tag&amp;quot;&lt;/code&gt;&lt;/pre&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Genome Sequence of Marine-Derived Streptomyces sp. Strain F001, a Producer of Akashin A and Diazaquinomycins</title>
+      <link>/publication/f001_genome/</link>
+      <pubDate>Thu, 09 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/f001_genome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Using the Open-Source MALDI TOF-MS IDBac Pipeline for Analysis of Microbial Protein and Specialized Metabolite Data</title>
+      <link>/publication/idbac_jove/</link>
+      <pubDate>Sun, 05 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/idbac_jove/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -442,6 +469,15 @@ groceries &amp;lt;- reactive({
 &lt;/ul&gt;
 &lt;/div&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Coupling MALDI-TOF Mass Spectrometry Protein and Specialized Metabolite Analyses to Rapidly Discriminate Bacterial Function</title>
+      <link>/publication/idbac_pnas/</link>
+      <pubDate>Tue, 08 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/publication/idbac_pnas/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -1112,23 +1148,39 @@ devtools::install_github(&amp;quot;chasemc/Jan2018ShinyMeetupCRUG&amp;quot;)&lt;
     </item>
     
     <item>
-      <title>Coupling MALDI-TOF mass spectrometry protein and specialized metabolite analyses to rapidly discriminate bacterial function</title>
-      <link>/publication/idbac1/</link>
-      <pubDate>Wed, 08 Nov 2017 00:00:00 +0000</pubDate>
+      <title>IDBac: A Shiny App to Analyze Bacterial Fingerprints and Aid in the Discovery of Potential New Antibiotics</title>
+      <link>/talk/crug_2017/</link>
+      <pubDate>Sat, 27 Jan 2018 00:00:00 -0600</pubDate>
       
-      <guid>/publication/idbac1/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>/talk/crug_2017/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>IDBac: A Shiny App to Analyze Bacterial Fingerprints and Aid in the Discovery of Potential New Antibiotics</title>
-      <link>/talk/example-talk/</link>
+      <title>Bioinformatics in R</title>
+      <link>/talk/satrdays_chicago_2019/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 -0600</pubDate>
       
-      <guid>/talk/example-talk/</guid>
-      <description>&lt;p&gt;Embed your slides or video here using &lt;a href=&#34;https://sourcethemes.com/academic/post/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <guid>/talk/satrdays_chicago_2019/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IDBac: A New Paradigm in Developing Microbial Libraries for Drug Discovery</title>
+      <link>/talk/rpharma_2018/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 -0600</pubDate>
+      
+      <guid>/talk/rpharma_2018/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Your Missing Step in Reproducible R Programming: Continuous Deployment</title>
+      <link>/talk/rpharma_2019/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 -0600</pubDate>
+      
+      <guid>/talk/rpharma_2019/</guid>
+      <description></description>
     </item>
     
   </channel>
