@@ -737,6 +737,93 @@ url('/img/headers/MainHeader.jpg');
       
           
       
+
+      
+      
+        
+        
+
+<div class="article-list-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+  
+  
+  <h3 class="article-title" itemprop="headline">
+    <a href="/post/the-subtleties-of-shiny-reactive-programming-lapply-and-for-loops/" itemprop="url">The Subtleties of Shiny Reactive Programming: Lapply and For Loops</a>
+  </h3>
+  
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    
+    <time datetime="2019-09-27 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
+      Sep 27, 2019
+    </time>
+  </span>
+  <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Chase Clark">
+  </span>
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min read
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/the-subtleties-of-shiny-reactive-programming-lapply-and-for-loops/#disqus_thread"></a>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fa fa-folder"></i>
+    
+    <a href="/categories/shiny">Shiny</a
+    >
+    
+  </span>
+  
+  
+
+  
+
+</div>
+
+  <div class="article-style" itemprop="articleBody">
+    
+    Why Read This?You want to understand why for loops can fail to produce desired results in an R Shiny app.You want an example of creating a dynamic number of plots within an R Shiny app.A Minimal, Reproducible ExampleFirst, let’s look at the minimal reprex. This is an R Shiny app that uses modules to display a dynamic number of plots.
+plot_overlay_ui() is a Shiny module ui function that returns a &lt;tag&gt; list containing our plot(s).
+    
+  </div>
+  <p class="read-more" itemprop="mainEntityOfPage">
+    <a href="/post/the-subtleties-of-shiny-reactive-programming-lapply-and-for-loops/" class="btn btn-primary btn-outline">
+      CONTINUE READING
+    </a>
+  </p>
+</div>
+
+      
+
+      
+
+        
+
+        
+        
+
+        
+        
+          
+      
+          
+      
+          
+      
           
       
           
@@ -1086,103 +1173,6 @@ a2 &lt;- inputData %&gt;% group_by(country) %&gt;% summarize_if(is.numeric,mean)
       
 
       
-
-        
-
-        
-        
-
-        
-        
-
-      
-      
-        
-        
-
-<div class="article-list-item" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
-  
-  
-  <h3 class="article-title" itemprop="headline">
-    <a href="/post/animated-t-sne/" itemprop="url">Animated t-SNE</a>
-  </h3>
-  
-
-<div class="article-metadata">
-
-  <span class="article-date">
-    
-    <time datetime="2018-04-18 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
-      Apr 18, 2018
-    </time>
-  </span>
-  <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Chase Clark">
-  </span>
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    2 min read
-  </span>
-  
-
-  
-  
-  <span class="middot-divider"></span>
-  <a href="/post/animated-t-sne/#disqus_thread"></a>
-  
-
-  
-  
-  
-  <span class="middot-divider"></span>
-  <span class="article-categories">
-    <i class="fa fa-folder"></i>
-    
-    <a href="/categories/r">R</a
-    >, 
-    
-    <a href="/categories/instructional">Instructional</a
-    >, 
-    
-    <a href="/categories/ggplot">ggplot</a
-    >, 
-    
-    <a href="/categories/rtsne">Rtsne</a
-    >, 
-    
-    <a href="/categories/gganimate">gganimate</a
-    >, 
-    
-    <a href="/categories/tweenr">tweenr</a
-    >
-    
-  </span>
-  
-  
-
-  
-
-</div>
-
-  <div class="article-style" itemprop="articleBody">
-    
-    Load libraries
-library(Rtsne)library(createdatasets)library(tweenr)library(gganimate)library(ggplot2)set.seed(42)Create data for t-SNE
-# Get MNIST data for t-SNEdf_mnist &lt;- createMNIST()df_sampled &lt;- df_mnist[sample(1:nrow(df_mnist), 1000), ]mat_mnist &lt;- as.matrix(df_sampled[ , !(colnames(df_sampled) == &quot;Class&quot;)])whichNumber &lt;- as.character(df_sampled[ , (colnames(df_sampled) == &quot;Class&quot;)])# Going to do parallel t-SNE later (and data has to be created for each instance on Windows R parallel, so lets save the data as rdssaveRDS(mat_mnist, &quot;data/mat_mnist.rds&quot;)saveRDS(df_sampled, &quot;data/df_sampled.
-    
-  </div>
-  <p class="read-more" itemprop="mainEntityOfPage">
-    <a href="/post/animated-t-sne/" class="btn btn-primary btn-outline">
-      CONTINUE READING
-    </a>
-  </p>
-</div>
-
-      
-
-      
     
 
   </div>
@@ -1284,21 +1274,21 @@ library(Rtsne)library(createdatasets)library(tweenr)library(gganimate)librar
           
           
           
-          <a href="/tags/instructional" style="font-size:2.2643002974495365rem">Instructional</a>
+          <a href="/tags/instructional" style="font-size:2.3270154828966763rem">Instructional</a>
         
           
           
           
           
           
-          <a href="/tags/r" style="font-size:2.2643002974495365rem">R</a>
+          <a href="/tags/r" style="font-size:2.3270154828966763rem">R</a>
         
           
           
           
           
           
-          <a href="/tags/shiny" style="font-size:2.2643002974495365rem">Shiny</a>
+          <a href="/tags/shiny" style="font-size:2.3270154828966763rem">Shiny</a>
         
           
           

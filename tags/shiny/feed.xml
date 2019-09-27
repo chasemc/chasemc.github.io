@@ -7,10 +7,147 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Wed, 15 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Sep 2019 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="/tags/shiny/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Subtleties of Shiny Reactive Programming: Lapply and For Loops</title>
+      <link>/post/the-subtleties-of-shiny-reactive-programming-lapply-and-for-loops/</link>
+      <pubDate>Fri, 27 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/post/the-subtleties-of-shiny-reactive-programming-lapply-and-for-loops/</guid>
+      <description>&lt;div id=&#34;why-read-this&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Why Read This?&lt;/h4&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;You want to understand why for loops can fail to produce desired results in an R Shiny app.&lt;/li&gt;
+&lt;li&gt;You want an example of creating a dynamic number of plots within an R Shiny app.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-minimal-reproducible-example&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;A Minimal, Reproducible Example&lt;/h4&gt;
+&lt;p&gt;First, let’s look at the minimal reprex. This is an R Shiny app that uses modules to display a dynamic number of plots.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;plot_overlay_ui()&lt;/code&gt; is a &lt;a href=&#34;https://shiny.rstudio.com/articles/modules.html&#34;&gt;Shiny module&lt;/a&gt; ui function that returns a &lt;code&gt;&amp;lt;tag&amp;gt;&lt;/code&gt; list containing our plot(s).&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;plot_overlay_server()&lt;/code&gt; is a &lt;a href=&#34;https://shiny.rstudio.com/articles/modules.html&#34;&gt;Shiny module&lt;/a&gt; server function that creates the plot.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;ui()&lt;/code&gt; is a regular Shiny ui function that contains the code to create the main skeleton of the user interface.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;server()&lt;/code&gt; is a regular Shiny server function that contains logic to run the app.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;plot_data()&lt;/code&gt; is a reactive expression that returns a list, where each list element is a vector representing a column of mtcars selected using the &lt;code&gt;checkboxGroupInput&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;multi_plot_ui&lt;/code&gt; renders ui/html that is dynamically generated… this will hold our dynamically-generated plots&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;And &lt;code&gt;callModule(plot_overlay_server,...)&lt;/code&gt; is where the focus of this blog takes place.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(shiny)
+
+plot_overlay_ui &amp;lt;- function(id) {
+  ns &amp;lt;- NS(id)
+  tagList(
+    plotOutput(ns(&amp;quot;my_plot&amp;quot;), 
+               width = &amp;quot;100%&amp;quot;)
+  )
+}
+# -------------------------------------------------------------------------
+
+plot_overlay_server &amp;lt;- function(input,
+                                output,
+                                session, 
+                                spec,
+                                plot_name) {
+  
+  output$my_plot &amp;lt;- renderPlot({
+    
+    plot(spec, 
+         main = plot_name)
+    
+  })
+}
+# -------------------------------------------------------------------------
+
+ui &amp;lt;- fluidPage(
+  titlePanel(&amp;quot;Reprex&amp;quot;),
+  sidebarLayout(
+    sidebarPanel(
+      checkboxGroupInput(&amp;quot;selected_sample&amp;quot;,
+                         label = &amp;quot;Select Strain&amp;quot;,
+                         choices = seq_along(mtcars))
+    ),
+    mainPanel(
+      uiOutput(&amp;quot;multi_plot_ui&amp;quot;)
+    )
+  )
+)
+# -------------------------------------------------------------------------
+
+server &amp;lt;- function(input, output) {
+  
+  plot_data &amp;lt;- reactive({
+    col_select &amp;lt;- as.integer(input$selected_sample)
+    lapply(col_select, function(x) mtcars[,x])
+  })
+  
+  observeEvent(input$selected_sample, {
+    req(!is.null(input$selected_sample))
+    req(plot_data())
+    
+    output$multi_plot_ui &amp;lt;- renderUI({
+      
+      lapply(seq_along(input$selected_sample),
+             function(n) {
+               return(plot_overlay_ui(paste0(&amp;quot;n&amp;quot;, n)))
+             })
+    })
+    
+    lapply(seq_along(input$selected_sample),
+           function(i){
+             callModule(plot_overlay_server,
+                        paste0(&amp;quot;n&amp;quot;, i),
+                        spec = plot_data()[[i]],
+                        plot_name = i)
+           }
+    )
+    
+    # for (i in seq_along(input$selected_sample)) {
+    #   callModule(plot_overlay_server,
+    #              paste0(&amp;quot;n&amp;quot;, i),
+    #              spec = plot_data()[[i]],
+    #              plot_name = i)
+    # }
+    
+  })
+}
+
+shinyApp(ui = ui, server = server)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;lapply-vs-for-loops-in-shiny&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Lapply vs For Loops in Shiny&lt;/h3&gt;
+&lt;p&gt;My original code to generate the multiple server functions to generate plots was:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# the for loop
+for (i in seq_along(input$selected_sample)) {
+  callModule(plot_overlay_server,
+             paste0(&amp;quot;n&amp;quot;, i),
+             spec = plot_data()[[i]],
+             plot_name = i)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;While this was able to produce multiple plots, all of the plots were identical and represented the plot created during the last iteration of the loop. I was convinced the problem was a regression in my Shiny abilities and that I was simply missing an &lt;code&gt;session$ns()&lt;/code&gt; or the like.&lt;/p&gt;
+&lt;p&gt;After convincing myself everything was correct, I tried an experiment that I thought was crazy enough to work because of the underlying mechanics… change the for-loop to a lapply.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# the lapply
+lapply(seq_along(input$selected_sample),
+       function(i){
+         callModule(plot_overlay_server,
+                    paste0(&amp;quot;n&amp;quot;, i),
+                    spec = plot_data()[[i]],
+                    plot_name = i)
+       }
+)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And the lapply worked! Multiple plots representing the correct, selected data were displayed!&lt;/p&gt;
+&lt;p&gt;My best guess was that for a &lt;code&gt;lapply()&lt;/code&gt; every iteration was run in its own environment. This turns out to be exactly what allows this to work, and I am honestly surprised I hadn’t encountered this before.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;learn-more&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Learn More!&lt;/h3&gt;
+&lt;p&gt;If you would like to learn more, Barbara Borges Ribeiro (&lt;a href=&#34;https://github.com/bborgesr&#34; class=&#34;uri&#34;&gt;https://github.com/bborgesr&lt;/a&gt;) has a wonderful Gist explaining what is going on with for loops vs lapply in Shiny: &lt;a href=&#34;https://gist.github.com/bborgesr/e1ce7305f914f9ca762c69509dda632e&#34; class=&#34;uri&#34;&gt;https://gist.github.com/bborgesr/e1ce7305f914f9ca762c69509dda632e&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Unit test renderUI inside Shiny modules</title>
