@@ -1,893 +1,1044 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Bino html5 free Template</title>
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="theme" content="hugo-academic">
-    <meta name="generator" content="Hugo 0.36.1" />
-    <meta name="author" content="Chase Clark">
-    <meta name="description" content="Postdoctoral Research Associate">
-    <link rel="alternate" hreflang="en-us" href="/">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw=="
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.1/css/academicons.min.css"
-        integrity="sha512-NThgw3XKQ1absAahW6to7Ey42uycrVvfNfyjqcFNgCmOCQ5AR4AO0SiXrN+8ZtYeappp56lk1WtvjVmEa+VR6A=="
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
-        crossorigin="anonymous">
-    <link rel="stylesheet"
-        href="//fonts.googleapis.com/css?family=Montserrat:400,700%7cRoboto:400,400italic,700%7cRoboto&#43;Mono">
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/css/override.css">
-    <script>
-        window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }; ga.l = +new Date;
-        ga('create', 'UA-111767565-1', 'auto');
-        ga('require', 'eventTracker');
-        ga('require', 'outboundLinkTracker');
-        ga('require', 'urlChangeTracker');
-        ga('send', 'pageview');
-    </script>
-    <script async src="//www.google-analytics.com/analytics.js"></script>
-    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"
-        integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g=="
-        crossorigin="anonymous"></script>
-    <link rel="alternate" href="/feed.xml" type="application/rss+xml" title="">
-    <link rel="feed" href="/feed.xml" type="application/rss+xml" title="">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="icon" type="image/png" href="/img/icon.png">
-    <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
-    <link rel="canonical" href="/">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:site" content="@ChasingMicrobes">
-    <meta property="twitter:creator" content="@ChasingMicrobes">
-    <meta property="og:site_name" content="">
-    <meta property="og:url" content="/">
-    <meta property="og:title" content="">
-    <meta property="og:description" content=" Postdoctoral Research Associate">
-    <meta property="og:locale" content="en-us">
-    <meta property="og:updated_time" content="2017-10-15T00:00:00-05:00">
-    <title></title>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!--Google Fonts link-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700,700i" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="assets/css/iconfont.css">
+    <link rel="stylesheet" href="assets/css/slick/slick.css">
+    <link rel="stylesheet" href="assets/css/slick/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!--        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">-->
+
+
+    <!--For Plugins external css-->
+    <link rel="stylesheet" href="assets/css/plugins.css" />
+
+    <!--Theme custom css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!--Theme Responsive css-->
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+
+    <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 
-<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
-    <nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
-        <div class="container">
-            <div class="navbar-header"> <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target=".navbar-collapse" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button> <a class="navbar-brand" href="/"></a>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item">
-                        <a href="/#about" data-target="#about"> <span>Home</span> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/#publications" data-target="#publications">
-                            <span>Publications</span> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/#posts" data-target="#posts"> <span>Posts</span> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/#projects" data-target="#projects"> <span>Projects</span> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/#talks" data-target="#talks"> <span>Talks</span> </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/#contact" data-target="#contact"> <span>Contact</span> </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav> <span id="homepage" style="display: none"></span>
-    <section id="hero" class="hero-overlay" style="background-color: #666;
-background-image:
-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
-url('/img/headers/MainHeader.jpg');;">
-        <div class="container">
-            <h1 class="hero-title" itemprop="headline"> </h1>
-        </div>
-    </section>
-    <section id="about" class="home-section">
-        <div class="container">
-            <div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person" itemref=" person-address">
-                <div class="col-xs-12 col-md-4">
-                    <div id="profile">
-                        <div class="portrait" style="background-image: url('/img/portrait.jpg');"></div>
-                        <meta itemprop="image" content="/img/portrait.jpg">
-                        <div class="portrait-title">
-                            <h2 itemprop="name">Chase Clark</h2>
-                            <h3 itemprop="jobTitle">Postdoctoral Research Associate</h3>
-                            <h3 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
-                                <a href="https://kwanlab.github.io" target="_blank" itemprop="url" rel="noopener">
-                                    <span itemprop="name">Kwan Lab</span>
-                                </a>
-                            </h3>
-                            <h3 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization">
-                                <a href="http://www.cibm.wisc.edu" target="_blank" itemprop="url" rel="noopener">
-                                    <span itemprop="name">Computation and Informatics in Biology and Medicine
-                                        (CIBM)</span>
-                                </a>
-                            </h3>
-                            <h3 itemprop="worksFor" itemscope itemtype="http://schema.org/Organization"> <span
-                                    itemprop="name">University of Wisconsin-Madison (remote from Chicago)</span> </h3>
-                        </div>
-                        <link itemprop="url" href="/">
-                        <ul class="network-icon" aria-hidden="true">
-                            <li>
-                                <a itemprop="sameAs" href="https://www.linkedin.com/in/hirechase" target="_blank"
-                                    rel="noopener">
-                                    <i class="fa fa-linkedin big-icon"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a itemprop="sameAs" href="//twitter.com/ChasingMicrobes" target="_blank"
-                                    rel="noopener">
-                                    <i class="fa fa-twitter big-icon"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a itemprop="sameAs" href="//github.com/chasemc" target="_blank" rel="noopener">
-                                    <i class="fa fa-github big-icon"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a itemprop="sameAs" href="https://scholar.google.com/citations?user=NcllzbUAAAAJ&hl"
-                                    target="_blank" rel="noopener">
-                                    <i class="ai ai-google-scholar big-icon"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a itemprop="sameAs" href="https://orcid.org/0000-0001-6439-9397" target="_blank"
-                                    rel="noopener">
-                                    <i class="ai ai-orcid big-icon"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-8" itemprop="description">
-                    <h1 id="biography">Biography</h1>
-                    <p>Website currently under construction.</p>
-                    <p>I received my PhD at the University of Illinois at Chicago
-                        as an NIH F31 Fellow, where I created a platform, called <a
-                            href="https://chasemc.github.io/IDBac" target="_blank">IDBac</a> to make finding new
-                        medicines from bacteria a little less
-                        serendipitous. I also studied freshwater sponge bacteria and chemical structure elucidation and
-                        metabolomics. I am currently a Postdoctoral Research Associate at UW-Madison (<a
-                            href="https://kwanlab.github.io" target="_blank">kwanlab.github.io</a>) and am funded by the
-                        <a href="http://www.cibm.wisc.edu" target="_blank">Computation and Informatics in Biology and
-                            Medicine (CIBM)</a> training program. My current projects include working on the Kwan Lab's
-                        metagenomic binning software <a href="https://github.com/KwanLab/Autometa"
-                            target="_blank">Autometa</a> and building a not-yet-released large scale genomic analysis
-                        platform.
-                    </p>
-                    <div class="row">
-                        <div class="col-sm-5">
-                            <h3>Interests</h3>
-                            <ul class="ul-interests">
-                                <li>Metagenomics</li>
-                                <li>Genomics</li>
-                                <li>Transcriptomics</li>
-                                <li>Metabolomics</li>
-                                <li>Bacterial Drug Discovery</li>
-                                <li>Bioinformatics (currently with: Python, Nextflow, R)</li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-7">
-                            <h3>Education</h3>
-                            <ul class="ul-edu fa-ul">
-                                <li>
-                                    <i class="fa-li fa fa-graduation-cap"></i>
-                                    <div class="description">
-                                        <p class="course">PhD in Pharmacognosy</p>
-                                        <p class="institution">University of Illinois at Chicago</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa-li fa fa-graduation-cap"></i>
-                                    <div class="description">
-                                        <p class="course">BS in Biochemistry</p>
-                                        <p class="institution">Berry College</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<body data-spy="scroll" data-target=".navbar-collapse">
 
-    <section id="publications" class="home-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-4 section-heading">
-                    <h1>Recent Publications</h1>
-                </div>
-                <div class="col-xs-12 col-md-8">
-
-                    <div class="pub-list-item" style="margin-bottom: 1rem" itemscope
-                        itemtype="http://schema.org/CreativeWork">
-                        <i class="fa fa-file-text-o pub-icon" aria-hidden="true"></i>
-                        <span itemprop="author">
-                            Chase M. Clark, Antonio Hernandez, Michael W. Mullowney, Jhewelle Fitz-Henley, Emma Li, Sean
-                            B. Romanowski, Roberto Pronzato, Renata Manconi, Brian T. Murphy</span>.
-                        <a href="https://doi.org/10.1101/2021.08.26.457769" itemprop="name">Relationship between
-                            bacterial phylotype and
-                            specialized metabolite production in the culturable microbiome of two
-                            freshwater sponges
-                        </a>.
-                        <em>bioRxiv</em>,
-                        2021.
-                        <p>
-                            <a class="btn btn-primary btn-outline btn-xs"
-                                href="https://doi.org/10.1101/2021.08.26.457769" target="_blank" rel="noopener">
-                                HTML
-                            </a>
-
-                        </p>
-                    </div>
-
-                    <div class="pub-list-item" style="margin-bottom: 1rem" itemscope
-                        itemtype="http://schema.org/CreativeWork">
-                        <i class="fa fa-file-text-o pub-icon" aria-hidden="true"></i>
-                        <span itemprop="author">
-                            Tiago F. Leao, Chase M. Clark, Anelize Bauermeister, Emmanuel O. Elijah, Emily C. Gentry,
-                            Makhai Husband, Michelli F.
-                            Oliveira, Nuno Bandeira, Mingxun Wang & Pieter C. Dorrestein</span>.
-                        <a href="https://www.nature.com/articles/s42255-021-00429-0" itemprop="name">Quick-start
-                            infrastructure for untargeted
-                            metabolomics analysis in GNPS</a>.
-                        <em>Nature Metabolism</em>,
-                        2021.
-                        <p>
-                            <a class="btn btn-primary btn-outline btn-xs"
-                                href="https://www.nature.com/articles/s42255-021-00429-0" target="_blank"
-                                rel="noopener">
-                                HTML
-                            </a>
-
-                        </p>
-                    </div>
-
-
-                    <div class="pub-list-item" style="margin-bottom: 1rem" itemscope
-                        itemtype="http://schema.org/CreativeWork">
-                        <i class="fa fa-file-text-o pub-icon" aria-hidden="true"></i>
-                        <span itemprop="author">
-                            Chase M. Clark, Brian T. Murphy, and Laura M. Sanchez</span>.
-                        <a href="https://doi.org/10.1128/mSystems.00813-19" itemprop="name">A Call to Action: the Need
-                            for
-                            Standardization
-                            in Developing Open-Source Mass Spectrometry-Based Methods for Microbial
-                            Subspecies Discrimination</a>.
-                        <em>mSystems</em>,
-                        2020.
-                        <p>
-                            <a class="btn btn-primary btn-outline btn-xs"
-                                href="https://doi.org/10.1128/mSystems.00813-19" target="_blank" rel="noopener">
-                                HTML
-                            </a>
-
-                        </p>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    <div class="pub-list-item" style="margin-bottom: 1rem" itemscope
-                        itemtype="http://schema.org/CreativeWork">
-                        <i class="fa fa-file-text-o pub-icon" aria-hidden="true"></i>
-                        <span itemprop="author">
-                            Maria S. Costa, Chase M. Clark, Sesselja Ómarsdóttir, Laura M. Sanchez, Brian T.
-                            Murphy</span>.
-                        <a href="https://pubs.acs.org/doi/pdf/10.1021/acs.jnatprod.9b00168" itemprop="name">Minimizing
-                            Taxonomic and Natural Product
-                            Redundancy in Microbial Libraries Using MALDI-TOF MS and the Bioinformatics Pipeline
-                            IDBac</a>.
-                        <em>Journal of Natural Products</em>,
-                        2019.
-                        <p>
-                            <a class="btn btn-primary btn-outline btn-xs"
-                                href="https://pubs.acs.org/doi/pdf/10.1021/acs.jnatprod.9b00168" target="_blank"
-                                rel="noopener">
-                                PDF
-                            </a>
-                            <a class="btn btn-primary btn-outline btn-xs"
-                                href="https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?task=ad311cd913c347578f1f1c29fabcea83"
-                                target="_blank" rel="noopener">
-                                Dataset
-                            </a> <a class="btn btn-primary btn-outline btn-xs"
-                                href="/project/example-external-project/">
-                                Project
-                            </a>
-                        </p>
-                    </div>
-                    <div class="pub-list-item" style="margin-bottom: 1rem" itemscope
-                        itemtype="http://schema.org/CreativeWork">
-                        <i class="fa fa-file-text-o pub-icon" aria-hidden="true"></i>
-                        <span itemprop="author">
-                            Jana Braesel, Chase M. Clark, Kevin J. Kunstman, Stefan J. Green, Mark Maienschein-Cline,
-                            Brian T. Murphy, Alessandra S. Eustáquio</span>.
-                        <a href="https://doi.org/10.1128/MRA.00165-19" itemprop="name">Genome Sequence of Marine-Derived
-                            Streptomyces sp. Strain F001, a Producer of Akashin A and Diazaquinomycins</a>.
-                        <em>Microbiology Resource Announcements</em>,
-                        2019.
-                        <p>
-                            <a class="btn btn-primary btn-outline btn-xs"
-                                href="https://mra.asm.org/content/8/19/e00165-19" target="_blank" rel="noopener">
-                                PDF
-                            </a>
-                            <a class="btn btn-primary btn-outline btn-xs"
-                                href="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA483497" target="_blank"
-                                rel="noopener">
-                                Dataset
-                            </a> <a class="btn btn-primary btn-outline btn-xs"
-                                href="/project/example-external-project/">
-                                Project
-                            </a>
-                        </p>
-                    </div>
-                    <div class="pub-list-item" style="margin-bottom: 1rem" itemscope
-                        itemtype="http://schema.org/CreativeWork">
-                        <i class="fa fa-file-text-o pub-icon" aria-hidden="true"></i>
-                        <span itemprop="author">
-                            Chase M. Clark, Maria S. Costa, Erin Conley, Emma LI, Laura M. Sanchez, Brian T.
-                            Murphy</span>.
-                        <a href="https://www.jove.com/video/59219/using-open-source-maldi-tof-ms-idbac-pipeline-for-analysis-microbial"
-                            itemprop="name">Using the Open-Source MALDI TOF-MS IDBac
-                            Pipeline for Analysis of Microbial Protein and Specialized Metabolite Data</a>.
-                        <em>JoVE</em>,
-                        2019.
-                        <p>
-                            <a class="btn btn-primary btn-outline btn-xs"
-                                href="https://www.jove.com/video/59219/using-open-source-maldi-tof-ms-idbac-pipeline-for-analysis-microbial"
-                                target="_blank" rel="noopener">
-                                PDF
-                            </a>
-                            <a class="btn btn-primary btn-outline btn-xs" href="/project/example-external-project/">
-                                Project
-                            </a>
-                        </p>
-                    </div>
-                    <div class="pub-list-item" style="margin-bottom: 1rem" itemscope
-                        itemtype="http://schema.org/CreativeWork">
-                        <i class="fa fa-file-text-o pub-icon" aria-hidden="true"></i>
-                        <span itemprop="author">
-                            Chase M. Clark, Maria S. Costa, Laura M. Sanchez, Brian T. Murphy</span>.
-                        <a href="https://doi.org/10.1073/pnas.1801247115" itemprop="name">Coupling MALDI-TOF Mass
-                            Spectrometry Protein
-                            and Specialized Metabolite Analyses to Rapidly Discriminate Bacterial Function</a>.
-                        <em>PNAS</em>,
-                        2018.
-                        <p> <a class="btn btn-primary btn-outline btn-xs"
-                                href="https://www.pnas.org/content/115/19/4981" target="_blank" rel="noopener">
-                                PDF
-                            </a> <a class="btn btn-primary btn-outline btn-xs" href="https://chasemc.github.io/IDBac"
-                                target="_blank" rel="noopener">
-                                Code
-                            </a>
-                            <a class="btn btn-primary btn-outline btn-xs"
-                                href="https://data.mendeley.com/datasets/ysrtr9c5s7/1" target="_blank" rel="noopener">
-                                Dataset
-                            </a> <a class="btn btn-primary btn-outline btn-xs"
-                                href="/project/example-external-project/">
-                                Project
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="talks" class="home-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-4 section-heading">
-                    <h1>Recent &amp; Upcoming Talks</h1>
-                </div>
-                <div class="col-xs-12 col-md-8">
-                    <div class="pub-list-item" itemscope itemtype="http://schema.org/Event">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <a href="/talk/rpharma_2019/">
-                                    <img src="/img//talks/rpharma_2019.png" class="pub-banner" itemprop="image">
-                                </a>
-                            </div>
-                            <div class="col-md-12">
-                                <h3 class="article-title" itemprop="name">
-                                    <a href="/talk/rpharma_2019/" itemprop="url">Your Missing Step in Reproducible R
-                                        Programming: Continuous Deployment</a>
-                                </h3>
-                                <div class="talk-metadata" itemprop="startDate"> Aug 23, 2019 12:00 AM &mdash; 12:00 AM
-                                </div>
-                                <div class="talk-metadata"> R/Pharma 2019 </div>
-                                <div class="talk-abstract" itemprop="text"> The past few years have shown vast
-                                    improvements in workflows for reproducible and
-                                    distributable research within the R ecosystem. At satRday Chicago everyone in the
-                                    audience said they used R Markdown, however only one person raised their hand when
-                                    asked if they could associate their reports back to the code version that generated
-                                    it. Since continuous integration is quickly becoming commonplace in the R community,
-                                    continuous deployment (CD) is a logical and easy step to add to your workflow to
-                                    enhance reproducibility. I will demo associating R Markdown to the code version that
-                                    produced it and automating the build and release of both executable and cloud-based
-                                    Shiny apps. Finally, an announcement of the electricShine package for creating
-                                    Electron based Shiny apps will highlight the power of using CD with production-level
-                                    Shiny apps. </div>
-                                <div class="talk-links">
-                                    <a class="btn btn-primary btn-outline btn-xs"
-                                        href="https://github.com/chasemc/presentations/blob/master/RinPharma/rinpharma_aug_2019/chase_RINPHARMA.pdf">
-                                        PDF
-                                    </a>
-                                    <a class="btn btn-primary btn-outline btn-xs"
-                                        href="https://github.com/chasemc/presentations/tree/master/RinPharma/rinpharma_aug_2019">
-                                        Slides
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pub-list-item" itemscope itemtype="http://schema.org/Event">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h3 class="article-title" itemprop="name">
-                                    <a href="/talk/satrdays_chicago_2019/" itemprop="url">Bioinformatics in R</a>
-                                </h3>
-                                <div class="talk-metadata" itemprop="startDate"> Apr 27, 2019 12:00 AM &mdash; 12:00 AM
-                                </div>
-                                <div class="talk-metadata"> satRday Chicago </div>
-                                <div class="talk-abstract" itemprop="text"> The past few years have shown vast
-                                    improvements in workflows for reproducible and
-                                    distributable research within the R ecosystem. This talk will highlight two recent
-                                    open source R packages I have written that take advantage of this modern R
-                                    ecosystem, along with conquered and prevailing challenges. The first is mzPlotter,
-                                    which encapsulates the ease of creating high-quality, interactive, and reproducible
-                                    reports with R. While simple and written in just a few hours, it is fast and robust
-                                    enough that it’s being deployed in Docker alongside production bash and python code.
-                                    Using mzR, plumber, ggplot, plotly, crosstalk, and rmarkdown, it ingests 100’s of MB
-                                    of data and outputs a single-file, interactive summary report in just a few seconds.
-                                    At the opposite end of the spectrum is a multi-thousand line shiny app, IDBac. Both
-                                    mzPlotter and IDBac have required introspection about how tools and pipelines we
-                                    build as R programmers best interact with non-R-programmers, and non-programmers in
-                                    general. This includes challenges in the distribution of data (Can your intermediate
-                                    or final data be read by other languages?) and interactive analysis (How do you
-                                    distribute shiny apps that are prohibitively expensive to run in the cloud?). To
-                                    this end I will touch on how mzPlotter and IDBac were designed for multi-language
-                                    support and provide an update on a current project to automate creating Electron
-                                    distributable Shiny apps. </div>
-                                <div class="talk-links">
-                                    <a class="btn btn-primary btn-outline btn-xs"
-                                        href="https://github.com/chasemc/presentations/blob/master/Chicago_SatRDays/ChaseClark_Chicago_SatRdays.pdf">
-                                        PDF
-                                    </a>
-                                    <a class="btn btn-primary btn-outline btn-xs"
-                                        href="https://github.com/chasemc/presentations/tree/master/Chicago_SatRDays">
-                                        Slides
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pub-list-item" itemscope itemtype="http://schema.org/Event">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <a href="/talk/rpharma_2018/">
-                                    <img src="/img//talks/rpharma_2018.png" class="pub-banner" itemprop="image">
-                                </a>
-                            </div>
-                            <div class="col-md-12">
-                                <h3 class="article-title" itemprop="name">
-                                    <a href="/talk/rpharma_2018/" itemprop="url">IDBac: A New Paradigm in Developing
-                                        Microbial Libraries for Drug Discovery</a>
-                                </h3>
-                                <div class="talk-metadata" itemprop="startDate"> Aug 15, 2018 12:00 AM &mdash; 12:00 AM
-                                </div>
-                                <div class="talk-metadata"> R/Pharma 2018 </div>
-                                <div class="talk-abstract" itemprop="text"> Chase Clark (<a
-                                        href="https://chasemc.github.io/IDBac/"
-                                        target="_blank">https://chasemc.github.io/IDBac/</a>) will demo a Shiny
-                                    application intended to make spectroscopy analyses more accessible and highlight the
-                                    usability features. </div>
-                                <div class="talk-links"> <a class="btn btn-primary btn-outline btn-xs"
-                                        href="https://github.com/chasemc/presentations/blob/master/RinPharma/rinpharma_aug_2018/rPharma_Chase.pdf">
-                                        Slides
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pub-list-item" itemscope itemtype="http://schema.org/Event">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h3 class="article-title" itemprop="name">
-                                    <a href="/talk/crug_2017/" itemprop="url">IDBac: A Shiny App to Analyze Bacterial
-                                        Fingerprints and Aid in the Discovery of Potential New Antibiotics</a>
-                                </h3>
-                                <div class="talk-metadata" itemprop="startDate"> Jan 27, 2018 12:00 AM &mdash; 12:00 AM
-                                </div>
-                                <div class="talk-metadata"> Chicago R User Group (Chicago RUG, CRUG) Data and Statistics
-                                </div>
-                                <div class="talk-abstract" itemprop="text"> Chase Clark (<a
-                                        href="https://chasemc.github.io/IDBac/"
-                                        target="_blank">https://chasemc.github.io/IDBac/</a>) will demo a Shiny
-                                    application intended to make spectroscopy analyses more accessible and highlight the
-                                    usability features. </div>
-                                <div class="talk-links">
-                                    <a class="btn btn-primary btn-outline btn-xs" href="/project/mass%20spectrometry/">
-                                        Project
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="posts" class="home-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-4 section-heading">
-                    <h1>Recent Posts</h1>
-                    <p class="view-all">
-                        <a href="/post/">
-                            More Posts
-                            <i class="fa fa-angle-double-right"></i>
-                        </a>
-                    </p>
-                </div>
-                <div class="col-xs-12 col-md-8">
-                    <div class="article-list-item" itemscope itemprop="blogPost"
-                        itemtype="http://schema.org/BlogPosting">
-                        <h3 class="article-title" itemprop="headline">
-                            <a href="/post/the-subtleties-of-shiny-reactive-programming-lapply-and-for-loops/"
-                                itemprop="url">The Subtleties of Shiny Reactive Programming: Lapply and For Loops</a>
-                        </h3>
-                        <div class="article-metadata"> <span class="article-date"> <time
-                                    datetime="2019-09-27 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
-                                    Sep 27, 2019
-                                </time>
-                            </span>
-                            <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
-                                <meta itemprop="name" content="Chase Clark">
-                            </span>
-                            <span class="middot-divider"></span>
-                            <span class="article-reading-time">
-                                3 min read
-                            </span>
-                            <span class="middot-divider"></span>
-                            <a
-                                href="/post/the-subtleties-of-shiny-reactive-programming-lapply-and-for-loops/#disqus_thread"></a>
-                            <span class="middot-divider"></span>
-                            <span class="article-categories">
-                                <i class="fa fa-folder"></i> <a href="/categories/shiny">Shiny</a> </span>
-                        </div>
-                        <div class="article-style" itemprop="articleBody"> Why Read This?
-                            You want to understand why for loops can fail to produce desired results in an R Shiny app.
-                            You want an example of creating a dynamic number of plots within an R Shiny app.
-                            A Minimal, Reproducible Example
-                            First, let’s look at the minimal reprex. This is an R Shiny app that uses modules to display
-                            a dynamic number of plots. plot_overlay_ui() is a Shiny module ui function that returns a
-                            &lt;tag&gt; list containing
-                            our plot(s). </div>
-                        <p class="read-more" itemprop="mainEntityOfPage">
-                            <a href="/post/the-subtleties-of-shiny-reactive-programming-lapply-and-for-loops/"
-                                class="btn btn-primary btn-outline">
-                                CONTINUE READING
-                            </a>
-                        </p>
-                    </div>
-                    <div class="article-list-item" itemscope itemprop="blogPost"
-                        itemtype="http://schema.org/BlogPosting">
-                        <h3 class="article-title" itemprop="headline">
-                            <a href="/post/unit-test-renderui-inside-shiny-modules/" itemprop="url">Unit test renderUI
-                                inside Shiny modules</a>
-                        </h3>
-                        <div class="article-metadata"> <span class="article-date"> <time
-                                    datetime="2019-05-15 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
-                                    May 15, 2019
-                                </time>
-                            </span>
-                            <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
-                                <meta itemprop="name" content="Chase Clark">
-                            </span>
-                            <span class="middot-divider"></span>
-                            <span class="article-reading-time">
-                                2 min read
-                            </span>
-                            <span class="middot-divider"></span>
-                            <a href="/post/unit-test-renderui-inside-shiny-modules/#disqus_thread"></a> <span
-                                class="middot-divider"></span>
-                            <span class="article-categories">
-                                <i class="fa fa-folder"></i> <a href="/categories/r">R</a>, <a
-                                    href="/categories/shiny">Shiny</a>, <a
-                                    href="/categories/instructional">Instructional</a> </span>
-                        </div>
-                        <div class="article-style" itemprop="articleBody"> I have run across this a few times and hope
-                            this might help someone. As Shiny apps get more
-                            complicated and you start to use Shiny modules you will likely run across use cases for
-                            using renderUI within modules. Sometimes it is desirable to be able to test these using
-                            packages like testthat.
-                            However, you will run into a problem because of a missing session$ns.
-                            library(testthat)
-                            library(shiny)
-                            Example adapted from: https://shiny. </div>
-                        <p class="read-more" itemprop="mainEntityOfPage">
-                            <a href="/post/unit-test-renderui-inside-shiny-modules/"
-                                class="btn btn-primary btn-outline">
-                                CONTINUE READING
-                            </a>
-                        </p>
-                    </div>
-                    <div class="article-list-item" itemscope itemprop="blogPost"
-                        itemtype="http://schema.org/BlogPosting">
-                        <h3 class="article-title" itemprop="headline">
-                            <a href="/post/structuring-shiny-app-development/" itemprop="url">Structuring Shiny App
-                                Development</a>
-                        </h3>
-                        <div class="article-metadata"> <span class="article-date"> <time
-                                    datetime="2018-12-07 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
-                                    Dec 7, 2018
-                                </time>
-                            </span>
-                            <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
-                                <meta itemprop="name" content="Chase Clark">
-                            </span>
-                            <span class="middot-divider"></span>
-                            <span class="article-reading-time">
-                                5 min read
-                            </span>
-                            <span class="middot-divider"></span>
-                            <a href="/post/structuring-shiny-app-development/#disqus_thread"></a> <span
-                                class="middot-divider"></span>
-                            <span class="article-categories">
-                                <i class="fa fa-folder"></i> <a href="/categories/instructional">Instructional</a>, <a
-                                    href="/categories/r">R</a>, <a href="/categories/shiny">Shiny</a> </span>
-                        </div>
-                        <div class="article-style" itemprop="articleBody"> Part One: Scope
-                            This is going to be a fairly opinionated post about my not novel but recent revelations as
-                            to how I think Shiny apps should be formatted. By formatting I don’t mean UI formatting,
-                            code style, etc. I mean how one might organize, holistically, a Shiny app to help maximize
-                            readability, stability, and scalability. Again not novel, just me getting my thoughts “on
-                            paper’.
-                            Before now my server() sections kind of looked like this: I am aware that it is possible to
-                            “modularize” a shiny app and there is good info on that from RStudio here and Steph Locke
-                            here. </div>
-                        <p class="read-more" itemprop="mainEntityOfPage">
-                            <a href="/post/structuring-shiny-app-development/" class="btn btn-primary btn-outline">
-                                CONTINUE READING
-                            </a>
-                        </p>
-                    </div>
-                    <div class="article-list-item" itemscope itemprop="blogPost"
-                        itemtype="http://schema.org/BlogPosting">
-                        <h3 class="article-title" itemprop="headline">
-                            <a href="/post/first-experience-with-scientific-publishing-and-preprints/"
-                                itemprop="url">First Experience With Scientific Publishing and Preprints</a>
-                        </h3>
-                        <div class="article-metadata"> <span class="article-date"> <time
-                                    datetime="2018-04-30 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
-                                    Apr 30, 2018
-                                </time>
-                            </span>
-                            <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
-                                <meta itemprop="name" content="Chase Clark">
-                            </span>
-                            <span class="middot-divider"></span>
-                            <span class="article-reading-time">
-                                4 min read
-                            </span>
-                            <span class="middot-divider"></span>
-                            <a
-                                href="/post/first-experience-with-scientific-publishing-and-preprints/#disqus_thread"></a>
-                            <span class="middot-divider"></span>
-                            <span class="article-categories">
-                                <i class="fa fa-folder"></i> <a href="/categories/mass-spectrometry">Mass
-                                    Spectrometry</a>, <a href="/categories/natural-products">Natural Products</a>
-                            </span>
-                        </div>
-                        <div class="article-style" itemprop="articleBody"> My first scientific publication was published
-                            this month in PNAS:
-                            https://doi.org/10.1073/pnas.1801247115 and has been a long time coming. I began this
-                            project as an interim between my first and second rotations as a first-year PhD student, I
-                            am now in the second-half of my third year.
-                            The manuscript took some time to prepare and apart from the usual: waiting for instrument
-                            time, repairs (LCQ used for initial derepilcation of desferrioxamines), etc. </div>
-                        <p class="read-more" itemprop="mainEntityOfPage">
-                            <a href="/post/first-experience-with-scientific-publishing-and-preprints/"
-                                class="btn btn-primary btn-outline">
-                                CONTINUE READING
-                            </a>
-                        </p>
-                    </div>
-                    <div class="article-list-item" itemscope itemprop="blogPost"
-                        itemtype="http://schema.org/BlogPosting">
-                        <h3 class="article-title" itemprop="headline">
-                            <a href="/post/tidy-tuesday-4-17-2018/" itemprop="url">Tidy Tuesday 4-17-2018</a>
-                        </h3>
-                        <div class="article-metadata"> <span class="article-date"> <time
-                                    datetime="2018-04-19 00:00:00 &#43;0000 UTC" itemprop="datePublished dateModified">
-                                    Apr 19, 2018
-                                </time>
-                            </span>
-                            <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
-                                <meta itemprop="name" content="Chase Clark">
-                            </span>
-                            <span class="middot-divider"></span>
-                            <span class="article-reading-time">
-                                14 min read
-                            </span>
-                            <span class="middot-divider"></span>
-                            <a href="/post/tidy-tuesday-4-17-2018/#disqus_thread"></a> <span
-                                class="middot-divider"></span>
-                            <span class="article-categories">
-                                <i class="fa fa-folder"></i> <a href="/categories/r">R</a>, <a
-                                    href="/categories/tidy-tuesday">Tidy Tuesday</a> </span>
-                        </div>
-                        <div class="article-style" itemprop="articleBody"> See here for more about tidy tuesday:
-                            https://github.com/rfordatascience/tidytuesday
-                            library(tidyverse)
-                            library(plotly)
-                            library(ggrepel)
-                            Read in data, remove punctuation from column names
-                            inputData &lt;- readxl::read_xlsx(&quot;data/4-19-18/global_mortality.xlsx&quot;)
-                            names(inputData) &lt;- str_trim(
-                            str_remove_all(names(inputData), &quot;[[:punct:]]&quot;)
-                            )
-                            Mean of each category grouped by country isn’t great, but for a tidy-tuesday it’ll do…
-                            a2 &lt;- inputData %&gt;% group_by(country) %&gt;% summarize_if(is.numeric,mean)
-                            a &lt;- a2 %&gt;% select(4:34) %&gt;% replace(is.na(.), 0)
-                            principleComponents &lt;- prcomp(a) %&gt;%
-                            .$x %&gt;%
-                            as_tibble %&gt;%
-                            bind_cols(name=a2$country, . </div>
-                        <p class="read-more" itemprop="mainEntityOfPage">
-                            <a href="/post/tidy-tuesday-4-17-2018/" class="btn btn-primary btn-outline">
-                                CONTINUE READING
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="projects" class="home-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-4 section-heading">
-                    <h1>Projects</h1>
-                </div>
-                <div class="col-xs-12 col-md-8">
-                    <span class="hidden default-project-filter">*</span>
-                    <div class="project-toolbar">
-                        <div class="project-filters">
-                            <div class="btn-toolbar">
-                                <div class="btn-group"> <a href="#" data-filter="*"
-                                        class="btn btn-primary btn-large active">All</a> <a href="#"
-                                        data-filter=".mass-spectrometry" class="btn btn-primary btn-large">Mass
-                                        Spectrometry</a> <a href="#" data-filter=".personal"
-                                        class="btn btn-primary btn-large">Personal</a> </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row isotope projects-container js-layout-masonry"> </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="tags" class="home-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-4 section-heading">
-                    <h1>Tags</h1>
-                </div>
-                <div class="col-xs-12 col-md-8">
-                    <div id="tag-cloud">
-                        <a href="/tags/instructional" style="font-size:2.3270154828966763rem">Instructional</a>
-                        <a href="/tags/r" style="font-size:2.3270154828966763rem">R</a>
-                        <a href="/tags/shiny" style="font-size:2.3270154828966763rem">Shiny</a>
-                        <a href="/tags/test" style="font-size:0.8rem">test</a>
-                        <a href="/tags/test-that" style="font-size:0.8rem">test-that</a>
-                        <a href="/tags/unit-testing" style="font-size:0.8rem">unit-testing</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="contact" class="home-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-md-4 section-heading">
-                    <h1>Contact</h1>
-                </div>
-                <p>Under Construction</p>
-            </div>
-        </div>
-    </section>
-    <footer class="site-footer">
-        <div class="container">
-            <p class="powered-by"> &copy; 2018 &middot; Powered by the
-                <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-                <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>. <span class="pull-right"
-                    aria-hidden="true">
-                    <a href="#" id="back_to_top">
-                        <span class="button_icon">
-                            <i class="fa fa-chevron-up fa-2x"></i>
-                        </span>
-                    </a>
-                </span>
-            </p>
-        </div>
-    </footer>
-    <div id="modal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close btn-large" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Cite</h4>
-                </div>
-                <div>
-                    <pre><code class="modal-body tex"></code></pre>
-                </div>
-                <div class="modal-footer">
-                    <a class="btn btn-primary btn-outline js-copy-cite" href="#" target="_blank">
-                        <i class="fa fa-copy"></i> Copy
-                    </a>
-                    <a class="btn btn-primary btn-outline js-download-cite" href="#" target="_blank">
-                        <i class="fa fa-download"></i> Download
-                    </a>
-                    <div id="modal-error"></div>
-                </div>
-            </div>
-        </div>
+    <div class='preloader'>
+        <div class='loaded'>&nbsp;</div>
     </div>
-    <script id="dsq-count-scr" src="//chasemc-github-io.disqus.com/count.js" async></script>
-    <script async defer src="//maps.googleapis.com/maps/api/js?key="></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-        integrity="sha512-3P8rXCuGJdNZOnUx/03c1jOTnMn3rP63nBip5gOP2qmUh5YAdVAvFZ1E+QLZZbC1rtMrQb+mah3AfYW11RUrWA=="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js"
-        integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA=="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha512-iztkobsvnjKfAtTNdHkGVjAYTrrtlC7mGp/54c40wowO7LhURYl3gVzzcEqGl/qKXQltJ2HwMrdLcNUdo+N/RQ=="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js"
-        integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ=="
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js"
-        integrity="sha256-7vjlAeb8OaTrCXZkCNun9djzuB2owUsaO72kXaFDBJs=" crossorigin="anonymous"></script>
-    <script src="/js/hugo-academic.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"
-        integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <div class="culmn">
+        <header id="main_menu" class="header navbar-fixed-top">
+            <div class="main_menu_bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="nave_menu">
+                            <nav class="navbar navbar-default">
+                                <div class="container-fluid">
+                                    <!-- Brand and toggle get grouped for better mobile display -->
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+
+                                    </div>
+
+                                    <!-- Collect the nav links, forms, and other content for toggling -->
+
+
+
+                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                                        <ul class="nav navbar-nav navbar-right">
+
+                                            <li><a href="https://www.linkedin.com/in/hirechase">LINKEDIN</a></li>
+
+                                        </ul>
+
+
+                                    </div>
+
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </header>
+        <!--End of header -->
+
+
+
+
+        <!--home Section -->
+        <section id="home" class="home">
+            <div class="overlay">
+                <div class="home_skew_border">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 ">
+                                <div class="main_home_slider text-center">
+                                    <div class="single_home_slider">
+                                        <div class="main_home wow fadeInUp" data-wow-duration="700ms">
+                                            <h3>Personal Website and Blog</h3>
+                                            <h1>Chase Clark</h1>
+                                            <div class="separator"></div>
+                                            <p>Postdoctoral Research Associate at the Universtiy
+                                                of Wisconsin Madison.</p>
+                                            <p>Computation and Informatics in Biology and Medicine (CIBM) trainee</p>
+                                            <div class="home_btn">
+                                                <a href="https://raw.githubusercontent.com/chasemc/resume/master/resume/Untitled.pdf"
+                                                    class="btn btn-default">RESUME</a>
+                                                <a href="https://raw.githubusercontent.com/chasemc/resume/master/cv/Untitled.pdf?"
+                                                    class="btn btn-default">CV</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- 
+                                    <div class="single_home_slider">
+                                        <div class="main_home wow fadeInUp" data-wow-duration="700ms">
+                                            <h3>Our Clients Are Our First Priority</h3>
+                                            <h1>WELCOME TO BINO</h1>
+                                            <div class="separator"></div>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                industry. Lorem Ipsum has been the industry's
+                                                standard dummy text ever since the 1500s, when an unknown printer took a
+                                                galley
+                                                of type and scrambled it to make a type specimen book.</p>
+                                            <div class="home_btn">
+                                                <a href="https://bootstrapthemes.co" class="btn btn-lg m_t_10">GET
+                                                    STARTED NOW</a>
+                                                <a href="https://bootstrapthemes.co" class="btn btn-default">LEARN
+                                                    MORE</a>
+                                            </div>
+
+                                        </div>
+                                    </div> -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scrooldown">
+                        <a href="#feature"><i class="fa fa-arrow-down"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End of home section -->
+
+
+        <!-- History section -->
+        <section id="history" class="history sections">
+            <div class="container">
+                <div class="row">
+                    <div class="main_history">
+                        <div class="col-sm-6">
+                            <div class="single_history_img">
+                                <img src="assets/images/stab1.png" alt="" />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="single_history_content">
+                                <div class="head_title">
+                                    <h2>Backgound</h2>
+                                </div>
+                                <p>I received my Bachelors in Biochemistry from Berry Collge where I
+                                    was a member of the honors program and a Bonner scholar. After graduating
+                                    I worked at Deerland Enzymes as an R&D scientist. I recently finished my
+                                    PhD in Pharmacognosy at the Universtiy of Illinois at Chicago where I studied
+                                    under an F31 fellowship in the lab of Brian Murphy. I am currently a
+                                    a Postdoctoral Research Associate in Jason Kwan's lab at the University of
+                                    Wisconsin-Madison where I work on bioinformatics, metagenomics, etc.
+
+                                </p>
+
+                                <a href="" class="btn btn-lg">BROWSE OUR WORK</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End of row -->
+            </div>
+            <!--End of container -->
+        </section>
+        <!--End of history -->
+
+
+        <!-- service Section -->
+        <section id="service" class="service">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="main_service">
+                        <div class="col-md-6 col-sm-12 no-padding">
+
+                            <div class="single_service single_service_text text-right">
+                                <div class="head_title">
+                                    <h2>SELECT PROJECTS</h2>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-10 col-xs-10 margin-bottom-60">
+                                        <div class="row">
+
+                                            <div class="col-sm-10 col-sm-offset-1 col-xs-9 col-xs-offset-1">
+                                                <article class="single_service_right_text">
+                                                    <h4>IDBac</h4>
+                                                    <p>Mass spectrometry based bioinformatic pipeline used to
+                                                        prioritizing bacteria for drug discovery.
+                                                    </p>
+                                                </article>
+                                            </div>
+                                            <div class="col-sm-1 col-xs-1">
+                                                <a href="https://chasemc.github.io/IDBac/" target="_blank"
+                                                    class="single_service_icon">
+                                                    <i class="fa fa-external-link"></i>
+                                                </a>
+                                                </figure><!-- End of figure -->
+                                            </div>
+                                        </div>
+                                    </div><!-- End of col-sm-12 -->
+
+                                    <div class="col-md-12 col-sm-10 col-xs-10 margin-bottom-60">
+                                        <div class="row">
+
+                                            <div class="col-sm-10 col-sm-offset-1 col-xs-9 col-xs-offset-1">
+                                                <article class="single_service_right_text">
+                                                    <h4>electricShine</h4>
+                                                    <p>R package for creating electron-based Shiny applications</p>
+                                                </article>
+                                            </div>
+                                            <div class="col-sm-1 col-xs-1">
+                                                <a href="https://chasemc.github.io/electricShine/" target="_blank"
+                                                    class="single_service_icon">
+                                                    <i class="fa fa-external-link"></i>
+                                                </a>
+                                                </figure><!-- End of figure -->
+                                            </div>
+                                        </div>
+                                    </div><!-- End of col-sm-12 -->
+
+                                    <div class="col-md-12 col-sm-10 col-xs-10 margin-bottom-60">
+                                        <div class="row">
+
+                                            <div
+                                                class="col-sm-10 col-sm-offset-1 col-xs-9 col-xs-offset-1 margin-bottom-20">
+                                                <article class="single_service_right_text">
+                                                    <h4>Map of scientific researchers</h4>
+                                                    <p>Uses leaflet, python, GitHub actions, and Google
+                                                        forms/spreadsheets
+                                                        to create an interactive map of researchers in ASP
+                                                    </p>
+                                                </article>
+                                            </div>
+                                            <div class="col-sm-1 col-xs-1">
+                                                <a href="https://chasemc.github.io/asp_map/" target="_blank"
+                                                    class="single_service_icon">
+                                                    <i class="fa fa-external-link"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div><!-- End of col-sm-12 -->
+                                    <div class="col-md-12 col-sm-10 col-xs-10 margin-bottom-60">
+                                        <div class="row">
+                                            <div
+                                                class="col-sm-10 col-sm-offset-1 col-xs-9 col-xs-offset-1 margin-bottom-20">
+                                                <article class="single_service_right_text">
+                                                    <h4>Autometa</h4>
+                                                    <p>Contributor to Autometa (an automated binning pipeline for single
+                                                        metagenomes), particularly v2.0's Nextflow implementation
+                                                    </p>
+                                                </article>
+                                            </div>
+                                            <div class="col-sm-1 col-xs-1">
+                                                <a href="https://github.com/KwanLab/Autometa" target="_blank"
+                                                    class="single_service_icon">
+                                                    <i class="fa fa-external-link"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div><!-- End of col-sm-12 -->
+                                    <div class="col-md-12 col-sm-10 col-xs-10 margin-bottom-60">
+                                        <div class="row">
+                                            <div
+                                                class="col-sm-10 col-sm-offset-1 col-xs-9 col-xs-offset-1 margin-bottom-20">
+                                                <article class="single_service_right_text">
+                                                    <h4>socialgene</h4>
+                                                    <p>In-progress/unreleased pipeline for repository-scale genome
+                                                        mining
+                                                    </p>
+                                                </article>
+                                            </div>
+                                            <div class="col-sm-1 col-xs-1">
+                                                <figure class="single_service_icon">
+                                                    <i class="fa fa-desktop"></i>
+                                                </figure><!-- End of figure -->
+                                            </div>
+                                        </div>
+                                    </div><!-- End of col-sm-12 -->
+                                </div>
+                            </div>
+                        </div><!-- End of col-sm-6 -->
+
+                        <div class="col-md-6 col-sm-12 no-padding">
+                            <figure class="single_service single_service_img">
+                                <div class="overlay-img"></div>
+                                <img src="assets/images/servicerightimg.jpg" alt="" />
+                            </figure><!-- End of figure -->
+                        </div><!-- End of col-sm-6 -->
+
+                    </div>
+                </div><!-- End of row -->
+            </div><!-- End of Container-fluid -->
+        </section><!-- End of service Section -->
+
+        <!--
+        <section id="portfolio" class="portfolio sections">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="main_portfolio">
+                        <div class="col-sm-12">
+                            <div class="head_title text-center">
+                                <h2>Professional Work</h2>
+                                <div class="subtitle">
+                                    Scientific publications and media coverage
+                                </div>
+                                <div class="separator"></div>
+                            </div>
+                        </div>
+                        <div class="work_menu text-center">
+                            <div id="filters" class="toolbar mb2 mt2">
+                                <button class="btn-md fil-cat filter active" data-filter="all">ALL</button>/
+                                <button class="btn-md fil-cat filter" data-rel="web" data-filter=".web">MASS
+                                    SPECTROMETRY</button>/
+                                <button class="btn-md fil-cat filter" data-rel="design"
+                                    data-filter=".design">IDBAC</button>/
+                                <button class="btn-md fil-cat filter" data-rel="flyers" data-filter=".flyers">DRUG
+                                    DISCOVERY</button>/
+                                <button class="btn-md fil-cat filter" data-rel="bcards"
+                                    data-filter=".bcards">PHOTOGRAPHY</button>/
+                                <button class="btn-md fil-cat filter" data-rel="photo"
+                                    data-filter=".photo">MEDIA</button>/
+                                <button class="btn-md fil-cat filter" data-rel="video"
+                                    data-filter=".video">VIDEO</button>
+                            </div>
+
+                        </div>
+
+                        <div style="clear:both;"></div>
+                        <div id="portfoliowork">
+                            <div class="single_portfolio tile scale-anm web grid-item-width2 video">
+                                <img src="assets/images/pnas_screenshot.png" alt="" />
+                                <a href="assets/images/pnas_fig.jpg" class="portfolio-img">
+                                    <div class="grid_item_overlay">
+                                        <p>Coupling MALDI-TOF Mass Spectrometry Protein and Specialized Metabolite
+                                            Analyses to Rapidly Discriminate Bacterial Function. Proceedings of the
+                                            National Academy of Sciences(May 8, 2018)</p>
+                                        <p></p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="single_portfolio tile scale-anm web grid-item-width2 video">
+                                <img src="assets/images/jnp_screenshot.png" alt="" />
+                                <a href="assets/images/jnp_idbac.png" height=100px, class="portfolio-img">
+                                    <div class="grid_item_overlay">
+                                        <div class="separator4"></div>
+                                        <p>Minimizing Taxonomic and Natural Product Redundancy in Microbial Libraries
+                                            Using MALDI-TOF MS and the Bioinformatics Pipeline IDBac. Journal of Natural
+                                            Products(August 23, 2019)</p>
+                                        <p>art / t-shirt</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    -->
+
+        <!--feature section -->
+        <section id="feature" class="feature sections">
+            <div class="container">
+                <div class="row">
+                    <div class="main_feature text-center">
+                        <h2>NOTABLE FUNDING/AWARDS
+                        </h2>
+                        <div class="col-sm-3">
+                            <div class="single_feature">
+                                <div class="single_feature_icon">
+                                    <i class="fa fa-usd"></i>
+                                </div>
+
+                                <h4>Computation and Informatics in Biology and Medicine (CIBM) Postdoctoral Trainee
+                                </h4>
+                                <div class="separator3"></div>
+                                <p>"The mission of the Computation and Informatics in Biology and Medicine (CIBM)
+                                    training program is to educate and mentor the next generation of leaders in
+                                    biomedical informatics research. The program is designed to equip and mentor pre-
+                                    and postdoctoral trainees to develop novel, state-of-the-art computational methods
+                                    for advancing biomedicine." Read more <a href="http://www.cibm.wisc.edu/"
+                                        target="_blank">here</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="single_feature">
+                                <div class="single_feature_icon">
+                                    <i class="fa fa-usd"></i>
+                                </div>
+
+                                <h4>NIH F31 Fellowship
+                                    (Graduate)
+                                </h4>
+                                <div class="separator3"></div>
+                                <p>"The purpose of this Kirschstein-NRSA program is to enable promising
+                                    predoctoral students with potential to develop into a productive,
+                                    independent research scientists, to obtain mentored research training
+                                    while conducting dissertation research. The F31 is also used to enhance
+                                    workforce diversity though a separate program." Read more <a
+                                        href="https://www.niehs.nih.gov/research/supported/training/fellowships/predoctoral/index.cfm"
+                                        target="_blank">here</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="single_feature">
+                                <div class="single_feature_icon">
+                                    <i class="fa fa-lightbulb-o"></i>
+                                </div>
+                                <h4>St. Jude National Graduate Student Symposium (NGSS)
+                                </h4>
+                                <div class="separator3"></div>
+                                <p>One of 38 students selected to attend out of 1,500 invitation-only
+                                    applicants. Event was cancelled due to COVID-19. Read more <a
+                                        href="https://www.stjude.org/education-training/predoctoral-training/graduate-students/national-graduate-student-symposium-ngss.html"
+                                        target="_blank">here</a> </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="single_feature">
+                                <div class="single_feature_icon">
+                                    <i class="fa fa-usd"></i>
+                                </div>
+
+                                <h4>Bonner Scholar
+                                    (Undergraduate)
+                                </h4>
+                                <div class="separator3"></div>
+                                <p>"The Bonner Program provides a scholarship to students in exchange
+                                    for weekly commitment to intensive and meaningful service with a
+                                    local community organization over the four years as an undergraduate
+                                    student with our campus partners. In addition to their service,
+                                    Bonner students engage in trainings on leadership development and
+                                    social justice topics in an effort to encourage students to become
+                                    aware of how the problems and issues of their communities influence
+                                    their service work and public policy. Read more <a
+                                        href="http://www.bonner.org/apply" target="_blank">here</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End of container -->
+        </section>
+        <!--End of feature Section -->
+        <hr />
+
+
+
+        <!-- Study Section 
+        <section id="study" class="study text-center wow fadeIn" data-wow-duration="2s" data-wow-dealy="1.5s">
+            <div class="container">
+                <div class="row">
+                    <div class="main_study_area sections">
+                        <div class="head_title text-center">
+                            <h2>CASE STUDY</h2>
+                            <div class="subtitle">
+                                A brief story about how this process works, keep an eye till the end.
+                            </div>
+                            <div class="separator"></div>
+                        </div>
+                        <div class="single_study_content">
+                            <div class="col-sm-6">
+                                <div class="single_study_slid_area">
+
+                                    <div class="single_study_text">
+                                        <div class="study_slider">
+                                            <div class="item">
+                                                <div class="s_study_icon">
+                                                    <i class="fa fa-lightbulb-o"></i>
+                                                </div>
+                                                <h4>aCCUMULATE CREATIVE IDEAS</h4>
+                                                <div class="separator3"></div>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting let.
+                                                    Lorem Ipsum has been the industry.
+                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                    let.
+                                                    Lorem Ipsum has been the industry Printing and typelorem Ipsum has
+                                                    been the setting let.</p>
+
+                                                <a href="" class="btn btn-lg">read more</a>
+                                            </div>
+                                            <div class="item">
+                                                <div class="s_study_icon">
+                                                    <i class="fa fa-lightbulb-o"></i>
+                                                </div>
+                                                <h4>aCCUMULATE CREATIVE IDEAS</h4>
+                                                <div class="separator3"></div>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting let.
+                                                    Lorem Ipsum has been the industry.
+                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                    let.
+                                                    Lorem Ipsum has been the industry Printing and typelorem Ipsum has
+                                                    been the setting let.</p>
+
+                                                <a href="" class="btn btn-lg">read more</a>
+                                            </div>
+                                            <div class="item">
+                                                <div class="s_study_icon">
+                                                    <i class="fa fa-lightbulb-o"></i>
+                                                </div>
+                                                <h4>aCCUMULATE CREATIVE IDEAS</h4>
+                                                <div class="separator3"></div>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting let.
+                                                    Lorem Ipsum has been the industry.
+                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                    let.
+                                                    Lorem Ipsum has been the industry Printing and typelorem Ipsum has
+                                                    been the setting let.</p>
+
+                                                <a href="" class="btn btn-lg">read more</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="single_study_right_img">
+                                <div class="col-sm-6">
+                                    <div class="single_study_img">
+                                        <img src="assets/images/study.jpg" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>End off Study Section
+ 
+
+       
+        <section id="counter" class="counter">
+            <div class="video_overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="main_counter_area text-center">
+
+                                <div class="row">
+                                    <div class="single_counter border_right">
+                                        <div class="col-sm-3 col-xs-12">
+                                            <div class="single_counter_item">
+                                                <i class="icon icon-thumbs-up"></i>
+                                                <h2 class="statistic-counter">1000000</h2>
+                                                <h4 class="">User Favourites</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="single_counter">
+                                        <div class="col-sm-3 col-xs-12">
+                                            <div class="single_counter_item">
+                                                <i class="icon icon-business-3"></i>
+                                                <h2 class="statistic-counter">281</h2>
+                                                <h4 class="">Posts Last 24 Hours</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="single_counter">
+                                        <div class="col-sm-3 col-xs-12">
+                                            <div class="single_counter_item">
+                                                <i class="icon icon-people-32"></i>
+                                                <h2 class="statistic-counter">618</h2>
+                                                <h4 class="">Total Posts</h4>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="single_counter">
+                                        <div class="col-sm-3 col-xs-12">
+                                            <div class="single_counter_item">
+                                                <i class="icon icon-cup"></i>
+                                                <h2 class="statistic-counter">178</h2>
+                                                <h4 class="">Amazing Features</h4>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="team" class="team">
+            <div class="main_team_area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="head_title textwhite text-center margin-top-80">
+                                <h2>OUR TEAM</h2>
+                                <div class="subtitle">
+                                    Meet the craziest team. Share your thoughts with them.
+                                </div>
+                                <div class="separator"></div>
+                            </div>
+
+                            <div class="main_team">
+                                <ul>
+                                    <li>
+                                        <div class="single_team_img">
+                                            <img src="assets/images/team1.jpg" alt="" />
+                                        </div>
+                                        <div class="single_team_text">
+                                            <h4>Semf Ucuk</h4>
+                                            <p>Founder</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="single_team_img">
+                                            <img src="assets/images/team2.jpg" alt="" />
+                                        </div>
+                                        <div class="single_team_text">
+                                            <h4>Kazi Erfan</h4>
+                                            <p>Engineering</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="single_team_img">
+                                            <img src="assets/images/team3.jpg" alt="" />
+                                        </div>
+                                        <div class="single_team_text">
+                                            <h4>Jeng Koli</h4>
+                                            <p>Designer</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="single_team_img">
+                                            <img src="assets/images/team4.jpg" alt="" />
+                                        </div>
+                                        <div class="single_team_text">
+                                            <h4>Pet Romak</h4>
+                                            <p>Marketing</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="single_team_img">
+                                            <img src="assets/images/test2.jpg" alt="" />
+                                        </div>
+                                        <div class="single_team_text">
+                                            <h4>Chet Pok</h4>
+                                            <p>Web Developer</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    
+        <section id="clogo" class="clogo">
+            <div class="container">
+                <div class="row">
+                    <div class="main_clogo sections text-center">
+                        <div class="head_title text-center">
+                            <h2>Great Integrations with Others</h2>
+                            <div class="subtitle">
+                                Suspendisse sed eros mollis, tincidunt felis eget, interdum erat.
+                                Nullam sit amet odio eu est aliquet euismod a a urna. Proin eu urna suscipit, dictum
+                                quam nec.
+                            </div>
+                            <div class="separator"></div>
+                        </div>
+
+                        <div class="col-sm-3 col-xs-6">
+                            <a href=""><img src="assets/images/clogo1.png" alt="" /></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <a href=""><img src="assets/images/clogo2.png" alt="" /></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <a href=""><img src="assets/images/clogo3.png" alt="" /></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <a href=""><img src="assets/images/clogo4.png" alt="" /></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <a href=""><img src="assets/images/clogo5.png" alt="" /></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <a href=""><img src="assets/images/clogo6.png" alt="" /></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <a href=""><img src="assets/images/clogo9.png" alt="" /></a>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <a href=""><img src="assets/images/clogo8.png" alt="" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+        </section>
+
+
+        
+        <section id="blog" class="blog">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="main_blog sections">
+                        <div class="head_title text-center">
+                            <h2>OUR BLOG</h2>
+                            <div class="subtitle">
+                                Suspendisse sed eros mollis, tincidunt felis eget, interdum eratullam sit amet odio.
+                            </div>
+                            <div class="separator"></div>
+                        </div>
+                        <div class="main_blog_content">
+                            <div class="col-sm-6">
+                                <div class="single_blog_area textwhite">
+                                    <div class="row">
+                                        <div class="col-sm-6 no-padding">
+                                            <div class="single_blog_img">
+                                                <img src="assets/images/blog1.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 no-padding">
+                                            <div class="single_blog_text s_b_left">
+                                                <p>art/t-shirt</p>
+                                                <h3>T-SHIRT DESIGN</h3>
+                                                <div class="separator2"></div>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                    industry. Lorem Ipsum has been the indu Stry's
+                                                    standard dummy text ever since the 1500s, an unknown printer took a
+                                                    galley of type
+                                                    a scrambled it to make a type specimen book.</p>
+
+                                                <a href="" class="read_more">Read More >></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="single_blog_area textwhite">
+                                    <div class="row">
+                                        <div class="col-sm-6 no-padding">
+                                            <div class="single_blog_img">
+                                                <img src="assets/images/blog2.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 no-padding">
+                                            <div class="single_blog_text s_b_left">
+                                                <p>art/t-shirt</p>
+                                                <h3>T-SHIRT DESIGN</h3>
+                                                <div class="separator2"></div>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                    industry. Lorem Ipsum has been the indu Stry's
+                                                    standard dummy text ever since the 1500s, an unknown printer took a
+                                                    galley of type
+                                                    a scrambled it to make a type specimen book.</p>
+
+                                                <a href="" class="read_more">Read More >></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="single_blog_area textwhite">
+                                    <div class="row">
+
+                                        <div class="col-sm-6 col-sm-push-6 no-padding">
+                                            <div class="single_blog_img">
+                                                <img src="assets/images/blog3.jpg" alt="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 col-sm-pull-6 no-padding">
+                                            <div class="single_blog_text s_b_right">
+                                                <p>art/t-shirt</p>
+                                                <h3>T-SHIRT DESIGN</h3>
+                                                <div class="separator2"></div>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                    industry. Lorem Ipsum has been the indu Stry's
+                                                    standard dummy text ever since the 1500s, an unknown printer took a
+                                                    galley of type
+                                                    a scrambled it to make a type specimen book.</p>
+
+                                                <a href="" class="read_more">Read More >></a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="single_blog_area textwhite">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-push-6 no-padding">
+                                            <div class="single_blog_img">
+                                                <img src="assets/images/blog4.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-sm-pull-6 no-padding">
+                                            <div class="single_blog_text s_b_right">
+                                                <p>art/t-shirt</p>
+                                                <h3>T-SHIRT DESIGN</h3>
+                                                <div class="separator2"></div>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                    industry. Lorem Ipsum has been the indu Stry's
+                                                    standard dummy text ever since the 1500s, an unknown printer took a
+                                                    galley of type
+                                                    a scrambled it to make a type specimen book.</p>
+
+                                                <a href="" class="read_more">Read More >></a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="contact_contant sections">
+                            <div class="head_title text-center">
+                                <h2>kEEP IN TOUCH</h2>
+                                <div class="subtitle">
+                                    Nullam sit amet odio eu est aliquet euismod a a urna. Proin eu urna suscipit, dictum
+                                    quam nec.
+                                </div>
+                                <div class="separator"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="main_contact_info">
+                                        <div class="row">
+                                            <div class="contact_info_content padding-top-90 padding-bottom-60 p_l_r">
+                                                <div class="col-sm-12">
+                                                    <div class="single_contact_info">
+                                                        <div class="single_info_text">
+                                                            <h3>Location</h3>
+                                                            <h4>Work remotely from Chicago, Illinois</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="single_contact_info">
+                                                        <div class="single_info_text">
+                                                            <h3>EMAIL US</h3>
+                                                            <h4>contactus@email.com</h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="single_contant_left padding-top-90 padding-bottom-90">
+                                        <form action="#" id="formid">
+                                            <div
+                                                class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="name"
+                                                                placeholder="First Name" required="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <input type="email" class="form-control" name="email"
+                                                                placeholder="Email" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="subject"
+                                                                placeholder="Subject" required="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <textarea class="form-control" name="message" rows="7"
+                                                        placeholder="Message"></textarea>
+                                                </div>
+
+                                                <div class="">
+                                                    <input type="submit" value="SEND MESSAGE" class="btn btn-lg">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="trial" class="trial text-center wow fadeIn" data-wow-duration="2s" data-wow-dealy="1.5s">
+            <div class="main_trial_area">
+                <div class="video_overlay sections">
+                    <div class="container">
+                        <div class="row">
+                            <div class="main_trial">
+                                <div class="col-sm-12">
+                                    <h2>Let's Get Started Now. <span>It's FREE!</span></h2>
+                                    <h4>30 day free trial. Free plan allows up to 2 projects. Pay if you need more.
+                                        Cancel anytime. No catches.</h4>
+                                    <a href="" class="btn btn-lg">start free trial</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+-->
+        <section class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="main_footer">
+                            <div class="row">
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="flowus">
+                                        <a href="https://twitter.com/ChasingMicrobes"><i class="fa fa-twitter"></i></a>
+                                        <a href="https://www.linkedin.com/in/hirechase/"><i
+                                                class="fa fa-linkedin"></i></a>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-xs-12">
+                                    <div class="copyright_text">
+                                        <p class=" wow fadeInRight" data-wow-duration="1s">Made with <i
+                                                class="fa fa-heart"></i> by <a
+                                                href="https://bootstrapthemes.co">Bootstrap Themes</a>2016. All Rights
+                                            Reserved</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <!-- START SCROLL TO TOP  -->
+
+    <div class="scrollup">
+        <a href="#"><i class="fa fa-chevron-up"></i></a>
+    </div>
+
+    <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+
+    <script src="assets/js/jquery.magnific-popup.js"></script>
+    <script src="assets/js/jquery.mixitup.min.js"></script>
+    <script src="assets/js/jquery.easing.1.3.js"></script>
+    <script src="assets/js/jquery.masonry.min.js"></script>
+
+    <!--slick slide js -->
+    <script src="assets/css/slick/slick.js"></script>
+    <script src="assets/css/slick/slick.min.js"></script>
+
+
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>
