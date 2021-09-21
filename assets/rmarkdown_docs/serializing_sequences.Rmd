@@ -1,0 +1,142 @@
+---
+title: "Saving Intermediate FASTA Files"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = TRUE, include = TRUE)
+knitr::opts_knit$set(root.dir = tempdir())
+library(reticulate)
+use_python("/home/chase/miniconda3/envs/socialgene/bin/python", required = TRUE)
+```
+
+
+I was looking at storing the intermediate results of hashing the protein sequences of a protein [FASTA file](https://www.ncbi.nlm.nih.gov/WebSub/html/help/protein.html). While I don't need to do this anymore I thought I would share the results. While the goal wasn't to get the smallest files (rather speed of later access), I was curious about what the file sizes would look like.
+
+Three methods for saving were:
+
+Feather (multiple options tried)
+pickle
+SQLite
+
+Get some example data:
+```{bash}
+curl -s https://ftp.ncbi.nlm.nih.gov/refseq/release/bacteria/bacteria.nonredundant_protein.1.protein.faa.gz  > example_fasta.faa.gz
+```
+
+There's a little over 250,000 proteins in this file:
+```{bash}
+zgrep ">" example_fasta.faa.gz | wc -l
+```
+
+Decompress but keep the original gz to compare size later
+```{bash}
+gunzip --decompress --keep example_fasta.faa.gz
+```
+
+
+
+Not transparant code here because I'm using some yet-unreleased Python code I have, but you could replicate it by just using [Biopython](https://biopython.org/) to parse.
+```{python}
+from socialgene.classes.sequences import Sequences
+import pandas as pd 
+import pyarrow.feather as feather
+import pickle
+import sqlite3
+
+seq_object = Sequences()
+seq_object.parse_file('example_fasta.faa', "fasta")
+seq_object.hash()
+
+# Don't want description so just create a dict without it:
+##############################
+# Arrow's Feather
+##############################
+feather.write_feather(
+    pd.DataFrame.from_dict(
+        seq_object.records,
+        orient='index',
+        columns=['hash_id', 'id', 'seq', 'description']),
+    "feather.lz4",
+    compression='lz4')
+
+feather.write_feather(
+    pd.DataFrame.from_dict(
+        seq_object.records,
+        orient='index',
+        columns=['hash_id', 'id', 'seq', 'description']),
+    "feather.zstd",
+    compression='zstd')
+
+feather.write_feather(
+    pd.DataFrame.from_dict(
+        seq_object.records,
+        orient='index',
+        columns=['hash_id', 'id', 'seq', 'description']),
+    "feather.uncompressed",
+    compression='uncompressed')
+##############################
+# Python's pickle
+##############################
+with open('python.pickle', 'wb') as handle:
+    pickle.dump(seq_object.records, handle, protocol=pickle.HIGHEST_PROTOCOL)
+##############################
+# Python's interface to SQLite
+##############################
+con = sqlite3.connect('python.sqlite')
+cur = con.cursor()
+sql_query = """
+    CREATE TABLE example_table (
+	  hash_id TEXT PRIMARY KEY,
+    id TEXT NOT NULL,
+	  seq TEXT NOT NULL,
+	  description TEXT NOT NULL
+);
+"""
+cur.execute(sql_query)
+con.commit()
+sql_query = """
+INSERT or IGNORE INTO example_table (hash_id, id, seq, description) 
+VALUES (?, ?, ?, ?);
+"""
+recordsToInsert = [[i['hash_id'],i['id'],i['seq'],i['description']]  for k,i in seq_object.records.items()]
+cur.executemany(sql_query,
+ recordsToInsert
+ )
+con.commit()
+print(f"{cur.rowcount} Records inserted into table")
+con.commit()
+cur.close()
+   
+
+```
+
+
+
+
+
+
+```{r}
+library(ggplot2)
+file_paths <- list.files(full.names = T)
+file_sizes <- sapply(file_paths, file.size)
+
+to_plot <- data.frame(list("file" = names(file_sizes), "size" = file_sizes), row.names = NULL)
+ggplot(to_plot) + geom_boxplot(aes(x=file, y= size / 1000000)) + labs(y="Size (MB)", x="")  + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
