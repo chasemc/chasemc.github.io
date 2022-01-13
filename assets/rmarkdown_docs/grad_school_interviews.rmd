@@ -1,0 +1,76 @@
+---
+title: "Interviewing for Grad School"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+When applying to grad school, basically the only advice I had was to read group's papers and see what their doing.
+
+That's advice I see a lot, and I've been asked a few times lately about how to interview prep for grad school so I thought I'd a write a couple notes down. While I have interviewed candidates for positions in industry, I have not interviewed candidates for grad school, so consider tis your warning and don't blame me if this is bad advice :)
+
+For some advice from people who have actual experience, there was a recent thread on Twitter, here: https://twitter.com/GarciaLabMS/status/1475891972648833028
+
+## Prelude
+
+A) Ideally there would be 1 lab I'd really like to be in. I'd have been in contact with the PI and discussed with the PI if they are taking new students and maybe even discussed some if their research with them. Ideally there'd be 2-3 labs at the interview I could see myself joining if my top pick didn't work out.
+
+I'd do the following for all three labs, but maybe spend more time on my top choice. If you're given a list of labs you'll interview with, then do it for those, even if you're not interested int their lab- the PIs will talk to each other and you don't want one interview to tank your others.
+
+## Step 1: What does the lab do?
+
+I'd start by looking for the lab's website, specifically for the page where they discuss ongoing research:
+
+e.g.
+
+https://www.murphylabuic.com/projects
+https://kwanlab.github.io/research/
+
+I'd look at each of the projects and think about what interests me and how I could see myself fitting into the research project.
+Note that this page may be outdated, which might be apparent when looking at the lab's recent publications
+
+## Step 2: Look at recent publications
+
+Next I would look at the lab's website's publications page.
+
+If the page isn't very updated or doesn't exist I would try and find the PI's google scholar page e.g. https://scholar.google.com/citations?user=NcllzbUAAAAJ 
+
+The google scholar page may have potentially many more publications, if the lab's website is up to date start with it, it may mean the PI has pruned for publications they feel best represents what the lab is doing.
+
+## Step 3: How to read a paper
+
+I (and most researchers) don't read every scientific papers all the way through. Generally my strategy breaks down into one of the below (ordered  by the frequency I do it).
+
+1) Read the title, read the abstract. A well-written abstract summarizes everything. Sometimes it requires reading the abstract more than once.
+2) Read the title, abstract, discussion/conclusion. If I'm familiar with the research area, the introduction usually doesn't offer much new info.
+3) Read the title, abstract, the last paragraph of the introduction (also maybe the first), and the discussion/conclusion.
+4) Read everything except the methods section.
+5) Read everything, for the methods section just skim through and look for the techniques and instruments used.
+6) Read everything- look at supplemental when referenced
+7) Read everything- look at supplemental when referenced and skim the rest of the supplemental.
+
+
+For a grad student interview I would strategize doing #1 for a few papers across each of the lab's research areas/projects.
+Then pick a couple papers to do #5. E.g. It doesn't matter how much Tween was used, but it matters you know that a Western Blot was performed.
+
+Finally, think about what you want to learn in the lab (e.g. for me going into grad school I knew a main thing I wanted to learn Mass Spectrometry). Go back to the papers and look through their methods sections and pay attention to what techniques are being used. Is Mass Spec used? Is Mass Spec only in 1-2 papers out of 20, and only when certain collaborators are present-if so then the lab may not be a great place to learn Mass Spec.
+
+Write down a list of some of the techniques you want to learn so you can bring it up in the interview.  Important- before the interview, talk to someone about the list. A technique you're unfamiliar with may seem hard but actually isn't, and you don't want to go into the interview saying "I want to join your lab so I can learn X" when X can be taught in a single afternoon. Overly simple examples: "I want to learn CRISPR design" would be good to mention while "I want to learn electrophoresis" would not be something to focus on.
+
+## How to talk science
+
+The biggest problem students have, especially those without access to strong mentorship, is something that's also common outside science. It's called the Dunning-Kruger effect. I first became aware of this while teaching whitewater kayaking, where novice kayakers would often overestimate their knowledge and abilities- not a great thing to overestimate while participating in a high-risk sport.
+The Dunning-Kruger effect is basically that people with limited knowledge of a task overestimate their knowledge of it "based on the idea that poor performers have not yet acquired the ability to distinguish between good and bad performances"
+(https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect).
+
+Stick with what you know and try to initiate a discussion about what you don't. Obviously there's a balance between showing some competence vs deferring and just asking questions, but if I were interviewing I would be interested in seeing that an interviewee is self-aware enough to know when they aren't knowledgeable about a topic.
+
+A lot of advice (even mine above) is to read papers by the group. But you can't just regurgitate what they discovered... they know. A good strategy is to:
+
+1) Ask if they plan to continue more studies in that area.
+1.5) Has this work generated any new ares of inquiry in the lab.
+
+
+Out of time to work on this.... To be continued/lengthened?
