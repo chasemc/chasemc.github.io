@@ -10,13 +10,13 @@ Author URI: http://bootstrapthemes.co
 html,
 body {
     background-color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     color: #797979;
     width: 100%;
     padding: 0;
     margin-left: 0;
     margin-right: 0;
-    font-weight: 300;
+    font-weight: 400;
     width:100%;
     font-family: 'ralewayregular';
 }
