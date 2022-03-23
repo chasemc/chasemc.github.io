@@ -1,0 +1,39 @@
+---
+title: "Proteins in Genbank"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(data.table)
+```
+
+
+Was trying to test two parsers, one for genbank and one for fasta and noticed I get got different numbers of proteins when looking at two files in an NCBI assembly directory. genbank came up with 6207 proteins and the fasta parse came up with 6185
+
+I thought the issue could possibly be from using the wrong fasta file- `*protein.faa.gz` vs `*translated_cds.faa.gz` and so compared the number of proteins in those two files:
+
+Count proteins in `*protein.faa.gz`
+
+```{bash}
+curl -s https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/145/235/GCF_000145235.1_ASM14523v1/GCF_000145235.1_ASM14523v1_protein.faa.gz |zgrep ">" | wc -l
+```
+
+Count proteins in `*translated_cds.faa.gz`
+
+```{bash}
+curl -s https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/145/235/GCF_000145235.1_ASM14523v1/GCF_000145235.1_ASM14523v1_translated_cds.faa.gz | zgrep ">" | wc -l
+
+```
+
+How many should there be?
+
+Download and display the `*feature_count.txt.gz` file.
+
+```{r}
+fread("https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/145/235/GCF_000145235.1_ASM14523v1/GCF_000145235.1_ASM14523v1_feature_count.txt.gz")
+```
+
+
+
+So, the Genbank file parser got it correct and the reason is that `*protein.faa.gz` is a non-redundant record of the proteins in the genome. 

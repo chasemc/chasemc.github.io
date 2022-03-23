@@ -1,0 +1,162 @@
+---
+title: "Metagenomics, from scratch"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = FALSE, include = TRUE)
+```
+
+
+```{r results="asis", echo=FALSE, eval=TRUE}
+
+css <- paste0(".",
+            tolower(names(knitr::knit_engines$get())),
+            "::before {
+            content: '",
+            tolower(names(knitr::knit_engines$get())),
+            "';
+            display: block;
+            text-align: right;
+            color: grey
+            }",
+            collapse="\n")
+
+cat(paste0("<style>", css, "</style>"))
+
+```
+
+
+# Intro
+
+I'm sure there are other resources that are similar and  better executed, this is a just a learn-along-with-me document.
+
+Note: don't try to run this on your laptop. I'm doing this on a server with multiple TB of disk space and 1 TB of RAM.
+
+# Data? What Data?
+
+I'm not actually starting with sequencing anything, so where do I get data?
+
+There's a couple of different places to look. 
+
+
+MGnify is a pretty slick resource from EMBL-EBI that organizes microbiome data (mostly?,  all?) of which is genetic (though some of the studies undoubtedly have other associated data). MGnify studies also have the links out to where the data is stored. 
+
+For this I'm going to use genetic reads that are stored in the Sequence Read Archive (SRA).
+Specifically, a couple of samples associated with [biosample SAMN07821431](https://www.ncbi.nlm.nih.gov/biosample/SAMN07821431)
+
+
+A nice overview of illumina reads can be found here: https://seekdeep.brown.edu/illumina_paired_info.html
+
+
+## Downloading the Data
+
+A lot of times metagenomic sequencing data is large, like quite large. That requires specially handling for downloads and NCBI has some tools to help handle data from SRA, aptly named [SRA tools](https://github.com/ncbi/sra-tools).
+
+
+We're going to use Conda to install it so, if you haven't already, install miniconda using the instructions [here](https://docs.conda.io/en/latest/miniconda.html)
+
+In terminal/bash:
+```{bash}
+conda create -n metagenomics-tutorial -c bioconda sra-tools
+```
+
+Activate the enviornment:
+```{bash}
+conda activate metagenomics-tutorial
+```
+
+A few good resources about using SRA tools:
+
+- https://github.com/ncbi/sra-tools/wiki/HowTo:-fasterq-dump
+- https://www.reneshbedre.com/blog/ncbi_sra_toolkit.html
+- https://edwards.sdsu.edu/research/fastq-dump/
+ 
+While you can provide a list of accessions, for simplicity we'll run `fastq-dump` once each for each of the two accessions,  following the the suggestion of [Rob Edwards's lab](https://edwards.sdsu.edu/research/fastq-dump/).
+
+Note- I found the download to be quite slow even on the University connection and removed --gzip (for the SRAs mentioned this wil require hundreds of GB disk space), followed by local compression via `pigz`
+
+I had plenty of time to wait this time, but there are faster alternatives I'll try in the future:
+ 
+ - Using the common method of using SRA tool's `prefetch` command to download the SRA directly, followed by `fastq-dump`
+ - Maybe `parallel-fastq-dump` from: https://github.com/rvalieris/parallel-fastq-dump
+
+
+Download https://www.ncbi.nlm.nih.gov/sra?LinkName=biosample_sra&from_uid=7821431:
+```{bash}
+fastq-dump -v --outdir fastq --skip-technical --readids --read-filter pass --dumpbase --split-3 --clip SRR6216942
+```
+ 
+Download https://www.ncbi.nlm.nih.gov/sra?LinkName=biosample_sra&from_uid=7821425:
+```{bash}
+fastq-dump -v --outdir fastq --skip-technical --readids --read-filter pass --dumpbase --split-3 --clip SRR6216943
+```
+
+Compress:
+```{bash, ="lang" }
+pigz fastq/*.fastq
+```
+
+This will create a directory `fastq` below the current location, containing four files:
+
+- ~/fastq
+  - /SRR6216942_pass_1.fastq.gz
+  - /SRR6216942_pass_2.fastq.gz
+  - /SRR6216943_pass_1.fastq.gz
+  - /SRR6216943_pass_2.fastq.gz
+
+
+## Read Quality
+
+First, we need to install FastQC
+```{bash}
+conda install -c bioconda fastqc 
+```
+
+
+Genome of Mouse C57BL/6J:
+https://www.ncbi.nlm.nih.gov/assembly/GCA_003774525.2
+https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/003/774/525/GCA_003774525.2_ASM377452v2/GCA_003774525.2_ASM377452v2_genomic.fna.gz
+
+
+
+```{bash}
+nextflow run nf-core/mag -profile test
+--host_fasta 'https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/003/774/525/GCA_003774525.2_ASM377452v2/GCA_003774525.2_ASM377452v2_genomic.fna.gz'
+```
+
+
+
+
+
+```
+
+params {
+      config_profile_description = 'Example config used for our large in-lab server'
+      config_profile_contact = ''
+      config_profile_url = ''
+    }
+
+executor.$slurm.queueSize = 20
+process {
+    executor = "slurm"
+    queue = "queue"
+}
+docker {
+        docker.enabled         = true
+        docker.userEmulation   = true
+        singularity.enabled    = false
+        podman.enabled         = false
+        shifter.enabled        = false
+        charliecloud.enabled   = false
+    }
+params {
+      max_memory = 700.GB
+      max_cpus = 80
+      max_time = 168.h
+    }
+    
+```
+
+
+
