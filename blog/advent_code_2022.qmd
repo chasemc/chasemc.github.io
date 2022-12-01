@@ -1,6 +1,6 @@
 ---
 title: "Advent of Code 2022"
-format: html
+format: gfm
 editor: visual
 ---
 
