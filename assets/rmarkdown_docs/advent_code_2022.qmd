@@ -1,0 +1,90 @@
+---
+title: "Advent of Code 2022"
+format: html
+editor: visual
+---
+
+R and Python answers to https://adventofcode.com/2022
+
+Code isn't meant to be pretty or performant. Just a quick, no-dependency, first-thought, first-pass effort at getting a solution.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval = TRUE, include = TRUE, python.reticulate=FALSE)
+```
+
+```{r results="asis", echo=FALSE}
+css <- paste0(".",
+            tolower(names(knitr::knit_engines$get())),
+            "::before {
+            content: '",
+            toupper(names(knitr::knit_engines$get())),
+            "';
+            display: block;
+            text-align: right;
+            }",
+            collapse="\n")
+cat(paste0("<style>", css, "</style>"))
+```
+
+## Day 1
+
+### Question 1
+
+https://adventofcode.com/2022/day/1
+```{r}
+prompt_data <- "/home/chase/Downloads/input.txt"
+input <- readChar(prompt_data, file.info(prompt_data)$size)
+input <- strsplit(input, "\n\n")[[1]]
+cals <- vapply(input, function(x) sum(as.integer(strsplit(x, "\n")[[1]])), 1,USE.NAMES = F)
+cals[which.max(cals)]
+
+```
+
+```{python}
+prompt_data = "/home/chase/Downloads/input.txt"
+
+current_calories = 0
+current_max = 0
+
+with open( "/home/chase/Downloads/input.txt") as fp:
+    for line in fp:
+        if line == "\n":
+            if current_calories > current_max:
+                current_max = current_calories
+            current_calories = 0
+        else:
+            current_calories += int(line)
+print(current_max)            
+```
+
+
+### Question 2
+
+
+https://adventofcode.com/2022/day/1#part2
+```{r}
+prompt_data <- "/home/chase/Downloads/input.txt"
+input <- readChar(prompt_data, file.info(prompt_data)$size)
+input <- strsplit(input, "\n\n")[[1]]
+cals <- vapply(input, function(x) sum(as.integer(strsplit(x, "\n")[[1]])), 1,USE.NAMES = F)
+top_three <- sort(cals, decreasing = T)[1:3]
+sum(top_three)
+```
+
+```{python}
+prompt_data = "/home/chase/Downloads/input.txt"
+
+current_calories = 0
+cal_list = []
+with open( "/home/chase/Downloads/input.txt") as fp:
+    for line in fp:
+        if line == "\n":
+            cal_list.append(current_calories)
+            current_calories = 0
+        else:
+            current_calories += int(line)
+top_three = sorted(cal_list, reverse=True)[0:3]
+print(sum(top_three))
+```
+
+
