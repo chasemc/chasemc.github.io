@@ -87,4 +87,144 @@ top_three = sorted(cal_list, reverse=True)[0:3]
 print(sum(top_three))
 ```
 
+-----------
 
+```{r}
+library(data.table)
+prompt_data = "/home/chase/Downloads/input.txt"
+
+x <- fread(cmd = paste0("sed 's/-/,/g' ", prompt_data), header = F,)
+nrow(x[ (V1 >= V3 & V2 <= V4) | ( V3 >= V1 & V4 <= V2) ])
+#485
+sum(between(x$V1, x$V3, x$V4) + between(x$V2,x$V3, x$V4)  + between((x$V3 + x$V4) / 2, x$V1,x$V2 ) > 0)
+#857
+```
+
+```{python}
+
+prompt_data = "/home/chase/Downloads/input.txt"
+
+counter = 0
+with open("/home/chase/Downloads/input.txt") as fp:
+    for line in fp:
+        a0 = [list(map(int, i.split("-")) ) for i in line.strip().split(",")]
+        # flatten for readability
+        a =  [y for x in a0 for y in x]
+        b1 = (a[0] >= a[2] and a[1] <= a[3])
+        b2 = (a[2] >= a[0] and a[3] <= a[1])
+        if b1 or b2:
+            counter += 1
+
+#
+counter = 0
+def within(x1,x2,x3):
+    return (x1 >= x2) and (x1 <= x3)
+
+with open("/home/chase/Downloads/input.txt") as fp:
+    for line in fp:
+        a0 = [list(map(int, i.split("-")) ) for i in line.strip().split(",")]
+        # flatten for readability
+        a =  [y for x in a0 for y in x]
+        b1 = within(a[0], a[2], a[3])
+        b2 = within(a[1], a[2], a[3])
+        b3 = within(a[2], a[0], a[1])
+        b4 = within(a[3], a[0], a[1])
+        if any([b1, b2, b3, b4]):
+            counter += 1
+
+
+```
+
+
+###############
+```{r}
+input_path <- "/Users/chase/Downloads/input.txt"
+input <- readLines(input_path,warn = F)
+
+x <- unlist(lapply(input, 
+       function(x){
+         a <- strsplit(substr(x, 1, nchar(x)/2), "")[[1]]
+         b <- strsplit(substr(x, nchar(x)/2+1, nchar(x)), "")[[1]]
+         intersect(a, b)
+}))
+
+sum(match(x, letters, nomatch=0)) + sum(match(x, LETTERS, nomatch=0)[match(x, LETTERS, nomatch=0) > 0] +26)
+
+input_path <- "/Users/chase/Downloads/input.txt"
+input <- readLines(input_path,warn = F)
+x <- sapply(input, function(x) unique(strsplit(x,"")[[1]]), USE.NAMES = F)
+x <- split(x, as.factor(rep(1:as.integer(length(x)/3), each = 3)))
+x <- sapply(x, function(x){
+  y <- table(unlist(x))
+  names(which(y == 3))
+})
+
+sum(match(x, letters, nomatch=0)) + sum(match(x, LETTERS, nomatch=0)[match(x, LETTERS, nomatch=0) > 0] +26)
+```
+
+```{python}
+import string
+prompt_data = "/home/chase/Downloads/input.txt"
+
+bro = []
+with open("/home/chase/Downloads/input.txt") as fp:
+    for line in fp:
+        pass
+        a= [i.split("-") for i in line.strip().split(",")]
+
+
+
+print([i for i, e in enumerate(haystack) if e in st])
+        [*string.ascii_lowercase]
+```
+-------------
+# 5
+
+
+
+```{python}
+prompt_data = "/home/chase/Downloads/input.txt"
+
+z = {k:[] for k in range(1,10)}
+with open("/home/chase/Downloads/input.txt") as fp:
+    for line in fp:  
+        if line.startswith(" 1"):
+            break
+        parsed = [line[i] for i in range(1, len(line), 4)]
+        for k in z.keys():
+            if parsed[k-1].strip():
+                z[k].append(parsed[k-1])
+
+def get_num(x):
+    return [int(s) for s in x.split() if s.isdigit()]
+
+with open("/home/chase/Downloads/input.txt") as fp:
+    for line in fp:  
+        if line.startswith("move"):
+            x = get_num(line)
+            for _ in range(x[0]-1):
+                if z[x[1]]:
+                    z[x[2]].append(z[x[1]].pop(0))
+
+list({v.pop(0) for v in z.values() if v})
+
+#RNZLFZSJH
+
+
+            
+```
+
+
+# Day 6
+
+```python
+from itertools import product, groupby,islice
+input = ""
+# part 1
+message_len = 4
+[len(set(input[i:i+message_len])) for i in range(len(input)-2)].index(message_len) + message_len
+# part 2
+message_len = 14
+[len(set(input[i:i+message_len])) for i in range(len(input)-2)].index(message_len) + message_len
+
+```
