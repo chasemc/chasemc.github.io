@@ -1,1067 +1,402 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="">
-<!--<![endif]-->
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Chase Clark's Website</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-    <!--Google Fonts link-->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700,700i" rel="stylesheet">
-
-
-    <link rel="stylesheet" href="assets/css/iconfont.css">
-    <link rel="stylesheet" href="assets/css/slick/slick.css">
-    <link rel="stylesheet" href="assets/css/slick/slick-theme.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/jquery.fancybox.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <!--        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">-->
-
-
-    <!--For Plugins external css-->
-    <link rel="stylesheet" href="assets/css/plugins.css" />
-
-    <!--Theme custom css -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <!--Theme Responsive css-->
-    <link rel="stylesheet" href="assets/css/responsive.css" />
-
-    <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-
-
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B4VB5VGBXQ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-B4VB5VGBXQ');
-    </script>
-
-
-</head>
-
-<body data-spy="scroll" data-target=".navbar-collapse">
-
-    <div class='preloader'>
-        <div class='loaded'>&nbsp;</div>
-    </div>
-    <div class="culmn">
-        <header id="main_menu" class="header navbar-fixed-top">
-            <div class="main_menu_bg">
-                <div class="container">
-                    <div class="row">
-                        <div class="nave_menu">
-                            <nav class="navbar navbar-default">
-                                <div class="container-fluid">
-                                    <!-- Brand and toggle get grouped for better mobile display -->
-                                    <div class="navbar-header">
-                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                            <span class="sr-only">Toggle navigation</span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-
-                                    </div>
-
-                                    <!-- Collect the nav links, forms, and other content for toggling -->
-                                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                                        <ul class="nav navbar-nav navbar-right">
-
-                                            <li><a href="https://www.linkedin.com/in/hirechase">LINKEDIN</a></li>
-                                            <li><a href="assets/rmarkdown_docs/serializing_sequences.html">POSTS</a>
-                                        </ul>
-                                    </div>
-                            </nav>
-                        </div>
-                    </div>
-
-                </div>
-
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <title>Chase Clark's Website</title>
+      <meta content="" name="description">
+      <meta content="" name="keywords">
+      <!-- Favicons -->
+      <link href="assets/img/favicon.png" rel="icon">
+      <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+      <!-- Vendor CSS Files -->
+      <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+      <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+      <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+      <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+      <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+      <!-- Template Main CSS File -->
+      <link href="assets/css/style.css" rel="stylesheet">
+      <script src='https://www.google.com/recaptcha/api.js'></script>
+      <!-- =======================================================
+         * Template Name: iPortfolio - v3.10.0
+         * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+         * Author: BootstrapMade.com
+         * License: https://bootstrapmade.com/license/
+         ======================================================== -->
+         <style>
+          .github-pinner {
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 10px;
+          }
+        </style>
+   </head>
+   <body>
+      <!-- ======= Mobile nav toggle button ======= -->
+      <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+      <!-- ======= Header ======= -->
+      <header id="header">
+         <div class="d-flex flex-column">
+            <div class="profile">
+               <img src="assets/img/headshot.jpg" alt="" class="img-fluid rounded-circle">
+               <h1 class="text-light"><a href="index.html">Chase M Clark, Ph.D.</a></h1>
+               <div class="social-links mt-3 text-center">
+                  <a href="https://twitter.com/ChasingMicrobes" target ="_" class="twitter"><i class="bx bxl-twitter"></i></a>
+                  <a href="https://github.com/chasemc" target ="_" class="github"><i class="bx bxl-github"></i></a>
+                  <a href="https://www.linkedin.com/in/hirechase/" target ="_" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+               </div>
             </div>
-        </header>
-        <!--End of header -->
-
-
-
-
-        <!--home Section -->
-        <section id="home" class="home">
-            <div class="overlay">
-                <div class="home_skew_border">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12 ">
-                                <div class="main_home_slider text-center">
-                                    <div class="single_home_slider">
-                                        <div class="main_home wow fadeInUp" data-wow-duration="700ms">
-                                            <h1>Chase Clark, Ph.D.</h1>
-                                            <div class="separator"></div>
-                                            <p>Postdoctoral Research Associate at the Universtiy
-                                                of Wisconsin Madison</p>
-                                            <p>Computation and Informatics in Biology and Medicine (CIBM) Fellow </p>
-                                            <p> ~10 years of experience in both academic and industrial settings,
-                                                working in highly multidisciplinary microbial natural product drug
-                                                discovery (analytical chemistry, structure elucidation, biochemistry,
-                                                microbiology) </p>
-                                            <p> >5 years of experience building bioinformatic tools for Mass
-                                                Spectrometry, Genomics, Metagenomics in R, Python, Nextflow </p>
-                                            <div class="home_btn">
-                                                <a href="https://raw.githubusercontent.com/chasemc/resume/main/resume/resume.pdf"
-                                                    class="btn btn-default">Click to view Resume</a>
-                                                <a href="https://raw.githubusercontent.com/chasemc/resume/main/cv/cv.pdf"
-                                                    class="btn btn-default">Click to view CV</a>
-                                            </div>
-
-
-
-
-
-                                        </div>
-                                    </div>
-                                    <!-- 
-                                    <div class="single_home_slider">
-                                        <div class="main_home wow fadeInUp" data-wow-duration="700ms">
-                                            <h3>Our Clients Are Our First Priority</h3>
-                                            <h1>WELCOME TO BINO</h1>
-                                            <div class="separator"></div>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                industry. Lorem Ipsum has been the industry's
-                                                standard dummy text ever since the 1500s, when an unknown printer took a
-                                                galley
-                                                of type and scrambled it to make a type specimen book.</p>
-                                            <div class="home_btn">
-                                                <a href="https://bootstrapthemes.co" class="btn btn-lg m_t_10">GET
-                                                    STARTED NOW</a>
-                                                <a href="https://bootstrapthemes.co" class="btn btn-default">LEARN
-                                                    MORE</a>
-                                            </div>
-
-                                        </div>
-                                    </div> -->
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="scrooldown">
-                        <a href="#feature"><i class="fa fa-arrow-down"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--End of home section -->
-
-
-        <!-- History section -->
-        <section id="history" class="history sections">
+            <nav id="navbar" class="nav-menu navbar">
+               <ul>
+                  <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+                  <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+                  <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+                  <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+                  <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
+                  <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+               </ul>
+            </nav>
+            <!-- .nav-menu -->
+         </div>
+      </header>
+      <!-- End Header -->
+      <!-- ======= Hero Section ======= -->
+      <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+         <div class="hero-container" data-aos="fade-in">
+            <h1>Chase M Clark, Ph.D.</h1>
+            <p><span class="typed" data-typed-items="Bioinformatics, Drug Discovery, Natural product isolation/elucidation, Metagenomics, Transcriptomics, Python, R, Nextflow, Git"></span></p>
+         </div>
+      </section>
+      <!-- End Hero -->
+      <main id="main">
+         <!-- ======= About Section ======= -->
+         <section id="about" class="about">
             <div class="container">
-                <div class="row">
-                    <div class="main_history">
-                        <div class="col-sm-6">
-                            <div class="single_history_img">
-                                <img src="assets/images/stab1.png" alt="" />
-                            </div>
+               <div class="section-title">
+                  <h2>About</h2>
+                  <p>
+                     Postdoctoral Research Associate / Computation and Informatics in Biology and Medicine (CIBM) Fellow at the University of Wisconsin Madison.          
+                  </p>
+               </div>
+               <div class="row">
+                  <div class="col-lg-4" data-aos="fade-right">
+                     <img src="assets/img/headshot.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+                     <h3>Drug Discovery, Bioinformatics, Computational Biology</h3>
+                     <p class="fst-italic">
+                     </p>
+                     <p>
+                        Ten years of experience in both academic and industrial settings,
+                        working in highly multidisciplinary microbial natural product drug
+                        discovery (analytical chemistry, structure elucidation, biochemistry,
+                        microbiology). Experienced in both wet and dry lab techniques.
+                     </p>
+                     <p>   
+                        Experienced bioinformatician, designing and writing novel, complex software for Mass
+                        Spectrometry, Genomics, Metagenomics in R, Python, Nextflow, Bash, etc. Experienced in handlng large data, using high throughput computing, Unix, etc.
+                     </p>
+                     <div class="row">
+                        <div class="col-lg-6">
+                           <ul>
+                              <li><i class="bi bi-chevron-right"></i> <strong>LinkedIn:</strong> <span>linkedin.com/hirechase</span></li>
+                              <li><i class="bi bi-chevron-right"></i> <strong>GitHub:</strong> <span>github.com/chasemc</span></li>
+                              <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Chicago, USA</span></li>
+                           </ul>
                         </div>
-
-                        <div class="col-sm-6">
-                            <div class="single_history_content">
-                                <div class="head_title">
-                                    <h2>Background</h2>
-                                </div>
-                                <p>I received my Bachelors in Biochemistry from Berry Collge where I
-                                    was a member of the honors program and a Bonner scholar. After graduating
-                                    I worked at Deerland Enzymes as an R&D scientist. I recently finished my
-                                    PhD in Pharmacognosy at the Universtiy of Illinois at Chicago where I studied
-                                    under an F31 fellowship in the lab of Brian Murphy. I am currently a
-                                    a Postdoctoral Research Associate in Jason Kwan's lab at the University of
-                                    Wisconsin-Madison where I mainly work in bioinformatics, metagenomics, etc.
-                                </p>
-                                <p>
-                                    Also, impatiently waiting for another scientific expedition or even just a weekend
-                                    whitewater kayaking trip.
-                                </p>
-
-                                <a href="" class="btn btn-lg">BROWSE OUR WORK</a>
-                            </div>
+                        <div class="col-lg-6">
+                           <ul>
+                              <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
+                           </ul>
                         </div>
-                    </div>
-                </div>
-                <!--End of row -->
+                     </div>
+                     
+                     
+                  </div>
+               </div>
             </div>
-            <!--End of container -->
-        </section>
-        <!--End of history -->
-
-
-        <!-- service Section -->
-        <section id="service" class="service">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="main_service">
-                        <div class="col-md-6 col-sm-12 no-padding">
-
-                            <div class="single_service single_service_text text-right">
-                                <div class="head_title">
-                                    <h2>SELECT PROJECTS</h2>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-12 col-sm-10 col-xs-10 margin-bottom-60">
-                                        <div class="row">
-
-                                            <div class="col-sm-10 col-sm-offset-1 col-xs-9 col-xs-offset-1">
-                                                <article class="single_service_right_text">
-                                                    <h4>IDBac</h4>
-                                                    <p>Mass spectrometry based bioinformatic pipeline used to
-                                                        prioritizing bacteria for drug discovery.
-                                                    </p>
-                                                </article>
-                                            </div>
-                                            <div class="col-sm-1 col-xs-1">
-                                                <a href="https://chasemc.github.io/IDBac/" target="_blank"
-                                                    class="single_service_icon">
-                                                    <i class="fa fa-external-link"></i>
-                                                </a>
-                                                </figure><!-- End of figure -->
-                                            </div>
-                                        </div>
-                                    </div><!-- End of col-sm-12 -->
-
-                                    <div class="col-md-12 col-sm-10 col-xs-10 margin-bottom-60">
-                                        <div class="row">
-
-                                            <div class="col-sm-10 col-sm-offset-1 col-xs-9 col-xs-offset-1">
-                                                <article class="single_service_right_text">
-                                                    <h4>electricShine</h4>
-                                                    <p>R package for creating electron-based Shiny applications</p>
-                                                </article>
-                                            </div>
-                                            <div class="col-sm-1 col-xs-1">
-                                                <a href="https://chasemc.github.io/electricShine/" target="_blank"
-                                                    class="single_service_icon">
-                                                    <i class="fa fa-external-link"></i>
-                                                </a>
-                                                </figure><!-- End of figure -->
-                                            </div>
-                                        </div>
-                                    </div><!-- End of col-sm-12 -->
-
-                                    <div class="col-md-12 col-sm-10 col-xs-10 margin-bottom-60">
-                                        <div class="row">
-
-                                            <div
-                                                class="col-sm-10 col-sm-offset-1 col-xs-9 col-xs-offset-1 margin-bottom-20">
-                                                <article class="single_service_right_text">
-                                                    <h4>Map of scientific researchers</h4>
-                                                    <p>Uses leaflet, python, GitHub actions, and Google
-                                                        forms/spreadsheets
-                                                        to create an interactive map of researchers in ASP
-                                                    </p>
-                                                </article>
-                                            </div>
-                                            <div class="col-sm-1 col-xs-1">
-                                                <a href="https://chasemc.github.io/asp_map/" target="_blank"
-                                                    class="single_service_icon">
-                                                    <i class="fa fa-external-link"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div><!-- End of col-sm-12 -->
-                                    <div class="col-md-12 col-sm-10 col-xs-10 margin-bottom-60">
-                                        <div class="row">
-                                            <div
-                                                class="col-sm-10 col-sm-offset-1 col-xs-9 col-xs-offset-1 margin-bottom-20">
-                                                <article class="single_service_right_text">
-                                                    <h4>socialgene</h4>
-                                                    <p>In-progress/unreleased pipeline for repository-scale genome
-                                                        mining. Nextflow,Python Package, Django App
-                                                    </p>
-                                                </article>
-                                            </div>
-                                            <div class="col-sm-1 col-xs-1">
-                                                <figure class="single_service_icon">
-                                                    <i class="fa fa-desktop"></i>
-                                                </figure><!-- End of figure -->
-                                            </div>
-                                        </div>
-                                    </div><!-- End of col-sm-12 -->
-                                    <div class="col-md-12 col-sm-10 col-xs-10 margin-bottom-60">
-                                        <div class="row">
-                                            <div
-                                                class="col-sm-10 col-sm-offset-1 col-xs-9 col-xs-offset-1 margin-bottom-20">
-                                                <article class="single_service_right_text">
-                                                    <h4>Autometa</h4>
-                                                    <p>Contributor to Autometa (an automated binning pipeline for single
-                                                        metagenomes), particularly v2.0's Nextflow implementation
-                                                    </p>
-                                                </article>
-                                            </div>
-                                            <div class="col-sm-1 col-xs-1">
-                                                <a href="https://github.com/KwanLab/Autometa" target="_blank"
-                                                    class="single_service_icon">
-                                                    <i class="fa fa-external-link"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div><!-- End of col-sm-12 -->
-                                </div>
-                            </div>
-                        </div><!-- End of col-sm-6 -->
-
-                        <div class="col-md-6 col-sm-12 no-padding">
-                            <figure class="single_service single_service_img">
-                                <div class="overlay-img"></div>
-                                <img src="assets/images/servicerightimg.jpg" alt="" />
-                            </figure><!-- End of figure -->
-                        </div><!-- End of col-sm-6 -->
-
-                    </div>
-                </div><!-- End of row -->
-            </div><!-- End of Container-fluid -->
-        </section><!-- End of service Section -->
-
-        <!--
-        <section id="portfolio" class="portfolio sections">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="main_portfolio">
-                        <div class="col-sm-12">
-                            <div class="head_title text-center">
-                                <h2>Professional Work</h2>
-                                <div class="subtitle">
-                                    Scientific publications and media coverage
-                                </div>
-                                <div class="separator"></div>
-                            </div>
-                        </div>
-                        <div class="work_menu text-center">
-                            <div id="filters" class="toolbar mb2 mt2">
-                                <button class="btn-md fil-cat filter active" data-filter="all">ALL</button>/
-                                <button class="btn-md fil-cat filter" data-rel="web" data-filter=".web">MASS
-                                    SPECTROMETRY</button>/
-                                <button class="btn-md fil-cat filter" data-rel="design"
-                                    data-filter=".design">IDBAC</button>/
-                                <button class="btn-md fil-cat filter" data-rel="flyers" data-filter=".flyers">DRUG
-                                    DISCOVERY</button>/
-                                <button class="btn-md fil-cat filter" data-rel="bcards"
-                                    data-filter=".bcards">PHOTOGRAPHY</button>/
-                                <button class="btn-md fil-cat filter" data-rel="photo"
-                                    data-filter=".photo">MEDIA</button>/
-                                <button class="btn-md fil-cat filter" data-rel="video"
-                                    data-filter=".video">VIDEO</button>
-                            </div>
-
-                        </div>
-
-                        <div style="clear:both;"></div>
-                        <div id="portfoliowork">
-                            <div class="single_portfolio tile scale-anm web grid-item-width2 video">
-                                <img src="assets/images/pnas_screenshot.png" alt="" />
-                                <a href="assets/images/pnas_fig.jpg" class="portfolio-img">
-                                    <div class="grid_item_overlay">
-                                        <p>Coupling MALDI-TOF Mass Spectrometry Protein and Specialized Metabolite
-                                            Analyses to Rapidly Discriminate Bacterial Function. Proceedings of the
-                                            National Academy of Sciences(May 8, 2018)</p>
-                                        <p></p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="single_portfolio tile scale-anm web grid-item-width2 video">
-                                <img src="assets/images/jnp_screenshot.png" alt="" />
-                                <a href="assets/images/jnp_idbac.png" height=100px, class="portfolio-img">
-                                    <div class="grid_item_overlay">
-                                        <div class="separator4"></div>
-                                        <p>Minimizing Taxonomic and Natural Product Redundancy in Microbial Libraries
-                                            Using MALDI-TOF MS and the Bioinformatics Pipeline IDBac. Journal of Natural
-                                            Products(August 23, 2019)</p>
-                                        <p>art / t-shirt</p>
-                                    </div>
-                                </a>
-                            </div>
-
-                        </div>
-
-                        <div style="clear:both;"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    -->
-
-        <!--feature section -->
-        <section id="feature" class="feature sections">
+         </section>
+         <!-- End About Section -->
+         <!-- ======= Facts Section ======= -->
+         <section id="facts" class="facts">
             <div class="container">
-                <div class="row">
-                    <div class="main_feature text-center">
-                        <h2>NOTABLE FUNDING/AWARDS
-                        </h2>
-                        <div class="col-sm-3">
-                            <div class="single_feature">
-                                <div class="single_feature_icon">
-                                    <i class="fa fa-usd"></i>
-                                </div>
-
-                                <h4>Computation and Informatics in Biology and Medicine (CIBM) Postdoctoral Trainee
-                                </h4>
-                                <div class="separator3"></div>
-                                <p>"The mission of the Computation and Informatics in Biology and Medicine (CIBM)
-                                    training program is to educate and mentor the next generation of leaders in
-                                    biomedical informatics research. The program is designed to equip and mentor pre-
-                                    and postdoctoral trainees to develop novel, state-of-the-art computational methods
-                                    for advancing biomedicine." Read more <a href="http://www.cibm.wisc.edu/"
-                                        target="_blank">here</a>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="single_feature">
-                                <div class="single_feature_icon">
-                                    <i class="fa fa-usd"></i>
-                                </div>
-
-                                <h4>NIH F31 Fellowship
-                                    (Graduate)
-                                </h4>
-                                <div class="separator3"></div>
-                                <p>"The purpose of this Kirschstein-NRSA program is to enable promising
-                                    predoctoral students with potential to develop into a productive,
-                                    independent research scientists, to obtain mentored research training
-                                    while conducting dissertation research. The F31 is also used to enhance
-                                    workforce diversity though a separate program." Read more <a
-                                        href="https://www.niehs.nih.gov/research/supported/training/fellowships/predoctoral/index.cfm"
-                                        target="_blank">here</a>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="single_feature">
-                                <div class="single_feature_icon">
-                                    <i class="fa fa-lightbulb-o"></i>
-                                </div>
-                                <h4>St. Jude National Graduate Student Symposium (NGSS)
-                                </h4>
-                                <div class="separator3"></div>
-                                <p>One of 38 students selected to attend out of 1,500 invitation-only
-                                    applicants. Event was cancelled due to COVID-19. Read more <a
-                                        href="https://www.stjude.org/education-training/predoctoral-training/graduate-students/national-graduate-student-symposium-ngss.html"
-                                        target="_blank">here</a> </p>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="single_feature">
-                                <div class="single_feature_icon">
-                                    <i class="fa fa-usd"></i>
-                                </div>
-
-                                <h4>Bonner Scholar
-                                    (Undergraduate)
-                                </h4>
-                                <div class="separator3"></div>
-                                <p>"The Bonner Program provides a scholarship to students in exchange
-                                    for weekly commitment to intensive and meaningful service with a
-                                    local community organization over the four years as an undergraduate
-                                    student with our campus partners. In addition to their service,
-                                    Bonner students engage in trainings on leadership development and
-                                    social justice topics in an effort to encourage students to become
-                                    aware of how the problems and issues of their communities influence
-                                    their service work and public policy. Read more <a
-                                        href="http://www.bonner.org/apply" target="_blank">here</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <br> </br>
-                <p> I always forget to mention it but I'm Eagle Scout as well. Was even awarded Cherokee Area Eagle
-                    Scout of the Year back in 2008. </p>
+               <div class="section-title">
+                  <h2>Award Highlights</h2>
+                  <p>Download full <a href="https://raw.githubusercontent.com/chasemc/resume/main/cv/cv.pdf" target="_">CV.pdf</a> for listing of all awards</p>
+               </div>
+               <ul>
+                  <li>
+                     <strong><span>Computation and Informatics in Biology and Medicine (CIBM) training (T32 institutional training fellowship)</span></strong>
+                     <ul>
+                        <li>
+                           "The mission of the CIBM training program is to educate and mentor the next generation of leaders in biomedical informatics and biomedical data science research. The program is designed to equip and mentor predoctoral trainees to develop and apply novel, state-of-the-art computational methods for advancing biomedicine."
+                        </li>
+                        <li>
+                           <a href="https://cibm.wisc.edu/" target="_">cibm.wisc.edu/</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li>
+                     <strong><span>NIH Predoctoral Individual National Research Service Award (F31)</span></strong>
+                     <ul>
+                        <li>
+                           "The purpose of this Kirschstein-NRSA program is to enable promising predoctoral students with potential to develop into a productive, independent research scientists, to obtain mentored research training while conducting dissertation research."
+                        </li>
+                        <li>
+                           <a href="https://reporter.nih.gov/search/Kt67k3CPR0WtrcwRMl_upA/project-details/9759178" target="_">reporter.nih.gov/search/Kt67k3CPR0WtrcwRMl_upA/project-details/9759178</a>
+                        </li>
+                     </ul>
+                  </li>
+                  <li><strong><span>W.E. van Doren Scholar</span></strong></li>
+                  <li><strong><span>American Society of Pharmacognosy Student Travel Award</span></strong></li>
+                  <li><strong><span>University of Illinois at Chicago Provost/Deiss Award</span></strong></li>
+                  <li>
+                     <strong><span>Bonner Scholar</span></strong>
+                     <ul>
+                        <li>
+                           Four-year undergraduate community service scholarship requiring weekly and summer commitments
+                        </li>
+                        <li>
+                           About Bonner: <a href="https://www.bonner.org/goals" target="_">www.bonner.org/goals</a>
+                        </li>
+                        <li>
+                           <a href="https://www.berry.edu/admission/scholarships-and-aid/bonner" target="_">berry.edu/admission/scholarships-and-aid/bonner</a>                
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+               <div class="row no-gutters">
+                  <div class="col-lg-6 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
+                     <div class="count-box">
+                        <i class="bi bi-graph-up-arrow"></i>
+                        <i class="bi bi-currency-dollar"></i>
+                        <span data-purecounter-start="0" data-purecounter-end="380000" data-purecounter-duration="1" class="purecounter"></span>
+                        <p><strong>Total Funding and Scholarships</strong> </p>
+                     </div>
+                  </div>
+                  <!-- 
+                     <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
+                       <div class="count-box">
+                         <i class="bi bi-people"></i>
+                         <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+                         <p><strong>Mentees</strong> mentored</p>
+                       </div>
+                     </div> -->
+               </div>
             </div>
-            <!--End of container -->
-        </section>
-        <!--End of feature Section -->
-        <hr />
-
-
-
-        <!-- Study Section 
-        <section id="study" class="study text-center wow fadeIn" data-wow-duration="2s" data-wow-dealy="1.5s">
+         </section>
+         <!-- End Facts Section -->
+         <!-- ======= Skills Section ======= -->
+         <section id="skills" class="skills section-bg">
             <div class="container">
-                <div class="row">
-                    <div class="main_study_area sections">
-                        <div class="head_title text-center">
-                            <h2>CASE STUDY</h2>
-                            <div class="subtitle">
-                                A brief story about how this process works, keep an eye till the end.
-                            </div>
-                            <div class="separator"></div>
-                        </div>
-                        <div class="single_study_content">
-                            <div class="col-sm-6">
-                                <div class="single_study_slid_area">
-
-                                    <div class="single_study_text">
-                                        <div class="study_slider">
-                                            <div class="item">
-                                                <div class="s_study_icon">
-                                                    <i class="fa fa-lightbulb-o"></i>
-                                                </div>
-                                                <h4>aCCUMULATE CREATIVE IDEAS</h4>
-                                                <div class="separator3"></div>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting let.
-                                                    Lorem Ipsum has been the industry.
-                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    let.
-                                                    Lorem Ipsum has been the industry Printing and typelorem Ipsum has
-                                                    been the setting let.</p>
-
-                                                <a href="" class="btn btn-lg">read more</a>
-                                            </div>
-                                            <div class="item">
-                                                <div class="s_study_icon">
-                                                    <i class="fa fa-lightbulb-o"></i>
-                                                </div>
-                                                <h4>aCCUMULATE CREATIVE IDEAS</h4>
-                                                <div class="separator3"></div>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting let.
-                                                    Lorem Ipsum has been the industry.
-                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    let.
-                                                    Lorem Ipsum has been the industry Printing and typelorem Ipsum has
-                                                    been the setting let.</p>
-
-                                                <a href="" class="btn btn-lg">read more</a>
-                                            </div>
-                                            <div class="item">
-                                                <div class="s_study_icon">
-                                                    <i class="fa fa-lightbulb-o"></i>
-                                                </div>
-                                                <h4>aCCUMULATE CREATIVE IDEAS</h4>
-                                                <div class="separator3"></div>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting let.
-                                                    Lorem Ipsum has been the industry.
-                                                    Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    let.
-                                                    Lorem Ipsum has been the industry Printing and typelorem Ipsum has
-                                                    been the setting let.</p>
-
-                                                <a href="" class="btn btn-lg">read more</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="single_study_right_img">
-                                <div class="col-sm-6">
-                                    <div class="single_study_img">
-                                        <img src="assets/images/study.jpg" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               <div class="section-title">
+                  <h2>Skills</h2>
+                  <p>Under construction</p>
+               </div>
+              
+               </div>
             </div>
-        </section>End off Study Section
- 
-
-       
-        <section id="counter" class="counter">
-            <div class="video_overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="main_counter_area text-center">
-
-                                <div class="row">
-                                    <div class="single_counter border_right">
-                                        <div class="col-sm-3 col-xs-12">
-                                            <div class="single_counter_item">
-                                                <i class="icon icon-thumbs-up"></i>
-                                                <h2 class="statistic-counter">1000000</h2>
-                                                <h4 class="">User Favourites</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="single_counter">
-                                        <div class="col-sm-3 col-xs-12">
-                                            <div class="single_counter_item">
-                                                <i class="icon icon-business-3"></i>
-                                                <h2 class="statistic-counter">281</h2>
-                                                <h4 class="">Posts Last 24 Hours</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="single_counter">
-                                        <div class="col-sm-3 col-xs-12">
-                                            <div class="single_counter_item">
-                                                <i class="icon icon-people-32"></i>
-                                                <h2 class="statistic-counter">618</h2>
-                                                <h4 class="">Total Posts</h4>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="single_counter">
-                                        <div class="col-sm-3 col-xs-12">
-                                            <div class="single_counter_item">
-                                                <i class="icon icon-cup"></i>
-                                                <h2 class="statistic-counter">178</h2>
-                                                <h4 class="">Amazing Features</h4>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        
-        <section id="team" class="team">
-            <div class="main_team_area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="head_title textwhite text-center margin-top-80">
-                                <h2>OUR TEAM</h2>
-                                <div class="subtitle">
-                                    Meet the craziest team. Share your thoughts with them.
-                                </div>
-                                <div class="separator"></div>
-                            </div>
-
-                            <div class="main_team">
-                                <ul>
-                                    <li>
-                                        <div class="single_team_img">
-                                            <img src="assets/images/team1.jpg" alt="" />
-                                        </div>
-                                        <div class="single_team_text">
-                                            <h4>Semf Ucuk</h4>
-                                            <p>Founder</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="single_team_img">
-                                            <img src="assets/images/team2.jpg" alt="" />
-                                        </div>
-                                        <div class="single_team_text">
-                                            <h4>Kazi Erfan</h4>
-                                            <p>Engineering</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="single_team_img">
-                                            <img src="assets/images/team3.jpg" alt="" />
-                                        </div>
-                                        <div class="single_team_text">
-                                            <h4>Jeng Koli</h4>
-                                            <p>Designer</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="single_team_img">
-                                            <img src="assets/images/team4.jpg" alt="" />
-                                        </div>
-                                        <div class="single_team_text">
-                                            <h4>Pet Romak</h4>
-                                            <p>Marketing</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="single_team_img">
-                                            <img src="assets/images/test2.jpg" alt="" />
-                                        </div>
-                                        <div class="single_team_text">
-                                            <h4>Chet Pok</h4>
-                                            <p>Web Developer</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-    
-        <section id="clogo" class="clogo">
+         </section>
+         <!-- End Skills Section -->
+         <!-- ======= Resume Section ======= -->
+         <section id="resume" class="resume">
             <div class="container">
-                <div class="row">
-                    <div class="main_clogo sections text-center">
-                        <div class="head_title text-center">
-                            <h2>Great Integrations with Others</h2>
-                            <div class="subtitle">
-                                Suspendisse sed eros mollis, tincidunt felis eget, interdum erat.
-                                Nullam sit amet odio eu est aliquet euismod a a urna. Proin eu urna suscipit, dictum
-                                quam nec.
-                            </div>
-                            <div class="separator"></div>
-                        </div>
-
-                        <div class="col-sm-3 col-xs-6">
-                            <a href=""><img src="assets/images/clogo1.png" alt="" /></a>
-                        </div>
-                        <div class="col-sm-3 col-xs-6">
-                            <a href=""><img src="assets/images/clogo2.png" alt="" /></a>
-                        </div>
-                        <div class="col-sm-3 col-xs-6">
-                            <a href=""><img src="assets/images/clogo3.png" alt="" /></a>
-                        </div>
-                        <div class="col-sm-3 col-xs-6">
-                            <a href=""><img src="assets/images/clogo4.png" alt="" /></a>
-                        </div>
-                        <div class="col-sm-3 col-xs-6">
-                            <a href=""><img src="assets/images/clogo5.png" alt="" /></a>
-                        </div>
-                        <div class="col-sm-3 col-xs-6">
-                            <a href=""><img src="assets/images/clogo6.png" alt="" /></a>
-                        </div>
-                        <div class="col-sm-3 col-xs-6">
-                            <a href=""><img src="assets/images/clogo9.png" alt="" /></a>
-                        </div>
-                        <div class="col-sm-3 col-xs-6">
-                            <a href=""><img src="assets/images/clogo8.png" alt="" /></a>
-                        </div>
-                    </div>
-                </div>
+               <div class="section-title">
+                  <h2>Resume</h2>
+                  <a href="https://raw.githubusercontent.com/chasemc/resume/main/resume/resume.pdf" target="_" type="button" class="btn btn-outline-secondary">Click to download full resume</a>
+                  <a href="https://raw.githubusercontent.com/chasemc/resume/main/cv/cv.pdf" target="_" type="button" class="btn btn-outline-secondary">Click to download full CV</a>
+               </div>
+               <div class="row">
+                  <div class="col-lg-6" data-aos="fade-up">
+                     <h3 class="resume-title">Summary</h3>
+                     <div class="resume-item pb-0">
+                        <h4>Chase M Clark, Ph.D.</h4>
+                        <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
+                        <ul>
+                           <li>Portland par 127,Orlando, FL</li>
+                           <li>(123) 456-7891</li>
+                           <li>alice.barkley@example.com</li>
+                        </ul>
+                     </div>
+                     <h3 class="resume-title">Education</h3>
+                     <div class="resume-item">
+                        <h4>Ph.D.; Pharmacognosy</h4>
+                        <h5>2015 - 2020</h5>
+                        <p><em>University of Illinois at Chicago, Chicago, IL</em></p>
+                        <p>Thesis: IDBac: A Proteomic and Metabolomic Platform for Microbial Drug Discovery
+                           <a href="https://doi.org/10.25417/uic.14134700.v1 " target = "_" >(doi.org/10.25417/uic.14134700.v1)</a>
+                        </p>
+                        <ul>
+                           <li>
+                              Natural product drug dicovery, specifically bacterial-derived antibiotics
+                           </li>
+                           <li>
+                              Conceived, learned to code, and built a bioinformatics program (R Shiny app) for rapid bacterial metabolomics analyses
+                           </li>
+                           <li>
+                              Isolated and cultured 1000's of bacterial isolates and performed natural product isolation and structure elucidation
+                           </li>
+                           <li>
+                              First or co-first author on four studies/manuscripts
+                           </li>
+                           <li>
+                              Mentored 11 undergradaute and graduate students leading to publishable studies
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="resume-item">
+                        <h4>Bachelor of Science; Biochemistry</h4>
+                        <h5>2008 - 2012</h5>
+                        <p><em>Berry College, Mount Berry, GA</em></p>
+                        <p>Thesis: Electrochemical studies of enzymatically modified electrodes for the detection of glucose</p>
+                        <p>Honors Program</p>
+                     </div>
+                  </div>
+                  <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                     <h3 class="resume-title">Professional Experience</h3>
+                     <div class="resume-item">
+                        <h4>Postdoctoral Research Associate/Fellow</h4>
+                        <h5>2020 - Present</h5>
+                        <p><em>University of Wisconsin-Madison, Madison, WI (Remote from Chicago) </em></p>
+                        <ul>
+                           <li>Training grant funded through the National Library of Medicine</li>
+                           <li>Developing genomic and metagenomic bioinformatics software</li>
+                           <li>Currently developing a repository scale analysis platform (synthesizing tens of billions of data points)</li>
+                        </ul>
+                     </div>
+                     <div class="resume-item">
+                        <h4>Predoctoral research and F31 Predoctoral Fellow</h4>
+                        <h5>2015 - 2020</h5>
+                        <p><em>University of Illinois at Chicago, Chicago, IL</em></p>
+                        <ul>
+                        
+                        
+                     </div>
+                     <div class="resume-item">
+                        <h4>Research and Development Technician</h4>
+                        <h5>2013 - 2015</h5>
+                        <p><em>Deerland Probiotics & Enzymes, Kennesaw, GA</em></p>
+                        <ul>
+                           <li>Assisted in the design and results analysis of three clinical studies</li>
+                           <li>Presented monthly projects to CEO, VP Sales and VP Science & Technology</li>
+                           <li>Head of method development and identification of raw materials to meet CFR 21,
+                              FDA requirements
+                           </li>
+                           <li> Developed identifications for over 140 materials, from enzymes and botanicals to
+                              minerals and additives.
+                           </li>
+                           <li> Overhauled the Method Development Department establishing inter-departmental
+                              responsibilities, improving and creating new SOPs, streamlining identification
+                              requests by establishing a formal request process and interactive database
+                           </li>
+                           <li>Strengthened and created new relationships with third-party vendors, labs, and
+                              universities.
+                           </li>
+                           <li>Controlled budget of method development for purchase of standards, consum-
+                              ables, equipment and third-party testing
+                           </li>
+                           <li>
+                              Mentored interns from Kennesaw Mountain High School magnet program
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
             </div>
-            <div class="divider"></div>
-        </section>
-
-
-        
-        <section id="blog" class="blog">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="main_blog sections">
-                        <div class="head_title text-center">
-                            <h2>OUR BLOG</h2>
-                            <div class="subtitle">
-                                Suspendisse sed eros mollis, tincidunt felis eget, interdum eratullam sit amet odio.
-                            </div>
-                            <div class="separator"></div>
-                        </div>
-                        <div class="main_blog_content">
-                            <div class="col-sm-6">
-                                <div class="single_blog_area textwhite">
-                                    <div class="row">
-                                        <div class="col-sm-6 no-padding">
-                                            <div class="single_blog_img">
-                                                <img src="assets/images/blog1.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 no-padding">
-                                            <div class="single_blog_text s_b_left">
-                                                <p>art/t-shirt</p>
-                                                <h3>T-SHIRT DESIGN</h3>
-                                                <div class="separator2"></div>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem Ipsum has been the indu Stry's
-                                                    standard dummy text ever since the 1500s, an unknown printer took a
-                                                    galley of type
-                                                    a scrambled it to make a type specimen book.</p>
-
-                                                <a href="" class="read_more">Read More >></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="single_blog_area textwhite">
-                                    <div class="row">
-                                        <div class="col-sm-6 no-padding">
-                                            <div class="single_blog_img">
-                                                <img src="assets/images/blog2.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 no-padding">
-                                            <div class="single_blog_text s_b_left">
-                                                <p>art/t-shirt</p>
-                                                <h3>T-SHIRT DESIGN</h3>
-                                                <div class="separator2"></div>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem Ipsum has been the indu Stry's
-                                                    standard dummy text ever since the 1500s, an unknown printer took a
-                                                    galley of type
-                                                    a scrambled it to make a type specimen book.</p>
-
-                                                <a href="" class="read_more">Read More >></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="single_blog_area textwhite">
-                                    <div class="row">
-
-                                        <div class="col-sm-6 col-sm-push-6 no-padding">
-                                            <div class="single_blog_img">
-                                                <img src="assets/images/blog3.jpg" alt="" />
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-6 col-sm-pull-6 no-padding">
-                                            <div class="single_blog_text s_b_right">
-                                                <p>art/t-shirt</p>
-                                                <h3>T-SHIRT DESIGN</h3>
-                                                <div class="separator2"></div>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem Ipsum has been the indu Stry's
-                                                    standard dummy text ever since the 1500s, an unknown printer took a
-                                                    galley of type
-                                                    a scrambled it to make a type specimen book.</p>
-
-                                                <a href="" class="read_more">Read More >></a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="single_blog_area textwhite">
-                                    <div class="row">
-                                        <div class="col-sm-6 col-sm-push-6 no-padding">
-                                            <div class="single_blog_img">
-                                                <img src="assets/images/blog4.jpg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-sm-pull-6 no-padding">
-                                            <div class="single_blog_text s_b_right">
-                                                <p>art/t-shirt</p>
-                                                <h3>T-SHIRT DESIGN</h3>
-                                                <div class="separator2"></div>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem Ipsum has been the indu Stry's
-                                                    standard dummy text ever since the 1500s, an unknown printer took a
-                                                    galley of type
-                                                    a scrambled it to make a type specimen book.</p>
-
-                                                <a href="" class="read_more">Read More >></a>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="contact" class="contact">
+         </section>
+         <!-- End Resume Section -->
+         <!-- ======= Portfolio Section ======= -->
+         <section id="portfolio" class="portfolio section-bg">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="contact_contant sections">
-                            <div class="head_title text-center">
-                                <h2>kEEP IN TOUCH</h2>
-                                <div class="subtitle">
-                                    Nullam sit amet odio eu est aliquet euismod a a urna. Proin eu urna suscipit, dictum
-                                    quam nec.
-                                </div>
-                                <div class="separator"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="main_contact_info">
-                                        <div class="row">
-                                            <div class="contact_info_content padding-top-90 padding-bottom-60 p_l_r">
-                                                <div class="col-sm-12">
-                                                    <div class="single_contact_info">
-                                                        <div class="single_info_text">
-                                                            <h3>Location</h3>
-                                                            <h4>Work remotely from Chicago, Illinois</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-12">
-                                                    <div class="single_contact_info">
-                                                        <div class="single_info_text">
-                                                            <h3>EMAIL US</h3>
-                                                            <h4>contactus@email.com</h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6">
-                                    <div class="single_contant_left padding-top-90 padding-bottom-90">
-                                        <form action="#" id="formid">
-                                            <div
-                                                class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">
-
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" name="name"
-                                                                placeholder="First Name" required="">
-                                                        </div>
-                                                    </div>
-                                                </div>
+               <div class="section-title">
+                  <h2>Portfolio</h2>
+                 
+               </div>
+               <p>Under construction</p>
 
 
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <div class="form-group">
-                                                            <input type="email" class="form-control" name="email"
-                                                                placeholder="Email" required="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-sm-12">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control" name="subject"
-                                                                placeholder="Subject" required="">
-                                                        </div>
-                                                    </div>
-                                                </div>
 
 
-                                                <div class="form-group">
-                                                    <textarea class="form-control" name="message" rows="7"
-                                                        placeholder="Message"></textarea>
-                                                </div>
 
-                                                <div class="">
-                                                    <input type="submit" value="SEND MESSAGE" class="btn btn-lg">
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
+               
+               </div>
             </div>
-        </section>
-
-        <section id="trial" class="trial text-center wow fadeIn" data-wow-duration="2s" data-wow-dealy="1.5s">
-            <div class="main_trial_area">
-                <div class="video_overlay sections">
-                    <div class="container">
-                        <div class="row">
-                            <div class="main_trial">
-                                <div class="col-sm-12">
-                                    <h2>Let's Get Started Now. <span>It's FREE!</span></h2>
-                                    <h4>30 day free trial. Free plan allows up to 2 projects. Pay if you need more.
-                                        Cancel anytime. No catches.</h4>
-                                    <a href="" class="btn btn-lg">start free trial</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
--->
-        <section class="footer">
+         </section>
+         <!-- End Portfolio Section -->
+         <!-- ======= Services Section ======= -->
+         <section id="services" class="services">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="main_footer">
-                            <div class="row">
-                                <div class="col-sm-6 col-xs-12">
-                                    <div class="flowus">
-                                        <a href="https://twitter.com/ChasingMicrobes"><i class="fa fa-twitter"></i></a>
-                                        <a href="https://www.linkedin.com/in/hirechase/"><i
-                                                class="fa fa-linkedin"></i></a>
-
-                                    </div>
-                                </div>
-
-                                <div class="col-sm-6 col-xs-12">
-                                    <div class="copyright_text">
-                                        <p class=" wow fadeInRight" data-wow-duration="1s">Made with <i
-                                                class="fa fa-heart"></i> by <a
-                                                href="https://bootstrapthemes.co">Bootstrap Themes</a>2016. All Rights
-                                            Reserved</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               <div class="section-title">
+                  <h2>Services</h2>
+               </div>
+             
+               </div>
             </div>
-        </section>
+         </section>
+         <!-- End Services Section -->
+         <!-- ======= Testimonials Section ======= -->
+         <p>Under construction</p>
 
+         <!-- End Testimonials Section -->
+         <!-- ======= Contact Section ======= -->
+         <section id="contact" class="contact">
+            <div class="container">
+               <div class="section-title">
+                  <h2>Contact</h2>
+               </div>
+               <div class="row" data-aos="fade-in">
+                  <p>Contact info can be found by downloading <a href="https://raw.githubusercontent.com/chasemc/resume/main/resume/resume.pdf" target="_" >resume.pdf</a></p>
+                  <div class="col-lg-8 d-flex align-items-stretch">
+                     <div class="info">
+                        <div class="address">
+                           <i class="bi bi-geo-alt"></i>
+                           <h4>Location:</h4>
+                           <p>Chicago, IL</p>
+                        </div>                       
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190255.3398271633!2d-87.87238845080297!3d41.83390324787697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2c3cd0f4cbed%3A0xafe0a6ad09c0c000!2sChicago%2C%20IL!5e0!3m2!1sen!2sus!4v1673895244323!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+                     </div>
+                  </div>
+                  <div class="row" data-aos="fade-in">
+                  </div>
 
-
-
-
-
-
-
-
-
-    </div>
-
-    <!-- START SCROLL TO TOP  -->
-
-    <div class="scrollup">
-        <a href="#"><i class="fa fa-chevron-up"></i></a>
-    </div>
-
-    <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-
-    <script src="assets/js/jquery.magnific-popup.js"></script>
-    <script src="assets/js/jquery.mixitup.min.js"></script>
-    <script src="assets/js/jquery.easing.1.3.js"></script>
-    <script src="assets/js/jquery.masonry.min.js"></script>
-
-    <!--slick slide js -->
-    <script src="assets/css/slick/slick.js"></script>
-    <script src="assets/css/slick/slick.min.js"></script>
-
-
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/main.js"></script>
-
-</body>
-
-</html>
+               </div>
+            </div>
+         </section>
+         <!-- End Contact Section -->
+      </main>
+      <!-- End #main -->
+      <!-- ======= Footer ======= -->
+      <footer id="footer">
+         <div class="container">
+            <div class="copyright">
+               &copy; Copyright <strong><span>iPortfolio</span></strong>
+            </div>
+            <div class="credits">
+               <!-- All the links in the footer should remain intact. -->
+               <!-- You can delete the links only if you purchased the pro version. -->
+               <!-- Licensing information: https://bootstrapmade.com/license/ -->
+               <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
+               Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+         </div>
+      </footer>
+      <!-- End  Footer -->
+      <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+      <!-- Vendor JS Files -->
+      <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+      <script src="assets/vendor/aos/aos.js"></script>
+      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+      <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+      <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+      <script src="assets/vendor/typed.js/typed.min.js"></script>
+      <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+      <script src="assets/vendor/php-email-form/validate.js"></script>
+      <!-- Template Main JS File -->
+      <script src="assets/js/main.js"></script>
+   </body>
